@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Vaazhvizhi Contracters - New Construction, Renovation, Building Materials Supply, Planning & Estimation."
+    content="Vaazhvizhi Contracters - New Construction, Renovation, Building Materials Supply, Planning & Estimation in Dharmapuri."
   >
 
   <style>
@@ -16,14 +16,17 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
-      color: #222;
-      background: #f7f7f7;
+      color: #1f2937;
+      background: #ffffff;
     }
 
     a {
@@ -36,25 +39,30 @@
       display: block;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
     }
 
-    /* ================= HEADER ================= */
+    /* =========================
+       NAVBAR
+    ========================= */
 
     header {
-      background: #111;
-      color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .navbar {
-      min-height: 70px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -62,70 +70,79 @@
     }
 
     .logo {
-      font-size: 23px;
+      font-size: 22px;
       font-weight: 800;
-      color: #f5b400;
+      color: #111827;
       white-space: nowrap;
+    }
+
+    .logo span {
+      color: #d97706;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 22px;
+      list-style: none;
     }
 
     .nav-links a {
-      color: white;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      transition: 0.3s;
+      color: #374151;
     }
 
     .nav-links a:hover {
-      color: #f5b400;
+      color: #d97706;
     }
 
     .language-btn {
-      border: 1px solid #f5b400;
-      background: transparent;
-      color: #f5b400;
-      padding: 8px 14px;
-      border-radius: 6px;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 7px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 700;
     }
 
-    /* ================= HERO ================= */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 650px;
+      min-height: 620px;
       display: flex;
       align-items: center;
       background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80")
+        linear-gradient(
+          rgba(0,0,0,0.58),
+          rgba(0,0,0,0.58)
+        ),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85")
         center/cover no-repeat;
-      color: white;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 70px 20px;
+      color: #ffffff;
     }
 
-    .hero h1 {
-      font-size: 52px;
-      line-height: 1.15;
+    .hero-content h1 {
+      max-width: 800px;
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.05;
       margin-bottom: 20px;
     }
 
-    .hero h1 span {
-      color: #f5b400;
-    }
-
-    .hero p {
+    .hero-content p {
+      max-width: 700px;
       font-size: 19px;
       margin-bottom: 30px;
-      max-width: 700px;
+      color: #f3f4f6;
     }
 
     .hero-buttons {
@@ -134,53 +151,44 @@
       gap: 12px;
     }
 
-    /* ================= BUTTONS ================= */
-
-    .btn {
+    .hero-btn {
       display: inline-block;
-      padding: 13px 22px;
-      border-radius: 7px;
+      padding: 14px 22px;
+      border-radius: 8px;
       font-weight: 700;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-      text-align: center;
+      transition: 0.2s;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-primary {
-      background: #f5b400;
-      color: #111;
-    }
-
-    .btn-primary:hover {
-      background: #d99f00;
-      transform: translateY(-2px);
+      background: #d97706;
+      color: #ffffff;
     }
 
     .btn-whatsapp {
       background: #25d366;
-      color: white;
+      color: #ffffff;
     }
 
-    .btn-whatsapp:hover {
-      background: #1da851;
-      transform: translateY(-2px);
+    .btn-call {
+      background: #ffffff;
+      color: #111827;
     }
 
-    .btn-dark {
-      background: #222;
-      color: white;
-    }
-
-    .btn-dark:hover {
-      background: #000;
-      transform: translateY(-2px);
-    }
-
-    /* ================= SECTIONS ================= */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
-      padding: 75px 0;
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
     }
 
     .section-title {
@@ -189,145 +197,219 @@
     }
 
     .section-title h2 {
-      font-size: 35px;
+      font-size: 36px;
+      color: #111827;
       margin-bottom: 10px;
-      color: #222;
     }
 
     .section-title p {
-      color: #666;
+      color: #6b7280;
     }
 
-    /* ================= PROJECTS ================= */
+    /* =========================
+       PROJECT REQUIREMENTS
+    ========================= */
 
-    .project-grid {
+    .requirements {
+      background: #f9fafb;
+    }
+
+    .requirements-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
-    .project-card {
-      background: white;
+    .requirement-card {
+      background: #ffffff;
       padding: 30px 20px;
+      border-radius: 14px;
       text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      border: 1px solid #e5e7eb;
+      transition: 0.2s;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
+    .requirement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .project-icon {
-      font-size: 40px;
+    .requirement-icon {
+      font-size: 38px;
       margin-bottom: 15px;
     }
 
-    .project-card h3 {
-      margin-bottom: 8px;
-      font-size: 19px;
+    .requirement-card h3 {
+      font-size: 18px;
+      color: #111827;
     }
 
-    .project-card p {
-      color: #666;
-      font-size: 14px;
-    }
+    /* =========================
+       SERVICES
+    ========================= */
 
-    /* ================= SERVICES ================= */
-
-    .services-section {
-      background: #111;
-      color: white;
-    }
-
-    .services-section .section-title h2 {
-      color: white;
-    }
-
-    .services-section .section-title p {
-      color: #bbb;
-    }
-
-    .service-grid {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
     .service-card {
-      background: #1d1d1d;
-      border: 1px solid #333;
-      padding: 25px;
-      border-radius: 10px;
-      transition: 0.3s;
+      padding: 28px 20px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      transition: 0.2s;
     }
 
     .service-card:hover {
-      border-color: #f5b400;
       transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    }
+
+    .service-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
     }
 
     .service-card h3 {
-      color: #f5b400;
-      font-size: 18px;
-      margin-bottom: 8px;
+      font-size: 17px;
+      color: #111827;
     }
 
-    .service-card p {
-      color: #ccc;
-      font-size: 14px;
+    /* =========================
+       WHY US
+    ========================= */
+
+    .why-us {
+      background: #111827;
+      color: #ffffff;
     }
 
-    /* ================= WHY US ================= */
+    .why-us .section-title h2 {
+      color: #ffffff;
+    }
+
+    .why-us .section-title p {
+      color: #d1d5db;
+    }
 
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .why-card {
-      background: white;
-      padding: 30px;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      background: rgba(255,255,255,0.05);
     }
 
     .why-card h3 {
-      margin-bottom: 10px;
-      color: #222;
+      margin-bottom: 8px;
+      font-size: 18px;
     }
 
     .why-card p {
-      color: #666;
+      color: #d1d5db;
+      font-size: 14px;
     }
 
-    /* ================= QUOTE ================= */
+    /* =========================
+       QUOTE SECTION
+    ========================= */
 
     .quote-section {
-      background: #eeeeee;
+      background: #f9fafb;
+      scroll-margin-top: 90px;
     }
 
     .quote-wrapper {
-      max-width: 900px;
+      max-width: 850px;
       margin: auto;
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
 
-    .quote-wrapper h2 {
+    /* NEW CHOICE AREA */
+
+    .quote-choice {
+      margin-bottom: 28px;
+      padding: 25px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
       text-align: center;
-      margin-bottom: 10px;
-      font-size: 32px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.04);
     }
 
-    .quote-wrapper > p {
-      text-align: center;
-      color: #666;
-      margin-bottom: 30px;
+    .quote-choice h3 {
+      font-size: 23px;
+      color: #111827;
+      margin-bottom: 6px;
+    }
+
+    .quote-choice-subtitle {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .quote-choice-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-whatsapp-btn,
+    .detailed-quote-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 9px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .quick-whatsapp-btn {
+      background: #25d366;
+      color: #ffffff;
+    }
+
+    .detailed-quote-btn {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .quick-whatsapp-btn:hover,
+    .detailed-quote-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* QUOTE FORM */
+
+    .quote-form-card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .quote-form-card h3 {
+      font-size: 25px;
+      margin-bottom: 7px;
+      color: #111827;
+    }
+
+    .form-description {
+      color: #6b7280;
+      margin-bottom: 25px;
+      font-size: 14px;
     }
 
     .form-grid {
@@ -341,32 +423,34 @@
       flex-direction: column;
     }
 
-    .form-group.full {
+    .form-group.full-width {
       grid-column: 1 / -1;
     }
 
     .form-group label {
-      font-weight: 700;
       margin-bottom: 7px;
       font-size: 14px;
+      font-weight: 700;
+      color: #374151;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 13px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
-      font-family: inherit;
+      padding: 13px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
       outline: none;
+      background: #ffffff;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: #f5b400;
+      border-color: #d97706;
+      box-shadow: 0 0 0 3px rgba(217,119,6,0.1);
     }
 
     .form-group textarea {
@@ -374,93 +458,98 @@
       resize: vertical;
     }
 
-    .submit-area {
-      margin-top: 25px;
-      text-align: center;
-    }
-
-    .submit-area .btn {
+    .submit-btn {
       width: 100%;
-      font-size: 17px;
+      margin-top: 22px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 9px;
+      background: #d97706;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    .form-message {
+    .submit-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.93;
+    }
+
+    .form-status {
       margin-top: 15px;
+      padding: 13px;
+      border-radius: 8px;
       text-align: center;
+      display: none;
+      font-size: 14px;
       font-weight: 600;
     }
 
-    .whatsapp-after-submit {
-      margin-top: 20px;
-      text-align: center;
-      display: none;
+    .form-status.success {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
     }
 
-    .whatsapp-after-submit p {
-      color: #555;
-      margin-bottom: 10px;
-      font-size: 14px;
+    .form-status.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
     }
 
-    /* ================= CONTACT ================= */
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
     .contact-card {
-      background: white;
-      padding: 25px 15px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    }
-
-    .contact-card .icon {
-      font-size: 30px;
-      margin-bottom: 10px;
+      padding: 28px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #ffffff;
     }
 
     .contact-card h3 {
-      font-size: 16px;
-      margin-bottom: 7px;
+      margin-bottom: 12px;
+      color: #111827;
     }
 
     .contact-card p {
-      color: #666;
-      font-size: 14px;
-      word-break: break-word;
+      margin-bottom: 8px;
+      color: #4b5563;
     }
 
     .contact-card a {
-      color: #333;
+      color: #d97706;
+      font-weight: 600;
     }
 
-    .contact-card a:hover {
-      color: #f5b400;
-    }
-
-    /* ================= FOOTER ================= */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #111;
-      color: white;
+      background: #111827;
+      color: #ffffff;
       text-align: center;
-      padding: 25px 15px;
-    }
-
-    footer strong {
-      color: #f5b400;
+      padding: 30px 20px;
     }
 
     footer p {
+      color: #d1d5db;
       font-size: 14px;
-      color: #bbb;
     }
 
-    /* ================= FLOATING WHATSAPP ================= */
+    /* =========================
+       FLOATING WHATSAPP
+    ========================= */
 
     .floating-whatsapp {
       position: fixed;
@@ -470,124 +559,88 @@
       height: 58px;
       border-radius: 50%;
       background: #25d366;
-      color: white;
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 29px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
       z-index: 999;
     }
 
-    .floating-whatsapp:hover {
-      transform: scale(1.08);
-    }
+    /* =========================
+       MOBILE
+    ========================= */
 
-    /* ================= MOBILE ================= */
+    @media (max-width: 900px) {
 
-    @media (max-width: 1000px) {
-
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .nav-links {
+        gap: 12px;
       }
 
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-grid {
+      .requirements-grid,
+      .services-grid,
+      .why-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 700px) {
 
       .navbar {
         flex-wrap: wrap;
-        padding: 15px 0;
-      }
-
-      .logo {
-        font-size: 19px;
       }
 
       .nav-links {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px 18px;
-      }
-
-      .nav-links a {
-        font-size: 13px;
+        gap: 12px;
       }
 
       .hero {
-        min-height: 600px;
+        min-height: 560px;
       }
 
-      .hero h1 {
-        font-size: 38px;
+      .hero-content {
+        padding: 50px 20px;
       }
 
-      .hero p {
+      .hero-content p {
         font-size: 16px;
       }
 
+      section {
+        padding: 60px 16px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .requirements-grid,
+      .services-grid,
+      .why-grid,
+      .contact-grid,
       .form-grid {
         grid-template-columns: 1fr;
       }
 
-      .form-group.full {
+      .form-group.full-width {
         grid-column: auto;
       }
 
-      .quote-wrapper {
-        padding: 25px 18px;
+      .quote-form-card {
+        padding: 22px;
       }
 
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .container {
-        width: 92%;
-      }
-
-      section {
-        padding: 55px 0;
-      }
-
-      .section-title h2 {
-        font-size: 28px;
-      }
-
-      .project-grid,
-      .service-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-buttons {
+      .quote-choice-buttons {
         flex-direction: column;
       }
 
-      .hero-buttons .btn {
+      .quick-whatsapp-btn,
+      .detailed-quote-btn {
         width: 100%;
-      }
-
-      .language-btn {
-        width: 100%;
-      }
-
-      .floating-whatsapp {
-        width: 52px;
-        height: 52px;
-        right: 15px;
-        bottom: 15px;
       }
     }
   </style>
@@ -595,108 +648,115 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- =========================
+       NAVBAR
+  ========================= -->
 
   <header>
-    <div class="container navbar">
+    <nav class="navbar">
 
       <a href="#home" class="logo">
-        Vaazhvizhi Contracters
+        Vaazhvizhi <span>Contracters</span>
       </a>
 
-      <nav class="nav-links">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#quote">Get Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
 
-        <a href="#home"
-           data-en="Home"
-           data-ta="முகப்பு">
-          Home
-        </a>
+        <li>
+          <button
+            type="button"
+            class="language-btn"
+            onclick="toggleLanguage()">
+            தமிழ்
+          </button>
+        </li>
+      </ul>
 
-        <a href="#projects"
-           data-en="Projects"
-           data-ta="திட்டங்கள்">
-          Projects
-        </a>
-
-        <a href="#services"
-           data-en="Services"
-           data-ta="சேவைகள்">
-          Services
-        </a>
-
-        <a href="#quote"
-           data-en="Get Quote"
-           data-ta="விலை மதிப்பீடு">
-          Get Quote
-        </a>
-
-        <a href="#contact"
-           data-en="Contact"
-           data-ta="தொடர்பு">
-          Contact
-        </a>
-
-      </nav>
-
-      <button
-        type="button"
-        class="language-btn"
-        id="languageToggle">
-        தமிழ்
-      </button>
-
-    </div>
+    </nav>
   </header>
 
 
-  <!-- ================= HERO ================= -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <section class="hero" id="home">
 
+    <div class="hero-content">
+
+      <h1>
+        Building Your Vision.<br>
+        Building Your Future.
+      </h1>
+
+      <p>
+        Professional construction, renovation, materials supply,
+        planning and estimation services in Dharmapuri.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#quote" class="hero-btn btn-primary">
+          Get Free Quote
+        </a>
+
+        <a
+          href="https://wa.me/919025541161"
+          target="_blank"
+          class="hero-btn btn-whatsapp">
+          WhatsApp Us
+        </a>
+
+        <a
+          href="tel:+919025541161"
+          class="hero-btn btn-call">
+          Call Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECT REQUIREMENTS
+  ========================= -->
+
+  <section class="requirements" id="projects">
+
     <div class="container">
 
-      <div class="hero-content">
+      <div class="section-title">
+        <h2>Project Requirements</h2>
+        <p>Complete construction solutions for your needs.</p>
+      </div>
 
-        <h1>
-          We Build Your
-          <span>Dream Home</span>
-        </h1>
+      <div class="requirements-grid">
 
-        <p
-          data-en="Complete construction solutions from planning to execution — with quality workmanship and reliable service."
-          data-ta="திட்டமிடுதல் முதல் கட்டுமானம் வரை முழுமையான கட்டுமான சேவைகள் — தரமான வேலை மற்றும் நம்பகமான சேவை.">
-          Complete construction solutions from planning to execution —
-          with quality workmanship and reliable service.
-        </p>
+        <div class="requirement-card">
+          <div class="requirement-icon">🏠</div>
+          <h3>New Construction</h3>
+        </div>
 
-        <div class="hero-buttons">
+        <div class="requirement-card">
+          <div class="requirement-icon">🔨</div>
+          <h3>Renovation / Repair Work</h3>
+        </div>
 
-          <a
-            href="#quote"
-            class="btn btn-primary"
-            data-en="Get Free Quote"
-            data-ta="இலவச மதிப்பீடு பெற">
-            Get Free Quote
-          </a>
+        <div class="requirement-card">
+          <div class="requirement-icon">🧱</div>
+          <h3>Building Materials Supply</h3>
+        </div>
 
-          <a
-            href="https://wa.me/919025541161"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-whatsapp"
-            data-en="WhatsApp Us"
-            data-ta="WhatsApp தொடர்பு">
-            WhatsApp Us
-          </a>
-
-          <a
-            href="tel:+919025541161"
-            class="btn btn-dark"
-            data-en="Call Now"
-            data-ta="இப்போது அழைக்கவும்">
-            Call Now
-          </a>
-
+        <div class="requirement-card">
+          <div class="requirement-icon">📐</div>
+          <h3>Planning &amp; Estimation</h3>
         </div>
 
       </div>
@@ -706,104 +766,59 @@
   </section>
 
 
-  <!-- ================= PROJECT REQUIREMENTS ================= -->
+  <!-- =========================
+       SERVICES
+  ========================= -->
 
-  <section id="projects">
+  <section id="services">
 
     <div class="container">
 
       <div class="section-title">
-
-        <h2
-          data-en="Project Requirements"
-          data-ta="திட்ட சேவைகள்">
-          Project Requirements
-        </h2>
-
-        <p
-          data-en="Complete solutions for your construction needs"
-          data-ta="உங்கள் கட்டுமான தேவைகளுக்கான முழுமையான தீர்வுகள்">
-          Complete solutions for your construction needs
-        </p>
-
+        <h2>Our Services</h2>
+        <p>Reliable services from planning to completion.</p>
       </div>
 
+      <div class="services-grid">
 
-      <div class="project-grid">
-
-        <div class="project-card">
-
-          <div class="project-icon">🏠</div>
-
-          <h3
-            data-en="New Construction"
-            data-ta="புதிய கட்டுமானம்">
-            New Construction
-          </h3>
-
-          <p
-            data-en="Complete construction from foundation to finishing."
-            data-ta="அடித்தளம் முதல் இறுதிப்பணி வரை முழுமையான கட்டுமானம்.">
-            Complete construction from foundation to finishing.
-          </p>
-
+        <div class="service-card">
+          <div class="service-icon">🛋️</div>
+          <h3>Interior Design</h3>
         </div>
 
-
-        <div class="project-card">
-
-          <div class="project-icon">🔨</div>
-
-          <h3
-            data-en="Renovation / Repair Work"
-            data-ta="புதுப்பித்தல் / பழுது பார்க்கும் பணி">
-            Renovation / Repair Work
-          </h3>
-
-          <p
-            data-en="Renovation and repair solutions for existing buildings."
-            data-ta="ஏற்கனவே உள்ள கட்டிடங்களுக்கு புதுப்பித்தல் மற்றும் பழுது பார்க்கும் சேவைகள்.">
-            Renovation and repair solutions for existing buildings.
-          </p>
-
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Interior &amp; Exterior Design</h3>
         </div>
 
-
-        <div class="project-card">
-
-          <div class="project-icon">🧱</div>
-
-          <h3
-            data-en="Building Materials Supply"
-            data-ta="கட்டுமான பொருட்கள் வழங்கல்">
-            Building Materials Supply
-          </h3>
-
-          <p
-            data-en="Quality building materials supplied for your project."
-            data-ta="உங்கள் திட்டத்திற்கு தரமான கட்டுமான பொருட்கள் வழங்கப்படும்.">
-            Quality building materials supplied for your project.
-          </p>
-
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Electrical &amp; Plumbing</h3>
         </div>
 
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Painting</h3>
+        </div>
 
-        <div class="project-card">
+        <div class="service-card">
+          <div class="service-icon">📦</div>
+          <h3>Material Procurement Only</h3>
+        </div>
 
-          <div class="project-icon">📐</div>
+        <div class="service-card">
+          <div class="service-icon">💧</div>
+          <h3>Waterproofing &amp; Weatherproofing</h3>
+        </div>
 
-          <h3
-            data-en="Planning & Estimation"
-            data-ta="திட்டமிடல் மற்றும் மதிப்பீடு">
-            Planning & Estimation
-          </h3>
+        <div class="service-card">
+          <div class="service-icon">🧱</div>
+          <h3>Tile Laying</h3>
+        </div>
 
-          <p
-            data-en="Planning, building plans and project cost estimation."
-            data-ta="திட்டமிடல், கட்டிட வரைபடம் மற்றும் செலவு மதிப்பீடு.">
-            Planning, building plans and project cost estimation.
-          </p>
-
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>New Approval / Building Plan Design</h3>
         </div>
 
       </div>
@@ -813,224 +828,47 @@
   </section>
 
 
-  <!-- ================= SERVICES ================= -->
+  <!-- =========================
+       WHY US
+  ========================= -->
 
-  <section class="services-section" id="services">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2
-          data-en="Our Services"
-          data-ta="எங்கள் சேவைகள்">
-          Our Services
-        </h2>
-
-        <p
-          data-en="Professional services for your complete building project"
-          data-ta="உங்கள் முழுமையான கட்டிட திட்டத்திற்கான தொழில்முறை சேவைகள்">
-          Professional services for your complete building project
-        </p>
-
-      </div>
-
-
-      <div class="service-grid">
-
-        <div class="service-card">
-          <h3
-            data-en="Interior Design"
-            data-ta="உட்புற வடிவமைப்பு">
-            Interior Design
-          </h3>
-
-          <p
-            data-en="Beautiful and functional interior design solutions."
-            data-ta="அழகான மற்றும் பயனுள்ள உட்புற வடிவமைப்பு தீர்வுகள்.">
-            Beautiful and functional interior design solutions.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="Interior & Exterior Design"
-            data-ta="உட்புறம் மற்றும் வெளிப்புற வடிவமைப்பு">
-            Interior & Exterior Design
-          </h3>
-
-          <p
-            data-en="Complete interior and exterior design for your building."
-            data-ta="உங்கள் கட்டிடத்திற்கான முழுமையான உட்புற மற்றும் வெளிப்புற வடிவமைப்பு.">
-            Complete interior and exterior design for your building.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="Electrical & Plumbing"
-            data-ta="மின்சாரம் மற்றும் பிளம்பிங்">
-            Electrical & Plumbing
-          </h3>
-
-          <p
-            data-en="Reliable electrical and plumbing installation work."
-            data-ta="நம்பகமான மின்சார மற்றும் பிளம்பிங் நிறுவல் பணிகள்.">
-            Reliable electrical and plumbing installation work.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="Painting"
-            data-ta="பெயிண்டிங்">
-            Painting
-          </h3>
-
-          <p
-            data-en="Interior and exterior painting with quality finishing."
-            data-ta="தரமான இறுதிப்பணியுடன் உட்புற மற்றும் வெளிப்புற பெயிண்டிங்.">
-            Interior and exterior painting with quality finishing.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="Material Procurement Only"
-            data-ta="கட்டுமான பொருட்கள் வாங்குதல் மட்டும்">
-            Material Procurement Only
-          </h3>
-
-          <p
-            data-en="We can procure required construction materials for your project."
-            data-ta="உங்கள் திட்டத்திற்கு தேவையான கட்டுமான பொருட்களை வாங்கித் தருகிறோம்.">
-            We can procure required construction materials for your project.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="Waterproofing & Weatherproofing"
-            data-ta="நீர்ப்புகா மற்றும் வானிலை பாதுகாப்பு">
-            Waterproofing & Weatherproofing
-          </h3>
-
-          <p
-            data-en="Protection against water leakage and weather damage."
-            data-ta="நீர் கசிவு மற்றும் வானிலை பாதிப்புகளிலிருந்து பாதுகாப்பு.">
-            Protection against water leakage and weather damage.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="Tile Laying"
-            data-ta="டைல்ஸ் பதித்தல்">
-            Tile Laying
-          </h3>
-
-          <p
-            data-en="Professional tile installation with proper finishing."
-            data-ta="சரியான இறுதிப்பணியுடன் தொழில்முறை டைல்ஸ் பதித்தல்.">
-            Professional tile installation with proper finishing.
-          </p>
-        </div>
-
-
-        <div class="service-card">
-          <h3
-            data-en="New Approval / Building Plan Design"
-            data-ta="புதிய அப்ரூவல் / கட்டிட வரைபட வடிவமைப்பு">
-            New Approval / Building Plan Design
-          </h3>
-
-          <p
-            data-en="Building plan design and support for new approval requirements."
-            data-ta="புதிய அப்ரூவல் தேவைகளுக்கான கட்டிட வரைபட வடிவமைப்பு மற்றும் உதவி.">
-            Building plan design and support for new approval requirements.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= WHY US ================= -->
-
-  <section>
+  <section class="why-us">
 
     <div class="container">
 
       <div class="section-title">
-
-        <h2
-          data-en="Why Choose Us"
-          data-ta="எங்களை ஏன் தேர்வு செய்ய வேண்டும்">
-          Why Choose Us
-        </h2>
-
+        <h2>Why Choose Us</h2>
+        <p>Focused on quality, transparency and dependable service.</p>
       </div>
-
 
       <div class="why-grid">
 
         <div class="why-card">
-
-          <h3
-            data-en="Quality Work"
-            data-ta="தரமான பணி">
-            Quality Work
-          </h3>
-
-          <p
-            data-en="We focus on quality workmanship and proper finishing."
-            data-ta="தரமான வேலை மற்றும் சிறந்த இறுதிப்பணிக்கு முக்கியத்துவம் அளிக்கிறோம்.">
-            We focus on quality workmanship and proper finishing.
+          <h3>Quality Work</h3>
+          <p>
+            Focused on delivering reliable construction and finishing work.
           </p>
-
         </div>
 
-
         <div class="why-card">
-
-          <h3
-            data-en="Transparent Estimation"
-            data-ta="வெளிப்படையான மதிப்பீடு">
-            Transparent Estimation
-          </h3>
-
-          <p
-            data-en="Clear project planning and cost estimation before work begins."
-            data-ta="பணி தொடங்குவதற்கு முன் தெளிவான திட்டமிடல் மற்றும் செலவு மதிப்பீடு.">
-            Clear project planning and cost estimation before work begins.
+          <h3>Transparent Process</h3>
+          <p>
+            Clear communication from planning and estimation to execution.
           </p>
-
         </div>
 
+        <div class="why-card">
+          <h3>Complete Solutions</h3>
+          <p>
+            Construction, renovation, materials, planning and multiple services.
+          </p>
+        </div>
 
         <div class="why-card">
-
-          <h3
-            data-en="Complete Solution"
-            data-ta="முழுமையான தீர்வு">
-            Complete Solution
-          </h3>
-
-          <p
-            data-en="From planning and materials to construction and finishing."
-            data-ta="திட்டமிடல் மற்றும் பொருட்கள் முதல் கட்டுமானம் மற்றும் இறுதிப்பணி வரை.">
-            From planning and materials to construction and finishing.
+          <h3>Local Support</h3>
+          <p>
+            Serving customers around Ungaranahalli and Dharmapuri.
           </p>
-
         </div>
 
       </div>
@@ -1040,303 +878,336 @@
   </section>
 
 
-  <!-- ================= QUOTE FORM ================= -->
+  <!-- =========================
+       QUOTE
+  ========================= -->
 
   <section class="quote-section" id="quote">
 
     <div class="container">
 
-      <div class="quote-wrapper">
+      <div class="section-title">
 
-        <h2
-          data-en="Get Your Free Quote"
-          data-ta="இலவச விலை மதிப்பீடு பெறுங்கள்">
-          Get Your Free Quote
-        </h2>
+        <h2>Get a Free Quote</h2>
 
-        <p
-          data-en="Fill in your project details. Your enquiry will be recorded and our team will contact you."
-          data-ta="உங்கள் திட்ட விவரங்களை நிரப்புங்கள். உங்கள் enquiry பதிவு செய்யப்பட்டு எங்கள் குழு உங்களை தொடர்பு கொள்ளும்.">
-          Fill in your project details. Your enquiry will be recorded and our team will contact you.
+        <p>
+          Choose the option that works best for you.
         </p>
 
+      </div>
 
-        <form id="quoteForm">
 
-          <div class="form-grid">
+      <div class="quote-wrapper">
 
-            <div class="form-group">
 
-              <label
-                for="name"
-                data-en="Name *"
-                data-ta="பெயர் *">
-                Name *
-              </label>
+        <!-- NEW QUICK RESPONSE CHOICE -->
 
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required>
+        <div class="quote-choice">
 
-            </div>
+          <h3>
+            How would you like to contact us?
+          </h3>
 
+          <p class="quote-choice-subtitle">
+            Need a quick response or a detailed quotation?
+          </p>
 
-            <div class="form-group">
+          <div class="quote-choice-buttons">
 
-              <label
-                for="phone"
-                data-en="Phone Number *"
-                data-ta="தொலைபேசி எண் *">
-                Phone Number *
-              </label>
-
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter phone number"
-                required>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label
-                for="email"
-                data-en="Email"
-                data-ta="மின்னஞ்சல்">
-                Email
-              </label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter email address">
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label
-                for="location"
-                data-en="Project Location *"
-                data-ta="திட்ட இடம் *">
-                Project Location *
-              </label>
-
-              <input
-                type="text"
-                id="location"
-                name="location"
-                placeholder="Enter project location"
-                required>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label
-                for="projectType"
-                data-en="Project Type *"
-                data-ta="திட்ட வகை *">
-                Project Type *
-              </label>
-
-              <select
-                id="projectType"
-                name="projectType"
-                required>
-
-                <option value="">Select project type</option>
-
-                <option value="New Construction">
-                  New Construction
-                </option>
-
-                <option value="Renovation / Repair Work">
-                  Renovation / Repair Work
-                </option>
-
-                <option value="Building Materials Supply">
-                  Building Materials Supply
-                </option>
-
-                <option value="Planning & Estimation">
-                  Planning & Estimation
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label
-                for="service"
-                data-en="Service Required *"
-                data-ta="தேவையான சேவை *">
-                Service Required *
-              </label>
-
-              <select
-                id="service"
-                name="service"
-                required>
-
-                <option value="">Select service</option>
-
-                <option value="Interior Design">
-                  Interior Design
-                </option>
-
-                <option value="Interior & Exterior Design">
-                  Interior & Exterior Design
-                </option>
-
-                <option value="Electrical & Plumbing">
-                  Electrical & Plumbing
-                </option>
-
-                <option value="Painting">
-                  Painting
-                </option>
-
-                <option value="Material Procurement Only">
-                  Material Procurement Only
-                </option>
-
-                <option value="Waterproofing & Weatherproofing">
-                  Waterproofing & Weatherproofing
-                </option>
-
-                <option value="Tile Laying">
-                  Tile Laying
-                </option>
-
-                <option value="New Approval / Building Plan Design">
-                  New Approval / Building Plan Design
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-              <label
-                for="budget"
-                data-en="Estimated Budget"
-                data-ta="மதிப்பிடப்பட்ட பட்ஜெட்">
-                Estimated Budget
-              </label>
-
-              <select
-                id="budget"
-                name="budget">
-
-                <option value="">Select budget</option>
-
-                <option value="Below ₹5 Lakhs">
-                  Below ₹5 Lakhs
-                </option>
-
-                <option value="₹5 - ₹10 Lakhs">
-                  ₹5 - ₹10 Lakhs
-                </option>
-
-                <option value="₹10 - ₹20 Lakhs">
-                  ₹10 - ₹20 Lakhs
-                </option>
-
-                <option value="₹20 - ₹50 Lakhs">
-                  ₹20 - ₹50 Lakhs
-                </option>
-
-                <option value="Above ₹50 Lakhs">
-                  Above ₹50 Lakhs
-                </option>
-
-              </select>
-
-            </div>
-
-
-            <div class="form-group full">
-
-              <label
-                for="requirement"
-                data-en="Your Requirement"
-                data-ta="உங்கள் தேவை">
-                Your Requirement
-              </label>
-
-              <textarea
-                id="requirement"
-                name="requirement"
-                placeholder="Tell us about your project..."></textarea>
-
-            </div>
-
-          </div>
-
-
-          <div class="submit-area">
-
-            <button
-              type="submit"
-              class="btn btn-primary"
-              id="submitBtn">
-
-              <span
-                data-en="Submit Quote Request"
-                data-ta="மதிப்பீட்டு கோரிக்கையை சமர்ப்பிக்கவும்">
-                Submit Quote Request
-              </span>
-
-            </button>
-
-            <div
-              id="formMessage"
-              class="form-message">
-            </div>
-
-          </div>
-
-
-          <!-- WHATSAPP AFTER FORM -->
-
-          <div
-            class="whatsapp-after-submit"
-            id="whatsappAfterSubmit">
-
-            <p
-              data-en="Need a quick response? You can also contact us directly on WhatsApp."
-              data-ta="விரைவான பதில் வேண்டுமா? WhatsApp மூலம் நேரடியாக தொடர்பு கொள்ளலாம்.">
-              Need a quick response? You can also contact us directly on WhatsApp.
-            </p>
+            <!-- QUICK WHATSAPP -->
 
             <a
-              href="https://wa.me/919025541161"
+              href="https://wa.me/919025541161?text=Hello%20Vaazhvizhi%20Contracters%2C%20I%20need%20a%20quick%20response%20for%20my%20construction%20requirement."
               target="_blank"
-              rel="noopener"
-              class="btn btn-whatsapp"
-              data-en="Chat on WhatsApp"
-              data-ta="WhatsApp-ல் தொடர்பு கொள்ளுங்கள்">
-              Chat on WhatsApp
+              class="quick-whatsapp-btn">
+
+              💬 Need a Quick Response?
+
+            </a>
+
+
+            <!-- DETAILED FORM -->
+
+            <a
+              href="#quoteForm"
+              class="detailed-quote-btn">
+
+              📋 Get Detailed Quote
+
             </a>
 
           </div>
 
-        </form>
+        </div>
+
+
+        <!-- DETAILED QUOTE FORM -->
+
+        <div class="quote-form-card">
+
+          <h3>
+            Detailed Quote Request
+          </h3>
+
+          <p class="form-description">
+            Fill in your project details and our team will contact you.
+          </p>
+
+
+          <form id="quoteForm">
+
+
+            <div class="form-grid">
+
+
+              <!-- NAME -->
+
+              <div class="form-group">
+
+                <label for="name">
+                  Name *
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required>
+
+              </div>
+
+
+              <!-- PHONE -->
+
+              <div class="form-group">
+
+                <label for="phone">
+                  Phone *
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Your phone number"
+                  required>
+
+              </div>
+
+
+              <!-- EMAIL -->
+
+              <div class="form-group">
+
+                <label for="email">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your email">
+
+              </div>
+
+
+              <!-- LOCATION -->
+
+              <div class="form-group">
+
+                <label for="location">
+                  Project Location *
+                </label>
+
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  placeholder="Project location"
+                  required>
+
+              </div>
+
+
+              <!-- PROJECT TYPE -->
+
+              <div class="form-group">
+
+                <label for="projectType">
+                  Project Type
+                </label>
+
+                <select
+                  id="projectType"
+                  name="projectType">
+
+                  <option value="">
+                    Select Project Type
+                  </option>
+
+                  <option value="New Construction">
+                    New Construction
+                  </option>
+
+                  <option value="Renovation / Repair Work">
+                    Renovation / Repair Work
+                  </option>
+
+                  <option value="Building Materials Supply">
+                    Building Materials Supply
+                  </option>
+
+                  <option value="Planning & Estimation">
+                    Planning &amp; Estimation
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- SERVICE -->
+
+              <div class="form-group">
+
+                <label for="service">
+                  Service Required
+                </label>
+
+                <select
+                  id="service"
+                  name="service">
+
+                  <option value="">
+                    Select Service
+                  </option>
+
+                  <option value="Interior Design">
+                    Interior Design
+                  </option>
+
+                  <option value="Interior & Exterior Design">
+                    Interior &amp; Exterior Design
+                  </option>
+
+                  <option value="Electrical & Plumbing">
+                    Electrical &amp; Plumbing
+                  </option>
+
+                  <option value="Painting">
+                    Painting
+                  </option>
+
+                  <option value="Material Procurement Only">
+                    Material Procurement Only
+                  </option>
+
+                  <option value="Waterproofing & Weatherproofing">
+                    Waterproofing &amp; Weatherproofing
+                  </option>
+
+                  <option value="Tile Laying">
+                    Tile Laying
+                  </option>
+
+                  <option value="New Approval / Building Plan Design">
+                    New Approval / Building Plan Design
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- BUDGET -->
+
+              <div class="form-group full-width">
+
+                <label for="budget">
+                  Estimated Budget
+                </label>
+
+                <select
+                  id="budget"
+                  name="budget">
+
+                  <option value="">
+                    Select Estimated Budget
+                  </option>
+
+                  <option value="Below ₹5 Lakhs">
+                    Below ₹5 Lakhs
+                  </option>
+
+                  <option value="₹5 - ₹10 Lakhs">
+                    ₹5 - ₹10 Lakhs
+                  </option>
+
+                  <option value="₹10 - ₹20 Lakhs">
+                    ₹10 - ₹20 Lakhs
+                  </option>
+
+                  <option value="₹20 - ₹30 Lakhs">
+                    ₹20 - ₹30 Lakhs
+                  </option>
+
+                  <option value="Above ₹30 Lakhs">
+                    Above ₹30 Lakhs
+                  </option>
+
+                  <option value="Not Decided">
+                    Not Decided
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- REQUIREMENT -->
+
+              <div class="form-group full-width">
+
+                <label for="requirement">
+                  Tell us about your requirement
+                </label>
+
+                <textarea
+                  id="requirement"
+                  name="requirement"
+                  placeholder="Tell us about your project..."></textarea>
+
+              </div>
+
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+              type="submit"
+              class="submit-btn"
+              id="submitButton">
+
+              Submit Quote Request
+
+            </button>
+
+
+            <!-- STATUS -->
+
+            <div
+              id="formStatus"
+              class="form-status">
+            </div>
+
+
+          </form>
+
+        </div>
 
       </div>
 
@@ -1345,7 +1216,9 @@
   </section>
 
 
-  <!-- ================= CONTACT ================= -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section id="contact">
 
@@ -1353,16 +1226,10 @@
 
       <div class="section-title">
 
-        <h2
-          data-en="Contact Us"
-          data-ta="எங்களை தொடர்பு கொள்ளுங்கள்">
-          Contact Us
-        </h2>
+        <h2>Contact Us</h2>
 
-        <p
-          data-en="Get in touch with Vaazhvizhi Contracters"
-          data-ta="Vaazhvizhi Contracters நிறுவனத்தை தொடர்பு கொள்ளுங்கள்">
-          Get in touch with Vaazhvizhi Contracters
+        <p>
+          Let's discuss your construction requirement.
         </p>
 
       </div>
@@ -1370,34 +1237,30 @@
 
       <div class="contact-grid">
 
+
         <div class="contact-card">
 
-          <div class="icon">📍</div>
-
-          <h3
-            data-en="Location"
-            data-ta="இடம்">
-            Location
-          </h3>
+          <h3>📍 Location</h3>
 
           <p>
-            Ungaranahalli,<br>
-            Dharmapuri,<br>
+            Ungaranahalli, Dharmapuri,
             Tamil Nadu - 636705
           </p>
+
+          <a
+            href="https://maps.app.goo.gl/GWejen8cyvza9THs7?g_st=aw"
+            target="_blank">
+
+            Open Google Maps
+
+          </a>
 
         </div>
 
 
         <div class="contact-card">
 
-          <div class="icon">📞</div>
-
-          <h3
-            data-en="Phone"
-            data-ta="தொலைபேசி">
-            Phone
-          </h3>
+          <h3>📞 Phone & WhatsApp</h3>
 
           <p>
             <a href="tel:+919025541161">
@@ -1405,23 +1268,13 @@
             </a>
           </p>
 
-        </div>
-
-
-        <div class="contact-card">
-
-          <div class="icon">💬</div>
-
-          <h3>
-            WhatsApp
-          </h3>
-
           <p>
             <a
               href="https://wa.me/919025541161"
-              target="_blank"
-              rel="noopener">
-              +91 90255 41161
+              target="_blank">
+
+              Chat on WhatsApp
+
             </a>
           </p>
 
@@ -1430,57 +1283,38 @@
 
         <div class="contact-card">
 
-          <div class="icon">📷</div>
-
-          <h3>
-            Instagram
-          </h3>
+          <h3>📸 Instagram</h3>
 
           <p>
-            <a
-              href="https://www.instagram.com/vaazhvizhi_contracters/"
-              target="_blank"
-              rel="noopener">
-              @vaazhvizhi_contracters
-            </a>
+            Follow our work and updates.
           </p>
+
+          <a
+            href="https://www.instagram.com/vaazhvizhi_contracters/"
+            target="_blank">
+
+            @vaazhvizhi_contracters
+
+          </a>
 
         </div>
 
 
         <div class="contact-card">
 
-          <div class="icon">✉️</div>
-
-          <h3
-            data-en="Email"
-            data-ta="மின்னஞ்சல்">
-            Email
-          </h3>
+          <h3>📧 Email</h3>
 
           <p>
             <a
               href="mailto:vaazhvizhicontractors@gmail.com">
+
               vaazhvizhicontractors@gmail.com
+
             </a>
           </p>
 
         </div>
 
-      </div>
-
-
-      <div style="text-align:center; margin-top:30px;">
-
-        <a
-          href="https://maps.app.goo.gl/GWejen8cyvza9THs7?g_st=aw"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-dark"
-          data-en="Open Google Maps"
-          data-ta="Google Maps திறக்கவும்">
-          Open Google Maps
-        </a>
 
       </div>
 
@@ -1489,63 +1323,66 @@
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     <p>
-      © 2026
-      <strong>Vaazhvizhi Contracters</strong>.
+      © 2026 Vaazhvizhi Contracters.
       All Rights Reserved.
+    </p>
+
+    <p>
+      Ungaranahalli, Dharmapuri, Tamil Nadu
     </p>
 
   </footer>
 
 
-  <!-- ================= FLOATING WHATSAPP ================= -->
+  <!-- =========================
+       FLOATING WHATSAPP
+  ========================= -->
 
   <a
     href="https://wa.me/919025541161"
     target="_blank"
-    rel="noopener"
     class="floating-whatsapp"
-    aria-label="WhatsApp">
+    aria-label="Chat on WhatsApp">
+
     💬
+
   </a>
 
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
   <script>
 
-    /* ==================================================
-       GOOGLE APPS SCRIPT WEB APP
-       ================================================== */
+    /* =========================
+       GOOGLE APPS SCRIPT
+    ========================= */
 
     const GOOGLE_SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbyMsEAzXdSathCJm2i44CA6lelm6KDYw9MTSRDPxiPriNXhYg2IC0AB5gIE0CYkU5hO/exec";
 
 
-    /* ==================================================
-       FORM ELEMENTS
-       ================================================== */
+    /* =========================
+       QUOTE FORM
+    ========================= */
 
     const quoteForm =
       document.getElementById("quoteForm");
 
-    const submitBtn =
-      document.getElementById("submitBtn");
+    const formStatus =
+      document.getElementById("formStatus");
 
-    const formMessage =
-      document.getElementById("formMessage");
+    const submitButton =
+      document.getElementById("submitButton");
 
-    const whatsappAfterSubmit =
-      document.getElementById("whatsappAfterSubmit");
-
-
-    /* ==================================================
-       QUOTE FORM SUBMISSION
-       ================================================== */
 
     quoteForm.addEventListener(
       "submit",
@@ -1553,16 +1390,20 @@
 
         event.preventDefault();
 
-        submitBtn.disabled = true;
 
-        submitBtn.style.opacity = "0.6";
+        formStatus.className =
+          "form-status";
 
-        submitBtn.querySelector("span").textContent =
+        formStatus.textContent =
+          "Submitting your quote request...";
+
+        formStatus.style.display =
+          "block";
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
           "Submitting...";
-
-        formMessage.textContent = "";
-
-        whatsappAfterSubmit.style.display = "none";
 
 
         const formData =
@@ -1570,15 +1411,6 @@
 
 
         try {
-
-          /*
-            Lead goes to:
-
-            1. Google Sheet
-            2. Gmail notification
-
-            WhatsApp is NOT automatically opened.
-          */
 
           await fetch(
             GOOGLE_SCRIPT_URL,
@@ -1590,164 +1422,92 @@
           );
 
 
-          /* Clear form */
+          formStatus.className =
+            "form-status success";
+
+          formStatus.textContent =
+            "Thank you! Your quote request has been submitted. We will contact you soon.";
 
           quoteForm.reset();
 
 
-          /* Success message */
-
-          formMessage.textContent =
-            "Thank you! Your quote request has been received. We will contact you soon.";
-
-          formMessage.style.color =
-            "green";
-
-
-          /*
-            Give customer an optional
-            WhatsApp button after submission.
-          */
-
-          whatsappAfterSubmit.style.display =
-            "block";
-
-
         } catch (error) {
 
+          formStatus.className =
+            "form-status error";
+
+          formStatus.textContent =
+            "Something went wrong. Please contact us directly on WhatsApp.";
+
           console.error(error);
-
-          formMessage.textContent =
-            "Unable to submit your request. Please try again.";
-
-          formMessage.style.color =
-            "red";
 
         }
 
 
-        submitBtn.disabled = false;
+        submitButton.disabled = false;
 
-        submitBtn.style.opacity = "1";
-
-        submitBtn.querySelector("span").textContent =
+        submitButton.textContent =
           "Submit Quote Request";
 
       }
     );
 
 
-    /* ==================================================
+    /* =========================
        LANGUAGE TOGGLE
-       ================================================== */
+       BASIC PLACEHOLDER FOR
+       FUTURE TAMIL CONTENT
+    ========================= */
 
-    let currentLanguage = "en";
+    function toggleLanguage() {
 
-    const languageToggle =
-      document.getElementById("languageToggle");
-
-
-    function updateLanguage() {
-
-      const elements =
-        document.querySelectorAll(
-          "[data-en][data-ta]"
-        );
-
-
-      elements.forEach(function(element) {
-
-        if (currentLanguage === "en") {
-
-          element.textContent =
-            element.getAttribute("data-en");
-
-        } else {
-
-          element.textContent =
-            element.getAttribute("data-ta");
-
-        }
-
-      });
-
-
-      languageToggle.textContent =
-        currentLanguage === "en"
-          ? "தமிழ்"
-          : "English";
-
-
-      /* Update placeholders */
-
-      const nameInput =
-        document.getElementById("name");
-
-      const phoneInput =
-        document.getElementById("phone");
-
-      const emailInput =
-        document.getElementById("email");
-
-      const locationInput =
-        document.getElementById("location");
-
-      const requirementInput =
-        document.getElementById("requirement");
-
-
-      if (currentLanguage === "en") {
-
-        nameInput.placeholder =
-          "Enter your name";
-
-        phoneInput.placeholder =
-          "Enter phone number";
-
-        emailInput.placeholder =
-          "Enter email address";
-
-        locationInput.placeholder =
-          "Enter project location";
-
-        requirementInput.placeholder =
-          "Tell us about your project...";
-
-      } else {
-
-        nameInput.placeholder =
-          "உங்கள் பெயரை உள்ளிடவும்";
-
-        phoneInput.placeholder =
-          "தொலைபேசி எண்ணை உள்ளிடவும்";
-
-        emailInput.placeholder =
-          "மின்னஞ்சல் முகவரியை உள்ளிடவும்";
-
-        locationInput.placeholder =
-          "திட்ட இடத்தை உள்ளிடவும்";
-
-        requirementInput.placeholder =
-          "உங்கள் திட்டத்தைப் பற்றி குறிப்பிடவும்...";
-
-      }
+      alert(
+        "Tamil version can be enabled section by section."
+      );
 
     }
 
 
-    languageToggle.addEventListener(
-      "click",
-      function() {
+    /* =========================
+       MOBILE / ANCHOR SCROLL
+    ========================= */
 
-        currentLanguage =
-          currentLanguage === "en"
-            ? "ta"
-            : "en";
+    document
+      .querySelectorAll('a[href^="#"]')
+      .forEach(function(link) {
 
-        updateLanguage();
+        link.addEventListener(
+          "click",
+          function(event) {
 
-      }
-    );
+            const targetId =
+              this.getAttribute("href");
+
+            if (
+              !targetId ||
+              targetId === "#"
+            ) {
+              return;
+            }
+
+            const target =
+              document.querySelector(targetId);
+
+            if (target) {
+
+              event.preventDefault();
+
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+
+            }
+
+          }
+        );
+
+      });
 
   </script>
 
