@@ -2,26 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
     name="description"
-    content="Vaazhvizhi Contracters - New Construction, Renovation, Building Materials Supply, Planning, Estimation and Interior Services in Dharmapuri."
-  />
+    content="Vaazhvizhi Contracters - Construction, Renovation, Building Materials, Planning, Estimation and Interior Services in Dharmapuri."
+  >
 
   <meta
     name="keywords"
-    content="Vaazhvizhi Contracters, construction, Dharmapuri, building construction, renovation, interior design, building materials, waterproofing"
-  />
+    content="Vaazhvizhi Contracters, construction, Dharmapuri, renovation, interior design, building materials, waterproofing"
+  >
 
   <title>Vaazhvizhi Contracters | Construction & Building Services</title>
 
   <style>
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
       margin: 0;
@@ -35,9 +35,9 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #f5f8fc;
       line-height: 1.6;
-      color: #222;
-      background: #f7f7f7;
     }
 
     a {
@@ -52,9 +52,20 @@
       font-family: inherit;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    /* =========================
+       BRAND COLORS
+    ========================= */
+
+    :root {
+      --navy: #0b1f33;
+      --blue: #1565c0;
+      --blue-dark: #0d47a1;
+      --blue-light: #eaf3ff;
+      --white: #ffffff;
+      --text: #172033;
+      --muted: #64748b;
+      --border: #dbe4ef;
+      --success: #15803d;
     }
 
     /* =========================
@@ -65,15 +76,15 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #111;
-      color: white;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.18);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: auto;
-      padding: 15px 20px;
+      padding: 14px 20px;
 
       display: flex;
       align-items: center;
@@ -81,44 +92,56 @@
       gap: 20px;
     }
 
-    .logo {
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      color: #ffffff;
       font-size: 21px;
       font-weight: 800;
-      color: #ffb300;
-      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+
+    .brand-tagline {
+      color: #9ecbff;
+      font-size: 11px;
+      margin-top: 4px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 19px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: white;
+      color: #ffffff;
       font-size: 14px;
       font-weight: 600;
-      transition: 0.3s;
+      transition: 0.25s;
     }
 
     .nav-links a:hover {
-      color: #ffb300;
+      color: #7db7ff;
     }
 
     .language-btn {
-      border: 1px solid #ffb300;
       background: transparent;
-      color: #ffb300;
-      padding: 7px 12px;
+      color: #ffffff;
+      border: 1px solid #6ea8e8;
       border-radius: 6px;
+      padding: 7px 12px;
       cursor: pointer;
       font-weight: 700;
     }
 
     .language-btn:hover {
-      background: #ffb300;
-      color: #111;
+      background: var(--blue);
+      border-color: var(--blue);
     }
 
     /* =========================
@@ -127,42 +150,73 @@
 
     .hero {
       min-height: 82vh;
-
       display: flex;
       align-items: center;
+      text-align: center;
+      color: #ffffff;
 
       background:
-        linear-gradient(
-          rgba(0,0,0,0.65),
-          rgba(0,0,0,0.65)
-        ),
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80")
-        center/cover no-repeat;
+        radial-gradient(
+          circle at 50% 35%,
+          #194d80 0%,
+          #0b1f33 48%,
+          #06131f 100%
+        );
 
-      color: white;
-      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .hero-content {
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
-      padding: 70px 20px;
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-brand {
+      color: #8fc5ff;
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 800;
+      letter-spacing: 5px;
+      margin-bottom: 14px;
+    }
+
+    .hero-tagline {
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(35px, 6vw, 65px);
+      font-size: clamp(34px, 6vw, 64px);
       line-height: 1.1;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: clamp(17px, 2vw, 21px);
       max-width: 760px;
-      margin: 0 auto 30px;
-      color: #f2f2f2;
+      margin: auto;
+      color: #dcecff;
+      font-size: clamp(16px, 2vw, 20px);
     }
 
     .hero-buttons {
+      margin-top: 30px;
+
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -176,41 +230,41 @@
       font-weight: 700;
       border: none;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.25s;
     }
 
     .btn-primary {
-      background: #ffb300;
-      color: #111;
+      background: #ffffff;
+      color: var(--blue-dark);
     }
 
     .btn-primary:hover {
-      background: #ffc733;
       transform: translateY(-2px);
+      background: #eaf3ff;
     }
 
-    .btn-dark {
+    .btn-whatsapp {
       background: #25d366;
-      color: white;
+      color: #ffffff;
     }
 
-    .btn-dark:hover {
-      background: #1ebe5b;
+    .btn-whatsapp:hover {
       transform: translateY(-2px);
+      background: #1ebe5b;
     }
 
     .btn-call {
-      background: white;
-      color: #111;
+      background: var(--blue);
+      color: #ffffff;
     }
 
     .btn-call:hover {
-      background: #eee;
       transform: translateY(-2px);
+      background: #1976d2;
     }
 
     /* =========================
-       COMMON SECTION
+       COMMON SECTIONS
     ========================= */
 
     section {
@@ -228,12 +282,13 @@
     }
 
     .section-title h2 {
+      color: var(--navy);
       font-size: 34px;
       margin-bottom: 8px;
     }
 
     .section-title p {
-      color: #666;
+      color: var(--muted);
     }
 
     /* =========================
@@ -248,55 +303,66 @@
     }
 
     .card {
-      background: white;
+      background: var(--white);
       padding: 28px 22px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-      transition: 0.3s;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(11,31,51,0.06);
       text-align: center;
+      transition: 0.25s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.11);
+      border-color: #9ecbff;
+      box-shadow: 0 10px 25px rgba(21,101,192,0.12);
     }
 
     .card-icon {
       font-size: 38px;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .card h3 {
+      color: var(--navy);
+      font-size: 19px;
       margin-bottom: 8px;
-      font-size: 20px;
     }
 
     .card p {
-      color: #666;
+      color: var(--muted);
       font-size: 14px;
     }
 
     /* =========================
-       WHY US
+       BLUE BAND
     ========================= */
 
-    .why-section {
-      background: #111;
-      color: white;
+    .blue-band {
+      background: var(--blue);
+      color: #ffffff;
     }
 
-    .why-section .section-title p {
-      color: #ccc;
+    .blue-band .section-title h2 {
+      color: #ffffff;
     }
 
-    .why-section .card {
-      background: #1c1c1c;
-      color: white;
-      border: 1px solid #333;
+    .blue-band .section-title p {
+      color: #dcecff;
     }
 
-    .why-section .card p {
-      color: #ccc;
+    .blue-band .card {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.18);
+      color: #ffffff;
+    }
+
+    .blue-band .card h3 {
+      color: #ffffff;
+    }
+
+    .blue-band .card p {
+      color: #dcecff;
     }
 
     /* =========================
@@ -304,27 +370,29 @@
     ========================= */
 
     .quote-section {
-      background: #f0f0f0;
+      background: var(--blue-light);
       scroll-margin-top: 90px;
     }
 
     .quote-choice {
-      max-width: 850px;
+      max-width: 880px;
       margin: auto;
-      background: white;
+      background: #ffffff;
       padding: 35px 25px;
       border-radius: 15px;
-      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 28px rgba(11,31,51,0.08);
       text-align: center;
     }
 
     .quote-choice h3 {
+      color: var(--navy);
       font-size: 25px;
       margin-bottom: 8px;
     }
 
     .quote-choice > p {
-      color: #666;
+      color: var(--muted);
       margin-bottom: 25px;
     }
 
@@ -335,30 +403,31 @@
     }
 
     .quote-option {
-      border: 2px solid #ddd;
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 25px 18px;
-      background: white;
-      transition: 0.3s;
+      background: #ffffff;
+      transition: 0.25s;
     }
 
     .quote-option:hover {
-      border-color: #ffb300;
+      border-color: #8dbdf0;
       transform: translateY(-3px);
     }
 
-    .quote-option .option-icon {
+    .option-icon {
       font-size: 34px;
       margin-bottom: 10px;
     }
 
     .quote-option h4 {
+      color: var(--navy);
       font-size: 18px;
       margin-bottom: 8px;
     }
 
     .quote-option p {
-      color: #666;
+      color: var(--muted);
       font-size: 14px;
       margin-bottom: 17px;
     }
@@ -376,12 +445,16 @@
 
     .whatsapp-option-btn {
       background: #25d366;
-      color: white;
+      color: #ffffff;
     }
 
     .detailed-quote-btn {
-      background: #ffb300;
-      color: #111;
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .detailed-quote-btn:hover {
+      background: var(--blue-dark);
     }
 
     /* =========================
@@ -391,16 +464,16 @@
     .quote-form-card {
       display: none;
 
-      max-width: 850px;
+      max-width: 880px;
       margin: 30px auto 0;
 
-      background: white;
+      background: #ffffff;
       padding: 30px;
 
       border-radius: 15px;
+      border: 1px solid var(--border);
 
-      box-shadow:
-        0 7px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 28px rgba(11,31,51,0.08);
 
       scroll-margin-top: 90px;
     }
@@ -423,6 +496,7 @@
     }
 
     .quote-form-card h3 {
+      color: var(--navy);
       text-align: center;
       margin-bottom: 25px;
       font-size: 26px;
@@ -444,6 +518,7 @@
     }
 
     .form-group label {
+      color: var(--navy);
       font-weight: 700;
       margin-bottom: 6px;
       font-size: 14px;
@@ -453,18 +528,19 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      border: 1px solid #ccc;
+      border: 1px solid #cbd5e1;
       border-radius: 7px;
       padding: 12px;
       font-size: 14px;
       outline: none;
+      background: #ffffff;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: #ffb300;
-      box-shadow: 0 0 0 2px rgba(255,179,0,0.12);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 2px rgba(21,101,192,0.12);
     }
 
     .form-group textarea {
@@ -476,17 +552,20 @@
       width: 100%;
       margin-top: 20px;
       padding: 14px;
+
       border: none;
       border-radius: 7px;
-      background: #111;
-      color: white;
+
+      background: var(--navy);
+      color: #ffffff;
+
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
     }
 
     .submit-btn:hover {
-      background: #333;
+      background: var(--blue-dark);
     }
 
     .submit-btn:disabled {
@@ -513,10 +592,11 @@
     }
 
     .contact-card {
-      background: white;
+      background: #ffffff;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(11,31,51,0.06);
       text-align: center;
     }
 
@@ -526,22 +606,23 @@
     }
 
     .contact-card h3 {
+      color: var(--navy);
       margin-bottom: 7px;
     }
 
     .contact-card p {
-      color: #666;
+      color: var(--muted);
       font-size: 14px;
       word-break: break-word;
     }
 
     .contact-card a {
-      color: #111;
+      color: var(--blue-dark);
       font-weight: 600;
     }
 
     .contact-card a:hover {
-      color: #ff9800;
+      text-decoration: underline;
     }
 
     /* =========================
@@ -549,15 +630,23 @@
     ========================= */
 
     footer {
-      background: #111;
-      color: white;
+      background: var(--navy);
+      color: #ffffff;
       text-align: center;
-      padding: 28px 20px;
+      padding: 30px 20px;
+    }
+
+    footer .footer-brand {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
     }
 
     footer p {
-      color: #bbb;
-      font-size: 14px;
+      color: #b8c9da;
+      font-size: 13px;
       margin: 4px 0;
     }
 
@@ -576,7 +665,7 @@
       border-radius: 50%;
 
       background: #25d366;
-      color: white;
+      color: #ffffff;
 
       display: flex;
       align-items: center;
@@ -587,8 +676,7 @@
       box-shadow: 0 5px 18px rgba(0,0,0,0.25);
 
       z-index: 999;
-
-      transition: 0.3s;
+      transition: 0.25s;
     }
 
     .floating-whatsapp:hover {
@@ -608,15 +696,19 @@
 
       .nav-links {
         justify-content: center;
-        gap: 12px;
+        gap: 11px;
       }
 
       .nav-links a {
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .hero {
-        min-height: 75vh;
+        min-height: 76vh;
+      }
+
+      .hero-brand {
+        letter-spacing: 3px;
       }
 
       section {
@@ -654,8 +746,12 @@
 
     @media (max-width: 480px) {
 
-      .logo {
+      .brand-name {
         font-size: 18px;
+      }
+
+      .brand-tagline {
+        font-size: 9px;
       }
 
       .hero-content {
@@ -675,11 +771,15 @@
       }
 
       .nav-links {
-        gap: 8px;
+        gap: 7px;
       }
 
       .nav-links a {
-        font-size: 12px;
+        font-size: 11px;
+      }
+
+      .language-btn {
+        padding: 6px 9px;
       }
     }
 
@@ -696,9 +796,22 @@
 
     <div class="nav-container">
 
-      <div class="logo">
-        Vaazhvizhi Contracters
+      <div class="brand">
+
+        <div class="brand-name">
+          VAAZHVIZHI
+        </div>
+
+        <div
+          class="brand-tagline"
+          data-en="Your Dream Construction, With VAAZHVIZHI"
+          data-ta="உங்கள் கனவு கட்டுமானம், VAAZHVIZHI உடன்"
+        >
+          Your Dream Construction, With VAAZHVIZHI
+        </div>
+
       </div>
+
 
       <div class="nav-links">
 
@@ -750,6 +863,18 @@
 
     <div class="hero-content">
 
+      <div class="hero-brand">
+        VAAZHVIZHI
+      </div>
+
+      <div
+        class="hero-tagline"
+        data-en="Your Dream Construction, With VAAZHVIZHI"
+        data-ta="உங்கள் கனவு கட்டுமானம், VAAZHVIZHI உடன்"
+      >
+        Your Dream Construction, With VAAZHVIZHI
+      </div>
+
       <h1
         data-en="Build Your Dream With Us"
         data-ta="உங்கள் கனவு இல்லத்தை எங்களுடன் கட்டுங்கள்"
@@ -761,9 +886,10 @@
         data-en="Complete construction solutions from planning and estimation to construction, renovation, interiors and materials."
         data-ta="திட்டமிடல் மற்றும் மதிப்பீடு முதல் கட்டுமானம், புதுப்பிப்பு, இன்டீரியர் மற்றும் கட்டுமானப் பொருட்கள் வரை முழுமையான சேவைகள்."
       >
-        Complete construction solutions from planning and estimation to construction,
-        renovation, interiors and materials.
+        Complete construction solutions from planning and estimation
+        to construction, renovation, interiors and materials.
       </p>
+
 
       <div class="hero-buttons">
 
@@ -779,11 +905,12 @@
           </span>
         </a>
 
+
         <a
           href="https://wa.me/919025541161?text=Hello%20Vaazhvizhi%20Contracters%2C%20I%20need%20a%20quick%20response%20for%20my%20construction%20requirement."
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-dark"
+          class="btn btn-whatsapp"
         >
           <span
             data-en="WhatsApp Us"
@@ -792,6 +919,7 @@
             WhatsApp Us
           </span>
         </a>
+
 
         <a
           href="tel:+919025541161"
@@ -935,7 +1063,7 @@
        SERVICES
   ========================== -->
 
-  <section id="services">
+  <section class="blue-band" id="services">
 
     <div class="section-container">
 
@@ -961,6 +1089,7 @@
       <div class="cards">
 
         <div class="card">
+
           <div class="card-icon">🛋️</div>
 
           <h3
@@ -969,10 +1098,12 @@
           >
             Interior Design
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">🏡</div>
 
           <h3
@@ -981,10 +1112,12 @@
           >
             Interior & Exterior Design
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">⚡</div>
 
           <h3
@@ -993,10 +1126,12 @@
           >
             Electrical & Plumbing
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">🎨</div>
 
           <h3
@@ -1005,10 +1140,12 @@
           >
             Painting
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">📦</div>
 
           <h3
@@ -1017,10 +1154,12 @@
           >
             Material Procurement Only
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">💧</div>
 
           <h3
@@ -1029,10 +1168,12 @@
           >
             Waterproofing & Weatherproofing
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">🔲</div>
 
           <h3
@@ -1041,10 +1182,12 @@
           >
             Tile Laying
           </h3>
+
         </div>
 
 
         <div class="card">
+
           <div class="card-icon">📋</div>
 
           <h3
@@ -1053,6 +1196,7 @@
           >
             New Approval / Building Plan Design
           </h3>
+
         </div>
 
       </div>
@@ -1066,7 +1210,7 @@
        WHY US
   ========================== -->
 
-  <section class="why-section">
+  <section>
 
     <div class="section-container">
 
@@ -1211,7 +1355,7 @@
       </div>
 
 
-      <!-- QUOTE CHOICE -->
+      <!-- QUOTE OPTIONS -->
 
       <div class="quote-choice">
 
@@ -1233,7 +1377,8 @@
 
         <div class="quote-options">
 
-          <!-- WHATSAPP -->
+
+          <!-- QUICK RESPONSE -->
 
           <div class="quote-option">
 
@@ -1270,7 +1415,7 @@
           </div>
 
 
-          <!-- DETAILED FORM -->
+          <!-- DETAILED QUOTE -->
 
           <div class="quote-option">
 
@@ -1311,7 +1456,7 @@
 
 
       <!-- =========================
-           DETAILED QUOTE FORM
+           DETAILED FORM
       ========================== -->
 
       <div
@@ -1354,7 +1499,7 @@
                 placeholder="Enter your name"
                 data-placeholder-en="Enter your name"
                 data-placeholder-ta="உங்கள் பெயரை உள்ளிடவும்"
-              />
+              >
 
             </div>
 
@@ -1382,7 +1527,7 @@
                 placeholder="Enter your phone number"
                 data-placeholder-en="Enter your phone number"
                 data-placeholder-ta="உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்"
-              />
+              >
 
             </div>
 
@@ -1408,7 +1553,7 @@
                 placeholder="Enter your email"
                 data-placeholder-en="Enter your email"
                 data-placeholder-ta="உங்கள் மின்னஞ்சலை உள்ளிடவும்"
-              />
+              >
 
             </div>
 
@@ -1434,7 +1579,7 @@
                 placeholder="Enter project location"
                 data-placeholder-en="Enter project location"
                 data-placeholder-ta="திட்ட இடத்தை உள்ளிடவும்"
-              />
+              >
 
             </div>
 
@@ -1617,7 +1762,7 @@
                 placeholder="Example: ₹10,00,000"
                 data-placeholder-en="Example: ₹10,00,000"
                 data-placeholder-ta="உதாரணம்: ₹10,00,000"
-              />
+              >
 
             </div>
 
@@ -1627,14 +1772,12 @@
             <div class="form-group full">
 
               <label for="requirement">
-
                 <span
                   data-en="Requirement"
                   data-ta="தேவை / விவரம்"
                 >
                   Requirement
                 </span>
-
               </label>
 
               <textarea
@@ -1655,7 +1798,6 @@
             class="submit-btn"
             id="submitButton"
           >
-
             <span
               id="submitButtonText"
               data-en="Submit Quote Request"
@@ -1663,7 +1805,6 @@
             >
               Submit Quote Request
             </span>
-
           </button>
 
 
@@ -1726,12 +1867,12 @@
           </h3>
 
           <p>
-            Ungaranahalli,<br />
-            Dharmapuri,<br />
+            Ungaranahalli,<br>
+            Dharmapuri,<br>
             Tamil Nadu - 636705
           </p>
 
-          <br />
+          <br>
 
           <a
             href="https://maps.app.goo.gl/GWejen8cyvza9THs7?g_st=aw"
@@ -1768,7 +1909,7 @@
             </a>
           </p>
 
-          <br />
+          <br>
 
           <a
             href="https://wa.me/919025541161"
@@ -1800,7 +1941,7 @@
             @vaazhvizhi_contracters
           </p>
 
-          <br />
+          <br>
 
           <a
             href="https://www.instagram.com/vaazhvizhi_contracters/"
@@ -1832,9 +1973,7 @@
           </h3>
 
           <p>
-            <a
-              href="mailto:vaazhvizhicontractors@gmail.com"
-            >
+            <a href="mailto:vaazhvizhicontractors@gmail.com">
               vaazhvizhicontractors@gmail.com
             </a>
           </p>
@@ -1854,8 +1993,11 @@
 
   <footer>
 
+    <div class="footer-brand">
+      VAAZHVIZHI
+    </div>
+
     <p>
-      © <span id="currentYear"></span>
       Vaazhvizhi Contracters
     </p>
 
@@ -1864,6 +2006,10 @@
       data-ta="கட்டுமானம் • புதுப்பிப்பு • பொருட்கள் • திட்டமிடல் & மதிப்பீடு"
     >
       Construction • Renovation • Materials • Planning & Estimation
+    </p>
+
+    <p>
+      © <span id="currentYear"></span> Vaazhvizhi Contracters
     </p>
 
   </footer>
@@ -1891,7 +2037,8 @@
   <script>
 
     /* =========================
-       GOOGLE APPS SCRIPT
+       GOOGLE APPS SCRIPT URL
+       DO NOT CHANGE
     ========================== */
 
     const GOOGLE_SCRIPT_URL =
@@ -1934,7 +2081,9 @@
       /* Select options */
 
       document
-        .querySelectorAll("option[data-en][data-ta]")
+        .querySelectorAll(
+          "option[data-en][data-ta]"
+        )
         .forEach(function(option) {
 
           const text =
@@ -1949,7 +2098,7 @@
         });
 
 
-      /* Placeholders */
+      /* Input placeholders */
 
       document
         .querySelectorAll(
@@ -1959,7 +2108,8 @@
 
           input.placeholder =
             input.getAttribute(
-              "data-placeholder-" + currentLanguage
+              "data-placeholder-" +
+              currentLanguage
             );
 
         });
@@ -1967,18 +2117,15 @@
 
       /* Language button */
 
-      const languageButton =
-        document.getElementById(
-          "languageButton"
-        );
-
-      languageButton.textContent =
+      document.getElementById(
+        "languageButton"
+      ).textContent =
         currentLanguage === "en"
           ? "தமிழ்"
           : "English";
 
 
-      /* HTML language */
+      /* Browser language */
 
       document.documentElement.lang =
         currentLanguage === "en"
@@ -1992,23 +2139,23 @@
 
 
     /* =========================
-       FORM STATUS LANGUAGE
+       FORM STATUS
     ========================== */
 
     function updateFormStatusLanguage() {
 
       const status =
-        document.getElementById("formStatus");
+        document.getElementById(
+          "formStatus"
+        );
+
 
       if (!status.dataset.type) {
         return;
       }
 
-      const type =
-        status.dataset.type;
 
-
-      if (type === "success") {
+      if (status.dataset.type === "success") {
 
         status.textContent =
           currentLanguage === "en"
@@ -2018,7 +2165,7 @@
       }
 
 
-      if (type === "error") {
+      if (status.dataset.type === "error") {
 
         status.textContent =
           currentLanguage === "en"
@@ -2090,8 +2237,6 @@
           );
 
 
-        /* Prevent double submission */
-
         submitButton.disabled = true;
 
 
@@ -2124,11 +2269,12 @@
 
 
           /*
-            no-cors does not allow the browser
-            to read the Apps Script response.
+            Google Apps Script response cannot
+            be read from a no-cors request.
 
-            The request is therefore treated as
-            submitted after fetch completes.
+            Existing Apps Script handles:
+            1. Google Sheet entry
+            2. Gmail notification
           */
 
 
@@ -2190,7 +2336,7 @@
 
 
     /* =========================
-       YEAR
+       CURRENT YEAR
     ========================== */
 
     document.getElementById(
@@ -2200,7 +2346,7 @@
 
 
     /* =========================
-       ANCHOR SCROLL
+       SMOOTH ANCHOR SCROLL
     ========================== */
 
     document
