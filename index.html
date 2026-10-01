@@ -390,6 +390,18 @@
       font-weight: 600;
     }
 
+    .whatsapp-after-submit {
+      margin-top: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .whatsapp-after-submit p {
+      color: #555;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
     /* ================= CONTACT ================= */
 
     .contact-grid {
@@ -593,7 +605,12 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#home" data-en="Home" data-ta="முகப்பு">Home</a>
+
+        <a href="#home"
+           data-en="Home"
+           data-ta="முகப்பு">
+          Home
+        </a>
 
         <a href="#projects"
            data-en="Projects"
@@ -618,6 +635,7 @@
            data-ta="தொடர்பு">
           Contact
         </a>
+
       </nav>
 
       <button
@@ -653,7 +671,6 @@
 
         <div class="hero-buttons">
 
-          <!-- THIS ONLY SCROLLS TO QUOTE FORM -->
           <a
             href="#quote"
             class="btn btn-primary"
@@ -662,7 +679,6 @@
             Get Free Quote
           </a>
 
-          <!-- WHATSAPP IS SEPARATE -->
           <a
             href="https://wa.me/919025541161"
             target="_blank"
@@ -1045,17 +1061,9 @@
         </p>
 
 
-        <!--
-          IMPORTANT:
-          This form DOES NOT open WhatsApp.
-          It sends the lead to Google Sheet only.
-        -->
-
         <form id="quoteForm">
 
           <div class="form-grid">
-
-            <!-- NAME -->
 
             <div class="form-group">
 
@@ -1076,8 +1084,6 @@
             </div>
 
 
-            <!-- PHONE -->
-
             <div class="form-group">
 
               <label
@@ -1097,8 +1103,6 @@
             </div>
 
 
-            <!-- EMAIL -->
-
             <div class="form-group">
 
               <label
@@ -1116,8 +1120,6 @@
 
             </div>
 
-
-            <!-- LOCATION -->
 
             <div class="form-group">
 
@@ -1138,8 +1140,6 @@
             </div>
 
 
-            <!-- PROJECT TYPE -->
-
             <div class="form-group">
 
               <label
@@ -1154,9 +1154,7 @@
                 name="projectType"
                 required>
 
-                <option value="">
-                  Select project type
-                </option>
+                <option value="">Select project type</option>
 
                 <option value="New Construction">
                   New Construction
@@ -1179,8 +1177,6 @@
             </div>
 
 
-            <!-- SERVICE -->
-
             <div class="form-group">
 
               <label
@@ -1195,9 +1191,7 @@
                 name="service"
                 required>
 
-                <option value="">
-                  Select service
-                </option>
+                <option value="">Select service</option>
 
                 <option value="Interior Design">
                   Interior Design
@@ -1236,8 +1230,6 @@
             </div>
 
 
-            <!-- BUDGET -->
-
             <div class="form-group">
 
               <label
@@ -1251,9 +1243,7 @@
                 id="budget"
                 name="budget">
 
-                <option value="">
-                  Select budget
-                </option>
+                <option value="">Select budget</option>
 
                 <option value="Below ₹5 Lakhs">
                   Below ₹5 Lakhs
@@ -1280,8 +1270,6 @@
             </div>
 
 
-            <!-- REQUIREMENT -->
-
             <div class="form-group full">
 
               <label
@@ -1300,8 +1288,6 @@
 
           </div>
 
-
-          <!-- SUBMIT -->
 
           <div class="submit-area">
 
@@ -1322,6 +1308,31 @@
               id="formMessage"
               class="form-message">
             </div>
+
+          </div>
+
+
+          <!-- WHATSAPP AFTER FORM -->
+
+          <div
+            class="whatsapp-after-submit"
+            id="whatsappAfterSubmit">
+
+            <p
+              data-en="Need a quick response? You can also contact us directly on WhatsApp."
+              data-ta="விரைவான பதில் வேண்டுமா? WhatsApp மூலம் நேரடியாக தொடர்பு கொள்ளலாம்.">
+              Need a quick response? You can also contact us directly on WhatsApp.
+            </p>
+
+            <a
+              href="https://wa.me/919025541161"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-whatsapp"
+              data-en="Chat on WhatsApp"
+              data-ta="WhatsApp-ல் தொடர்பு கொள்ளுங்கள்">
+              Chat on WhatsApp
+            </a>
 
           </div>
 
@@ -1359,8 +1370,6 @@
 
       <div class="contact-grid">
 
-        <!-- LOCATION -->
-
         <div class="contact-card">
 
           <div class="icon">📍</div>
@@ -1380,8 +1389,6 @@
         </div>
 
 
-        <!-- PHONE -->
-
         <div class="contact-card">
 
           <div class="icon">📞</div>
@@ -1400,8 +1407,6 @@
 
         </div>
 
-
-        <!-- WHATSAPP -->
 
         <div class="contact-card">
 
@@ -1423,8 +1428,6 @@
         </div>
 
 
-        <!-- INSTAGRAM -->
-
         <div class="contact-card">
 
           <div class="icon">📷</div>
@@ -1444,8 +1447,6 @@
 
         </div>
 
-
-        <!-- EMAIL -->
 
         <div class="contact-card">
 
@@ -1503,11 +1504,6 @@
 
   <!-- ================= FLOATING WHATSAPP ================= -->
 
-  <!--
-    This is ONLY a WhatsApp button.
-    It has NO connection with the quote form.
-  -->
-
   <a
     href="https://wa.me/919025541161"
     target="_blank"
@@ -1523,7 +1519,7 @@
   <script>
 
     /* ==================================================
-       GOOGLE SHEETS WEB APP
+       GOOGLE APPS SCRIPT WEB APP
        ================================================== */
 
     const GOOGLE_SCRIPT_URL =
@@ -1531,7 +1527,7 @@
 
 
     /* ==================================================
-       QUOTE FORM
+       FORM ELEMENTS
        ================================================== */
 
     const quoteForm =
@@ -1543,15 +1539,19 @@
     const formMessage =
       document.getElementById("formMessage");
 
+    const whatsappAfterSubmit =
+      document.getElementById("whatsappAfterSubmit");
+
+
+    /* ==================================================
+       QUOTE FORM SUBMISSION
+       ================================================== */
 
     quoteForm.addEventListener(
       "submit",
       async function(event) {
 
         event.preventDefault();
-
-
-        /* Disable button */
 
         submitBtn.disabled = true;
 
@@ -1562,8 +1562,8 @@
 
         formMessage.textContent = "";
 
+        whatsappAfterSubmit.style.display = "none";
 
-        /* Collect form data */
 
         const formData =
           new FormData(quoteForm);
@@ -1572,12 +1572,12 @@
         try {
 
           /*
-            IMPORTANT:
+            Lead goes to:
 
-            Data goes ONLY to Google Apps Script.
+            1. Google Sheet
+            2. Gmail notification
 
-            NO WhatsApp redirect.
-            NO WhatsApp message.
+            WhatsApp is NOT automatically opened.
           */
 
           await fetch(
@@ -1590,7 +1590,7 @@
           );
 
 
-          /* Reset form */
+          /* Clear form */
 
           quoteForm.reset();
 
@@ -1604,10 +1604,18 @@
             "green";
 
 
+          /*
+            Give customer an optional
+            WhatsApp button after submission.
+          */
+
+          whatsappAfterSubmit.style.display =
+            "block";
+
+
         } catch (error) {
 
           console.error(error);
-
 
           formMessage.textContent =
             "Unable to submit your request. Please try again.";
@@ -1617,8 +1625,6 @@
 
         }
 
-
-        /* Enable button */
 
         submitBtn.disabled = false;
 
@@ -1742,7 +1748,6 @@
 
       }
     );
-
 
   </script>
 
