@@ -46,10 +46,6 @@
       font-family: inherit;
     }
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
     header {
       position: sticky;
       top: 0;
@@ -106,9 +102,7 @@
       font-weight: 700;
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
       min-height: 620px;
@@ -178,9 +172,7 @@
       color: #111827;
     }
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
+    /* GENERAL */
 
     section {
       padding: 80px 20px;
@@ -206,9 +198,7 @@
       color: #6b7280;
     }
 
-    /* =========================
-       PROJECT REQUIREMENTS
-    ========================= */
+    /* REQUIREMENTS */
 
     .requirements {
       background: #f9fafb;
@@ -244,9 +234,7 @@
       color: #111827;
     }
 
-    /* =========================
-       SERVICES
-    ========================= */
+    /* SERVICES */
 
     .services-grid {
       display: grid;
@@ -277,9 +265,7 @@
       color: #111827;
     }
 
-    /* =========================
-       WHY US
-    ========================= */
+    /* WHY US */
 
     .why-us {
       background: #111827;
@@ -317,9 +303,7 @@
       font-size: 14px;
     }
 
-    /* =========================
-       QUOTE SECTION
-    ========================= */
+    /* QUOTE */
 
     .quote-section {
       background: #f9fafb;
@@ -331,11 +315,8 @@
       margin: auto;
     }
 
-    /* NEW CHOICE AREA */
-
     .quote-choice {
-      margin-bottom: 28px;
-      padding: 25px;
+      padding: 30px 25px;
       border-radius: 16px;
       background: #ffffff;
       border: 1px solid #e5e7eb;
@@ -383,6 +364,7 @@
     .detailed-quote-btn {
       background: #111827;
       color: #ffffff;
+      border: none;
     }
 
     .quick-whatsapp-btn:hover,
@@ -390,14 +372,33 @@
       transform: translateY(-2px);
     }
 
-    /* QUOTE FORM */
+    /* FORM */
 
     .quote-form-card {
+      display: none;
+      margin-top: 25px;
       background: #ffffff;
       padding: 35px;
       border-radius: 16px;
       border: 1px solid #e5e7eb;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .quote-form-card.show {
+      display: block;
+      animation: formOpen 0.3s ease;
+    }
+
+    @keyframes formOpen {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .quote-form-card h3 {
@@ -469,12 +470,11 @@
       font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.2s;
     }
 
-    .submit-btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.93;
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
     }
 
     .form-status {
@@ -499,9 +499,7 @@
       color: #991b1b;
     }
 
-    /* =========================
-       CONTACT
-    ========================= */
+    /* CONTACT */
 
     .contact-grid {
       display: grid;
@@ -531,9 +529,7 @@
       font-weight: 600;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     footer {
       background: #111827;
@@ -545,11 +541,10 @@
     footer p {
       color: #d1d5db;
       font-size: 14px;
+      margin-bottom: 4px;
     }
 
-    /* =========================
-       FLOATING WHATSAPP
-    ========================= */
+    /* WHATSAPP */
 
     .floating-whatsapp {
       position: fixed;
@@ -568,9 +563,7 @@
       z-index: 999;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
@@ -648,9 +641,7 @@
 
 <body>
 
-  <!-- =========================
-       NAVBAR
-  ========================= -->
+  <!-- NAVBAR -->
 
   <header>
     <nav class="navbar">
@@ -660,60 +651,87 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#quote">Get Quote</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li>
+          <a href="#home" data-en="Home" data-ta="முகப்பு">Home</a>
+        </li>
+
+        <li>
+          <a href="#projects" data-en="Projects" data-ta="திட்டங்கள்">Projects</a>
+        </li>
+
+        <li>
+          <a href="#services" data-en="Services" data-ta="சேவைகள்">Services</a>
+        </li>
+
+        <li>
+          <a href="#quote" data-en="Get Quote" data-ta="மேற்கோள் பெறுக">Get Quote</a>
+        </li>
+
+        <li>
+          <a href="#contact" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+        </li>
 
         <li>
           <button
             type="button"
             class="language-btn"
-            onclick="toggleLanguage()">
+            onclick="toggleLanguage()"
+            id="languageButton">
             தமிழ்
           </button>
         </li>
+
       </ul>
 
     </nav>
   </header>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+  <!-- HERO -->
 
   <section class="hero" id="home">
 
     <div class="hero-content">
 
-      <h1>
+      <h1
+        data-en="Building Your Vision.<br>Building Your Future."
+        data-ta="உங்கள் கனவை கட்டுகிறோம்.<br>உங்கள் எதிர்காலத்தை உருவாக்குகிறோம்.">
         Building Your Vision.<br>
         Building Your Future.
       </h1>
 
-      <p>
+      <p
+        data-en="Professional construction, renovation, materials supply, planning and estimation services in Dharmapuri."
+        data-ta="தர்மபுரியில் புதிய கட்டுமானம், புதுப்பிப்பு, கட்டுமானப் பொருட்கள் வழங்கல், திட்டமிடல் மற்றும் மதிப்பீட்டு சேவைகள்.">
         Professional construction, renovation, materials supply,
         planning and estimation services in Dharmapuri.
       </p>
 
       <div class="hero-buttons">
 
-        <a href="#quote" class="hero-btn btn-primary">
+        <a
+          href="#quote"
+          class="hero-btn btn-primary"
+          data-en="Get Free Quote"
+          data-ta="இலவச மேற்கோள் பெறுக">
           Get Free Quote
         </a>
 
         <a
           href="https://wa.me/919025541161"
           target="_blank"
-          class="hero-btn btn-whatsapp">
+          class="hero-btn btn-whatsapp"
+          data-en="WhatsApp Us"
+          data-ta="WhatsApp தொடர்பு">
           WhatsApp Us
         </a>
 
         <a
           href="tel:+919025541161"
-          class="hero-btn btn-call">
+          class="hero-btn btn-call"
+          data-en="Call Now"
+          data-ta="இப்போது அழைக்கவும்">
           Call Now
         </a>
 
@@ -724,39 +742,64 @@
   </section>
 
 
-  <!-- =========================
-       PROJECT REQUIREMENTS
-  ========================= -->
+  <!-- PROJECT REQUIREMENTS -->
 
   <section class="requirements" id="projects">
 
     <div class="container">
 
       <div class="section-title">
-        <h2>Project Requirements</h2>
-        <p>Complete construction solutions for your needs.</p>
+
+        <h2
+          data-en="Project Requirements"
+          data-ta="திட்ட தேவைகள்">
+          Project Requirements
+        </h2>
+
+        <p
+          data-en="Complete construction solutions for your needs."
+          data-ta="உங்கள் தேவைகளுக்கான முழுமையான கட்டுமான தீர்வுகள்.">
+          Complete construction solutions for your needs.
+        </p>
+
       </div>
 
       <div class="requirements-grid">
 
         <div class="requirement-card">
           <div class="requirement-icon">🏠</div>
-          <h3>New Construction</h3>
+          <h3
+            data-en="New Construction"
+            data-ta="புதிய கட்டுமானம்">
+            New Construction
+          </h3>
         </div>
 
         <div class="requirement-card">
           <div class="requirement-icon">🔨</div>
-          <h3>Renovation / Repair Work</h3>
+          <h3
+            data-en="Renovation / Repair Work"
+            data-ta="புதுப்பிப்பு / பழுதுபார்ப்பு பணிகள்">
+            Renovation / Repair Work
+          </h3>
         </div>
 
         <div class="requirement-card">
           <div class="requirement-icon">🧱</div>
-          <h3>Building Materials Supply</h3>
+          <h3
+            data-en="Building Materials Supply"
+            data-ta="கட்டுமானப் பொருட்கள் வழங்கல்">
+            Building Materials Supply
+          </h3>
         </div>
 
         <div class="requirement-card">
           <div class="requirement-icon">📐</div>
-          <h3>Planning &amp; Estimation</h3>
+          <h3
+            data-en="Planning & Estimation"
+            data-ta="திட்டமிடல் & மதிப்பீடு">
+            Planning &amp; Estimation
+          </h3>
         </div>
 
       </div>
@@ -766,59 +809,94 @@
   </section>
 
 
-  <!-- =========================
-       SERVICES
-  ========================= -->
+  <!-- SERVICES -->
 
   <section id="services">
 
     <div class="container">
 
       <div class="section-title">
-        <h2>Our Services</h2>
-        <p>Reliable services from planning to completion.</p>
+
+        <h2
+          data-en="Our Services"
+          data-ta="எங்கள் சேவைகள்">
+          Our Services
+        </h2>
+
+        <p
+          data-en="Reliable services from planning to completion."
+          data-ta="திட்டமிடல் முதல் நிறைவு வரை நம்பகமான சேவைகள்.">
+          Reliable services from planning to completion.
+        </p>
+
       </div>
 
       <div class="services-grid">
 
         <div class="service-card">
           <div class="service-icon">🛋️</div>
-          <h3>Interior Design</h3>
+          <h3 data-en="Interior Design" data-ta="உள்துறை வடிவமைப்பு">
+            Interior Design
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🏢</div>
-          <h3>Interior &amp; Exterior Design</h3>
+          <h3
+            data-en="Interior & Exterior Design"
+            data-ta="உள்துறை & வெளிப்புற வடிவமைப்பு">
+            Interior &amp; Exterior Design
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">⚡</div>
-          <h3>Electrical &amp; Plumbing</h3>
+          <h3
+            data-en="Electrical & Plumbing"
+            data-ta="மின்சாரம் & பிளம்பிங்">
+            Electrical &amp; Plumbing
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🎨</div>
-          <h3>Painting</h3>
+          <h3 data-en="Painting" data-ta="பெயிண்டிங்">
+            Painting
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">📦</div>
-          <h3>Material Procurement Only</h3>
+          <h3
+            data-en="Material Procurement Only"
+            data-ta="கட்டுமானப் பொருட்கள் கொள்முதல் மட்டும்">
+            Material Procurement Only
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">💧</div>
-          <h3>Waterproofing &amp; Weatherproofing</h3>
+          <h3
+            data-en="Waterproofing & Weatherproofing"
+            data-ta="நீர்ப்புகா & வானிலை பாதுகாப்பு">
+            Waterproofing &amp; Weatherproofing
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🧱</div>
-          <h3>Tile Laying</h3>
+          <h3 data-en="Tile Laying" data-ta="டைல் பதித்தல்">
+            Tile Laying
+          </h3>
         </div>
 
         <div class="service-card">
           <div class="service-icon">📋</div>
-          <h3>New Approval / Building Plan Design</h3>
+          <h3
+            data-en="New Approval / Building Plan Design"
+            data-ta="புதிய அனுமதி / கட்டிட வரைபட வடிவமைப்பு">
+            New Approval / Building Plan Design
+          </h3>
         </div>
 
       </div>
@@ -828,45 +906,70 @@
   </section>
 
 
-  <!-- =========================
-       WHY US
-  ========================= -->
+  <!-- WHY US -->
 
   <section class="why-us">
 
     <div class="container">
 
       <div class="section-title">
-        <h2>Why Choose Us</h2>
-        <p>Focused on quality, transparency and dependable service.</p>
+
+        <h2
+          data-en="Why Choose Us"
+          data-ta="எங்களை ஏன் தேர்வு செய்ய வேண்டும்">
+          Why Choose Us
+        </h2>
+
+        <p
+          data-en="Focused on quality, transparency and dependable service."
+          data-ta="தரம், வெளிப்படைத்தன்மை மற்றும் நம்பகமான சேவையில் கவனம்.">
+          Focused on quality, transparency and dependable service.
+        </p>
+
       </div>
 
       <div class="why-grid">
 
         <div class="why-card">
-          <h3>Quality Work</h3>
-          <p>
+          <h3 data-en="Quality Work" data-ta="தரமான பணி">
+            Quality Work
+          </h3>
+          <p
+            data-en="Focused on delivering reliable construction and finishing work."
+            data-ta="நம்பகமான கட்டுமானம் மற்றும் முடிப்பு பணிகளை வழங்குவதில் கவனம் செலுத்துகிறோம்.">
             Focused on delivering reliable construction and finishing work.
           </p>
         </div>
 
         <div class="why-card">
-          <h3>Transparent Process</h3>
-          <p>
+          <h3 data-en="Transparent Process" data-ta="வெளிப்படையான செயல்முறை">
+            Transparent Process
+          </h3>
+          <p
+            data-en="Clear communication from planning and estimation to execution."
+            data-ta="திட்டமிடல் மற்றும் மதிப்பீட்டிலிருந்து செயல்படுத்துதல் வரை தெளிவான தகவல் தொடர்பு.">
             Clear communication from planning and estimation to execution.
           </p>
         </div>
 
         <div class="why-card">
-          <h3>Complete Solutions</h3>
-          <p>
+          <h3 data-en="Complete Solutions" data-ta="முழுமையான தீர்வுகள்">
+            Complete Solutions
+          </h3>
+          <p
+            data-en="Construction, renovation, materials, planning and multiple services."
+            data-ta="கட்டுமானம், புதுப்பிப்பு, பொருட்கள், திட்டமிடல் மற்றும் பல்வேறு சேவைகள்.">
             Construction, renovation, materials, planning and multiple services.
           </p>
         </div>
 
         <div class="why-card">
-          <h3>Local Support</h3>
-          <p>
+          <h3 data-en="Local Support" data-ta="உள்ளூர் ஆதரவு">
+            Local Support
+          </h3>
+          <p
+            data-en="Serving customers around Ungaranahalli and Dharmapuri."
+            data-ta="உங்கரனஹள்ளி மற்றும் தர்மபுரி சுற்றுவட்டார வாடிக்கையாளர்களுக்கு சேவை.">
             Serving customers around Ungaranahalli and Dharmapuri.
           </p>
         </div>
@@ -878,9 +981,7 @@
   </section>
 
 
-  <!-- =========================
-       QUOTE
-  ========================= -->
+  <!-- QUOTE -->
 
   <section class="quote-section" id="quote">
 
@@ -888,83 +989,103 @@
 
       <div class="section-title">
 
-        <h2>Get a Free Quote</h2>
+        <h2
+          data-en="Get a Free Quote"
+          data-ta="இலவச மேற்கோள் பெறுக">
+          Get a Free Quote
+        </h2>
 
-        <p>
+        <p
+          data-en="Choose the option that works best for you."
+          data-ta="உங்களுக்கு ஏற்ற தொடர்பு முறையை தேர்வு செய்யுங்கள்.">
           Choose the option that works best for you.
         </p>
 
       </div>
 
-
       <div class="quote-wrapper">
 
-
-        <!-- NEW QUICK RESPONSE CHOICE -->
+        <!-- CHOICE -->
 
         <div class="quote-choice">
 
-          <h3>
+          <h3
+            data-en="How would you like to contact us?"
+            data-ta="எங்களை எப்படி தொடர்பு கொள்ள விரும்புகிறீர்கள்?">
             How would you like to contact us?
           </h3>
 
-          <p class="quote-choice-subtitle">
+          <p
+            class="quote-choice-subtitle"
+            data-en="Need a quick response or a detailed quotation?"
+            data-ta="விரைவான பதிலா அல்லது விரிவான மேற்கோளா?">
             Need a quick response or a detailed quotation?
           </p>
 
           <div class="quote-choice-buttons">
-
-            <!-- QUICK WHATSAPP -->
 
             <a
               href="https://wa.me/919025541161?text=Hello%20Vaazhvizhi%20Contracters%2C%20I%20need%20a%20quick%20response%20for%20my%20construction%20requirement."
               target="_blank"
               class="quick-whatsapp-btn">
 
-              💬 Need a Quick Response?
+              💬
+              <span
+                data-en="Need a Quick Response?"
+                data-ta="விரைவான பதில் வேண்டுமா?">
+                Need a Quick Response?
+              </span>
 
             </a>
 
+            <button
+              type="button"
+              class="detailed-quote-btn"
+              onclick="showQuoteForm()">
 
-            <!-- DETAILED FORM -->
+              📋
+              <span
+                data-en="Get Detailed Quote"
+                data-ta="விரிவான மேற்கோள் பெறுக">
+                Get Detailed Quote
+              </span>
 
-            <a
-              href="#quoteForm"
-              class="detailed-quote-btn">
-
-              📋 Get Detailed Quote
-
-            </a>
+            </button>
 
           </div>
 
         </div>
 
 
-        <!-- DETAILED QUOTE FORM -->
+        <!-- FORM -->
 
-        <div class="quote-form-card">
+        <div
+          class="quote-form-card"
+          id="quoteFormCard">
 
-          <h3>
+          <h3
+            data-en="Detailed Quote Request"
+            data-ta="விரிவான மேற்கோள் கோரிக்கை">
             Detailed Quote Request
           </h3>
 
-          <p class="form-description">
+          <p
+            class="form-description"
+            data-en="Fill in your project details and our team will contact you."
+            data-ta="உங்கள் திட்ட விவரங்களை நிரப்புங்கள். எங்கள் குழு உங்களை தொடர்பு கொள்ளும்.">
             Fill in your project details and our team will contact you.
           </p>
 
-
           <form id="quoteForm">
-
 
             <div class="form-grid">
 
-
-              <!-- NAME -->
-
               <div class="form-group">
 
-                <label for="name">
+                <label
+                  for="name"
+                  data-en="Name *"
+                  data-ta="பெயர் *">
                   Name *
                 </label>
 
@@ -978,11 +1099,12 @@
               </div>
 
 
-              <!-- PHONE -->
-
               <div class="form-group">
 
-                <label for="phone">
+                <label
+                  for="phone"
+                  data-en="Phone *"
+                  data-ta="தொலைபேசி *">
                   Phone *
                 </label>
 
@@ -996,11 +1118,12 @@
               </div>
 
 
-              <!-- EMAIL -->
-
               <div class="form-group">
 
-                <label for="email">
+                <label
+                  for="email"
+                  data-en="Email"
+                  data-ta="மின்னஞ்சல்">
                   Email
                 </label>
 
@@ -1013,11 +1136,12 @@
               </div>
 
 
-              <!-- LOCATION -->
-
               <div class="form-group">
 
-                <label for="location">
+                <label
+                  for="location"
+                  data-en="Project Location *"
+                  data-ta="திட்ட இடம் *">
                   Project Location *
                 </label>
 
@@ -1031,11 +1155,12 @@
               </div>
 
 
-              <!-- PROJECT TYPE -->
-
               <div class="form-group">
 
-                <label for="projectType">
+                <label
+                  for="projectType"
+                  data-en="Project Type"
+                  data-ta="திட்ட வகை">
                   Project Type
                 </label>
 
@@ -1043,9 +1168,7 @@
                   id="projectType"
                   name="projectType">
 
-                  <option value="">
-                    Select Project Type
-                  </option>
+                  <option value="">Select Project Type</option>
 
                   <option value="New Construction">
                     New Construction
@@ -1068,11 +1191,12 @@
               </div>
 
 
-              <!-- SERVICE -->
-
               <div class="form-group">
 
-                <label for="service">
+                <label
+                  for="service"
+                  data-en="Service Required"
+                  data-ta="தேவையான சேவை">
                   Service Required
                 </label>
 
@@ -1080,9 +1204,7 @@
                   id="service"
                   name="service">
 
-                  <option value="">
-                    Select Service
-                  </option>
+                  <option value="">Select Service</option>
 
                   <option value="Interior Design">
                     Interior Design
@@ -1121,11 +1243,12 @@
               </div>
 
 
-              <!-- BUDGET -->
-
               <div class="form-group full-width">
 
-                <label for="budget">
+                <label
+                  for="budget"
+                  data-en="Estimated Budget"
+                  data-ta="மதிப்பிடப்பட்ட பட்ஜெட்">
                   Estimated Budget
                 </label>
 
@@ -1133,9 +1256,7 @@
                   id="budget"
                   name="budget">
 
-                  <option value="">
-                    Select Estimated Budget
-                  </option>
+                  <option value="">Select Estimated Budget</option>
 
                   <option value="Below ₹5 Lakhs">
                     Below ₹5 Lakhs
@@ -1166,11 +1287,12 @@
               </div>
 
 
-              <!-- REQUIREMENT -->
-
               <div class="form-group full-width">
 
-                <label for="requirement">
+                <label
+                  for="requirement"
+                  data-en="Tell us about your requirement"
+                  data-ta="உங்கள் தேவையைப் பற்றி கூறுங்கள்">
                   Tell us about your requirement
                 </label>
 
@@ -1181,29 +1303,25 @@
 
               </div>
 
-
             </div>
 
-
-            <!-- SUBMIT -->
 
             <button
               type="submit"
               class="submit-btn"
-              id="submitButton">
+              id="submitButton"
+              data-en="Submit Quote Request"
+              data-ta="மேற்கோள் கோரிக்கையை சமர்ப்பிக்கவும்">
 
               Submit Quote Request
 
             </button>
 
 
-            <!-- STATUS -->
-
             <div
               id="formStatus"
               class="form-status">
             </div>
-
 
           </form>
 
@@ -1216,9 +1334,7 @@
   </section>
 
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+  <!-- CONTACT -->
 
   <section id="contact">
 
@@ -1226,9 +1342,15 @@
 
       <div class="section-title">
 
-        <h2>Contact Us</h2>
+        <h2
+          data-en="Contact Us"
+          data-ta="எங்களை தொடர்பு கொள்ளுங்கள்">
+          Contact Us
+        </h2>
 
-        <p>
+        <p
+          data-en="Let's discuss your construction requirement."
+          data-ta="உங்கள் கட்டுமான தேவையைப் பற்றி பேசலாம்.">
           Let's discuss your construction requirement.
         </p>
 
@@ -1237,10 +1359,15 @@
 
       <div class="contact-grid">
 
-
         <div class="contact-card">
 
-          <h3>📍 Location</h3>
+          <h3>📍
+            <span
+              data-en="Location"
+              data-ta="இடம்">
+              Location
+            </span>
+          </h3>
 
           <p>
             Ungaranahalli, Dharmapuri,
@@ -1260,7 +1387,13 @@
 
         <div class="contact-card">
 
-          <h3>📞 Phone & WhatsApp</h3>
+          <h3>📞
+            <span
+              data-en="Phone & WhatsApp"
+              data-ta="தொலைபேசி & WhatsApp">
+              Phone & WhatsApp
+            </span>
+          </h3>
 
           <p>
             <a href="tel:+919025541161">
@@ -1272,9 +1405,7 @@
             <a
               href="https://wa.me/919025541161"
               target="_blank">
-
               Chat on WhatsApp
-
             </a>
           </p>
 
@@ -1283,7 +1414,13 @@
 
         <div class="contact-card">
 
-          <h3>📸 Instagram</h3>
+          <h3>📸
+            <span
+              data-en="Instagram"
+              data-ta="Instagram">
+              Instagram
+            </span>
+          </h3>
 
           <p>
             Follow our work and updates.
@@ -1302,19 +1439,26 @@
 
         <div class="contact-card">
 
-          <h3>📧 Email</h3>
+          <h3>📧
+            <span
+              data-en="Email"
+              data-ta="மின்னஞ்சல்">
+              Email
+            </span>
+          </h3>
 
           <p>
+
             <a
               href="mailto:vaazhvizhicontractors@gmail.com">
 
               vaazhvizhicontractors@gmail.com
 
             </a>
+
           </p>
 
         </div>
-
 
       </div>
 
@@ -1323,9 +1467,7 @@
   </section>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -1341,9 +1483,7 @@
   </footer>
 
 
-  <!-- =========================
-       FLOATING WHATSAPP
-  ========================= -->
+  <!-- FLOATING WHATSAPP -->
 
   <a
     href="https://wa.me/919025541161"
@@ -1356,23 +1496,38 @@
   </a>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+  <!-- JAVASCRIPT -->
 
   <script>
 
-    /* =========================
-       GOOGLE APPS SCRIPT
-    ========================= */
+    /* GOOGLE APPS SCRIPT */
 
     const GOOGLE_SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbyMsEAzXdSathCJm2i44CA6lelm6KDYw9MTSRDPxiPriNXhYg2IC0AB5gIE0CYkU5hO/exec";
 
 
-    /* =========================
-       QUOTE FORM
-    ========================= */
+    /* SHOW DETAILED QUOTE FORM */
+
+    function showQuoteForm() {
+
+      const formCard =
+        document.getElementById("quoteFormCard");
+
+      formCard.classList.add("show");
+
+      setTimeout(function() {
+
+        formCard.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }, 50);
+
+    }
+
+
+    /* QUOTE FORM */
 
     const quoteForm =
       document.getElementById("quoteForm");
@@ -1389,7 +1544,6 @@
       async function(event) {
 
         event.preventDefault();
-
 
         formStatus.className =
           "form-status";
@@ -1453,24 +1607,54 @@
     );
 
 
-    /* =========================
-       LANGUAGE TOGGLE
-       BASIC PLACEHOLDER FOR
-       FUTURE TAMIL CONTENT
-    ========================= */
+    /* LANGUAGE TOGGLE */
+
+    let currentLanguage = "en";
+
 
     function toggleLanguage() {
 
-      alert(
-        "Tamil version can be enabled section by section."
-      );
+      currentLanguage =
+        currentLanguage === "en"
+          ? "ta"
+          : "en";
+
+
+      document
+        .querySelectorAll("[data-en][data-ta]")
+        .forEach(function(element) {
+
+          const text =
+            element.getAttribute(
+              "data-" + currentLanguage
+            );
+
+          if (text) {
+            element.innerHTML = text;
+          }
+
+        });
+
+
+      const languageButton =
+        document.getElementById("languageButton");
+
+
+      languageButton.textContent =
+        currentLanguage === "en"
+          ? "தமிழ்"
+          : "English";
+
+
+      document.documentElement.lang =
+        currentLanguage === "en"
+          ? "en"
+          : "ta";
 
     }
 
 
-    /* =========================
-       MOBILE / ANCHOR SCROLL
-    ========================= */
+    /* ANCHOR SCROLL */
 
     document
       .querySelectorAll('a[href^="#"]')
