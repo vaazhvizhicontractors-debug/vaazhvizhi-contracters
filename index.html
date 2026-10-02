@@ -8,31 +8,29 @@
 
   <meta
     name="description"
-    content="Vaazhvizhi Contracters - House construction, renovation, civil work, interiors and turnkey construction services in Dharmapuri, Tamil Nadu."
+    content="Vaazhvizhi Contracters - Construction, renovation and turnkey construction solutions in Dharmapuri, Tamil Nadu."
   >
-
-  <meta name="theme-color" content="#eef7ff">
 
   <style>
     :root {
-      --green: #159447;
-      --green-dark: #0d7135;
-      --green-soft: #eaf8ef;
+      --blue: #0b5ed7;
+      --blue-dark: #073b8f;
+      --blue-light: #eaf3ff;
 
-      --blue: #1769aa;
-      --blue-dark: #0b3c68;
-      --blue-soft: #eaf4fc;
-      --blue-line: #d7e9f7;
+      --green: #159957;
+      --green-dark: #087443;
+      --green-light: #eaf8f1;
+
+      --ink: #102033;
+      --muted: #617085;
 
       --white: #ffffff;
-      --ink: #102131;
-      --muted: #627486;
+      --bg: #f4f8fc;
+      --line: #dce6f0;
 
-      --border: #dce8ef;
-      --shadow: 0 18px 50px rgba(23, 72, 110, 0.10);
-      --shadow-soft: 0 8px 28px rgba(23, 72, 110, 0.08);
+      --shadow: 0 18px 50px rgba(20, 55, 90, 0.10);
 
-      --radius: 22px;
+      --radius: 20px;
       --max: 1180px;
     }
 
@@ -57,19 +55,19 @@
         sans-serif;
 
       color: var(--ink);
+
       background:
         radial-gradient(
-          circle at 85% 8%,
-          rgba(23, 105, 170, 0.09),
-          transparent 27%
+          circle at 5% 0%,
+          rgba(11, 94, 215, 0.09),
+          transparent 28%
         ),
-        linear-gradient(
-          180deg,
-          #f7fbfe 0%,
-          #ffffff 26%,
-          #f5fbff 58%,
-          #ffffff 100%
-        );
+        radial-gradient(
+          circle at 95% 20%,
+          rgba(21, 153, 87, 0.07),
+          transparent 25%
+        ),
+        var(--bg);
 
       line-height: 1.6;
       overflow-x: hidden;
@@ -91,59 +89,33 @@
       cursor: pointer;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .container {
-      width: min(var(--max), calc(100% - 36px));
-      margin: auto;
+      width: min(calc(100% - 32px), var(--max));
+      margin-inline: auto;
     }
 
-    /* =========================
-       SVG ICON SYSTEM
-    ========================= */
-
-    .icon {
-      width: 22px;
-      height: 22px;
-      display: inline-block;
-      flex: 0 0 auto;
-    }
-
-    .icon-lg {
-      width: 28px;
-      height: 28px;
-    }
-
-    .icon-xl {
-      width: 34px;
-      height: 34px;
-    }
-
-    /* =========================
+    /* =========================================================
        HEADER
-    ========================= */
+    ========================================================= */
 
-    .site-header {
+    header {
       position: sticky;
       top: 0;
       z-index: 1000;
 
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.93);
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
 
-      border-bottom: 1px solid rgba(23, 105, 170, 0.10);
+      border-bottom: 1px solid rgba(11, 94, 215, 0.10);
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 74px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
@@ -151,809 +123,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 0;
+
+      min-width: max-content;
     }
 
     .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-
-      display: grid;
-      place-items: center;
-
-      background:
-        linear-gradient(
-          145deg,
-          var(--green),
-          #0e7d3c
-        );
-
-      color: white;
-      box-shadow: 0 8px 22px rgba(21, 148, 71, 0.22);
-    }
-
-    .brand-copy {
-      min-width: 0;
-    }
-
-    .brand-name {
-      font-weight: 900;
-      font-size: 16px;
-      line-height: 1.1;
-      color: var(--blue-dark);
-      letter-spacing: -0.3px;
-    }
-
-    .brand-tagline {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 700;
-      color: #486072;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .language-btn,
-    .menu-btn {
-      border: 1px solid var(--blue-line);
-      background: white;
-      color: var(--blue-dark);
-
-      min-height: 42px;
-      padding: 0 14px;
-
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .language-btn:hover,
-    .menu-btn:hover {
-      background: var(--blue-soft);
-    }
-
-    .menu-btn {
-      display: none;
-      padding: 0 11px;
-    }
-
-    .mobile-menu {
-      display: none;
-      padding: 10px 0 18px;
-    }
-
-    .mobile-menu.active {
-      display: block;
-    }
-
-    .mobile-menu a {
-      display: block;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--blue-line);
-
-      color: var(--blue-dark);
-      font-weight: 700;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================= */
-
-    .btn {
-      border: 0;
-      border-radius: 14px;
-
-      min-height: 50px;
-      padding: 0 20px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-
-      font-size: 14px;
-      font-weight: 850;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      color: white;
-      background:
-        linear-gradient(
-          135deg,
-          var(--green),
-          #0e7c3a
-        );
-
-      box-shadow:
-        0 12px 25px rgba(21, 148, 71, 0.20);
-    }
-
-    .btn-primary:hover {
-      box-shadow:
-        0 16px 30px rgba(21, 148, 71, 0.28);
-    }
-
-    .btn-secondary {
-      color: var(--blue-dark);
-      background: white;
-      border: 1px solid var(--blue-line);
-    }
-
-    .btn-secondary:hover {
-      background: var(--blue-soft);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      position: relative;
-      min-height: 700px;
-
-      display: flex;
-      align-items: center;
-
-      padding: 80px 0 100px;
-
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-
-      position: absolute;
-      width: 600px;
-      height: 600px;
-
-      right: -240px;
-      top: -230px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(23, 105, 170, 0.14),
-          rgba(23, 105, 170, 0)
-        );
-
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      align-items: center;
-      gap: 70px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      padding: 7px 11px;
-      border-radius: 999px;
-
-      background: var(--green-soft);
-      color: var(--green-dark);
-
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-
-      margin-bottom: 18px;
-    }
-
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 5vw, 68px);
-      line-height: 1.03;
-      letter-spacing: -2.7px;
-
-      color: var(--blue-dark);
-
-      max-width: 690px;
-    }
-
-    .hero h1 span {
-      color: var(--green);
-    }
-
-    .hero-description {
-      margin-top: 22px;
-
-      max-width: 590px;
-
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-
-      margin-top: 30px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-
-      margin-top: 30px;
-    }
-
-    .hero-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-
-      color: #506778;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .hero-meta-item svg {
-      color: var(--blue);
-    }
-
-    /* =========================
-       ARCHITECTURAL VISUAL
-    ========================= */
-
-    .architectural-card {
-      position: relative;
-
-      min-height: 510px;
-
-      border-radius: 34px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #f2f9fe,
-          #ffffff 48%,
-          #edf8f1
-        );
-
-      border: 1px solid var(--blue-line);
-
-      box-shadow: var(--shadow);
-
-      overflow: hidden;
-    }
-
-    .architectural-card::before {
-      content: "";
-
-      position: absolute;
-      inset: 28px;
-
-      border: 1px solid rgba(23, 105, 170, 0.10);
-      border-radius: 25px;
-
-      pointer-events: none;
-    }
-
-    .blueprint-grid {
-      position: absolute;
-      inset: 0;
-
-      background-image:
-        linear-gradient(
-          rgba(23, 105, 170, 0.055) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(23, 105, 170, 0.055) 1px,
-          transparent 1px
-        );
-
-      background-size: 32px 32px;
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          black,
-          transparent 85%
-        );
-    }
-
-    .building {
-      position: absolute;
-
-      left: 50%;
-      bottom: 54px;
-
-      transform: translateX(-50%);
-
-      width: 300px;
-      height: 330px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffffff,
-          #edf5fa
-        );
-
-      border: 1px solid #cfe0ea;
-
-      box-shadow:
-        0 28px 60px rgba(17, 62, 92, 0.14);
-    }
-
-    .building::before {
-      content: "";
-
-      position: absolute;
-
-      left: -25px;
-      top: 24px;
-
-      width: 25px;
-      height: calc(100% - 24px);
-
-      background:
-        linear-gradient(
-          180deg,
-          #dceaf2,
-          #c8dbe6
-        );
-
-      clip-path: polygon(
-        100% 0,
-        100% 100%,
-        0 88%,
-        0 10%
-      );
-    }
-
-    .roof {
-      position: absolute;
-
-      left: -18px;
-      top: -42px;
-
-      width: 336px;
-      height: 55px;
-
-      background:
-        linear-gradient(
-          135deg,
-          var(--blue-dark),
-          var(--blue)
-        );
-
-      clip-path: polygon(
-        8% 100%,
-        50% 0,
-        92% 100%
-      );
-
-      opacity: 0.96;
-    }
-
-    .building-floor {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-
-      height: 1px;
-
-      background: #c9dce7;
-    }
-
-    .floor-1 {
-      top: 105px;
-    }
-
-    .floor-2 {
-      top: 185px;
-    }
-
-    .floor-3 {
-      top: 265px;
-    }
-
-    .window-grid {
-      position: absolute;
-
-      top: 44px;
-      left: 22px;
-      right: 22px;
-
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .window {
-      height: 55px;
-
-      border: 2px solid #bcd3df;
-
-      background:
-        linear-gradient(
-          135deg,
-          #e5f4fc,
-          #ffffff
-        );
-
-      position: relative;
-    }
-
-    .window::after {
-      content: "";
-
-      position: absolute;
-
-      left: 50%;
-      top: 0;
-      bottom: 0;
-
-      width: 1px;
-
-      background: #c8dce7;
-    }
-
-    .entrance {
-      position: absolute;
-
-      left: 50%;
-      bottom: 0;
-
-      transform: translateX(-50%);
-
-      width: 68px;
-      height: 100px;
-
-      background:
-        linear-gradient(
-          90deg,
-          #0c416c,
-          #1769aa
-        );
-
-      border-radius: 8px 8px 0 0;
-
-      box-shadow:
-        inset 0 0 0 4px rgba(255,255,255,0.15);
-    }
-
-    .entrance::before {
-      content: "";
-
-      position: absolute;
-
-      width: 8px;
-      height: 8px;
-
-      border-radius: 50%;
-
-      right: 11px;
-      top: 50%;
-
-      background: #ffffff;
-    }
-
-    .floating-chip {
-      position: absolute;
-
-      display: flex;
-      align-items: center;
-      gap: 9px;
-
-      padding: 11px 14px;
-
-      border-radius: 14px;
-
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(23,105,170,0.12);
-
-      box-shadow: var(--shadow-soft);
-
-      font-size: 12px;
-      font-weight: 850;
-
-      color: var(--blue-dark);
-    }
-
-    .chip-1 {
-      top: 72px;
-      left: 30px;
-    }
-
-    .chip-2 {
-      right: 28px;
-      top: 160px;
-    }
-
-    .chip-3 {
-      left: 30px;
-      bottom: 86px;
-    }
-
-    .chip-icon {
-      width: 29px;
-      height: 29px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 9px;
-
-      background: var(--green-soft);
-      color: var(--green);
-    }
-
-    /* =========================
-       TRUST STRIP
-    ========================= */
-
-    .trust-strip {
-      margin-top: -22px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .trust-card {
-      background: white;
-
-      border: 1px solid var(--blue-line);
-      border-radius: 20px;
-
-      box-shadow: var(--shadow-soft);
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      overflow: hidden;
-    }
-
-    .trust-item {
-      padding: 23px;
-
-      display: flex;
-      align-items: center;
-      gap: 13px;
-
-      border-right: 1px solid var(--blue-line);
-    }
-
-    .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-icon {
-      width: 43px;
-      height: 43px;
-
-      border-radius: 13px;
-
-      display: grid;
-      place-items: center;
-
-      background: var(--blue-soft);
-      color: var(--blue);
-    }
-
-    .trust-item strong {
-      display: block;
-      font-size: 14px;
-      color: var(--blue-dark);
-    }
-
-    .trust-item span {
-      display: block;
-      margin-top: 2px;
-
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
-
-    section {
-      padding: 105px 0;
-    }
-
-    .section-header {
-      max-width: 720px;
-      margin-bottom: 45px;
-    }
-
-    .section-kicker {
-      color: var(--green-dark);
-      font-size: 12px;
-      font-weight: 900;
-
-      text-transform: uppercase;
-      letter-spacing: 1px;
-
-      margin-bottom: 10px;
-    }
-
-    .section-header h2 {
-      color: var(--blue-dark);
-
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.08;
-
-      letter-spacing: -1.7px;
-    }
-
-    .section-header p {
-      margin-top: 15px;
-
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       PROJECT TYPES
-    ========================= */
-
-    .projects-section {
-      background:
-        linear-gradient(
-          180deg,
-          rgba(232, 244, 252, 0.72),
-          rgba(255,255,255,0)
-        );
-    }
-
-    .project-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 17px;
-    }
-
-    .project-card {
-      position: relative;
-
-      min-height: 235px;
-
-      padding: 25px;
-
-      border-radius: 20px;
-
-      background: rgba(255,255,255,0.86);
-      border: 1px solid var(--blue-line);
-
-      box-shadow: var(--shadow-soft);
-
-      overflow: hidden;
-
-      transition: 0.25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-      border-color: #b9d9ec;
-    }
-
-    .project-number {
-      position: absolute;
-
-      top: 18px;
-      right: 20px;
-
-      color: rgba(23,105,170,0.12);
-
-      font-size: 45px;
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    .project-icon {
-      width: 50px;
-      height: 50px;
-
-      border-radius: 15px;
-
-      display: grid;
-      place-items: center;
-
-      background: var(--green-soft);
-      color: var(--green);
-
-      margin-bottom: 28px;
-    }
-
-    .project-card h3 {
-      color: var(--blue-dark);
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .services-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 16px;
-    }
-
-    .service-card {
-      padding: 23px;
-
-      border-radius: 19px;
-
-      background: white;
-      border: 1px solid var(--border);
-
-      box-shadow: var(--shadow-soft);
-
-      transition: 0.22s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: #b8d9ec;
-    }
-
-    .service-icon {
       width: 44px;
       height: 44px;
 
@@ -962,38 +136,532 @@
 
       border-radius: 13px;
 
-      background: var(--blue-soft);
-      color: var(--blue);
+      color: white;
 
-      margin-bottom: 18px;
-    }
-
-    .service-card h3 {
-      color: var(--blue-dark);
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.65;
-    }
-
-    /* =========================
-       PROCESS
-    ========================= */
-
-    .process-section {
       background:
         linear-gradient(
           135deg,
-          #edf7fd,
-          #f6fcf8
+          var(--blue),
+          var(--green)
         );
-      border-top: 1px solid #e1eef5;
-      border-bottom: 1px solid #e1eef5;
+
+      box-shadow:
+        0 10px 24px rgba(11, 94, 215, 0.22);
     }
+
+    .brand-text strong {
+      display: block;
+
+      font-size: 15px;
+      line-height: 1.2;
+
+      font-weight: 850;
+    }
+
+    .brand-text span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang-btn,
+    .menu-btn {
+      border: 1px solid var(--line);
+
+      background: white;
+
+      border-radius: 11px;
+
+      padding: 9px 12px;
+
+      color: var(--ink);
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      padding: 82px 0 72px;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -230px;
+      top: -220px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(11, 94, 215, 0.11),
+          transparent 68%
+        );
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+
+      align-items: center;
+
+      gap: 60px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+
+      padding: 8px 13px;
+
+      margin-bottom: 18px;
+
+      border-radius: 999px;
+
+      background: var(--green-light);
+      color: var(--green-dark);
+
+      font-size: 12px;
+      font-weight: 850;
+
+      letter-spacing: 0.2px;
+    }
+
+    .hero h1 {
+      margin-bottom: 16px;
+
+      font-size: clamp(42px, 5vw, 68px);
+
+      line-height: 1.02;
+
+      letter-spacing: -2.5px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .tamil-line {
+      max-width: 650px;
+
+      margin-bottom: 17px;
+
+      color: var(--green-dark);
+
+      font-size: clamp(23px, 3vw, 35px);
+
+      font-weight: 850;
+
+      line-height: 1.25;
+    }
+
+    .hero-copy {
+      max-width: 610px;
+
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      border: 0;
+
+      padding: 14px 19px;
+
+      border-radius: 13px;
+
+      font-weight: 850;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue),
+          var(--blue-dark)
+        );
+
+      box-shadow:
+        0 12px 25px rgba(11, 94, 215, 0.20);
+    }
+
+    .btn-green {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--green),
+          var(--green-dark)
+        );
+
+      box-shadow:
+        0 12px 25px rgba(21, 153, 87, 0.18);
+    }
+
+    .btn-outline {
+      color: var(--ink);
+
+      background: white;
+
+      border: 1px solid var(--line);
+    }
+
+    /* =========================================================
+       ARCHITECTURAL HERO VISUAL
+    ========================================================= */
+
+    .architecture {
+      position: relative;
+
+      min-height: 465px;
+
+      overflow: hidden;
+
+      border-radius: 32px;
+
+      border: 1px solid rgba(11, 94, 215, 0.12);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(11, 94, 215, 0.12),
+          rgba(21, 153, 87, 0.07)
+        ),
+        white;
+
+      box-shadow: var(--shadow);
+    }
+
+    .architecture::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(11, 94, 215, 0.055) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(11, 94, 215, 0.055) 1px,
+          transparent 1px
+        );
+
+      background-size: 34px 34px;
+    }
+
+    .building {
+      position: absolute;
+
+      left: 16%;
+      right: 16%;
+      bottom: 0;
+
+      height: 72%;
+
+      background: white;
+
+      border:
+        1px solid #cad9e7;
+
+      box-shadow:
+        20px 20px 50px rgba(18, 52, 82, 0.14);
+    }
+
+    .building-top {
+      height: 58px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
+      clip-path:
+        polygon(
+          0 100%,
+          50% 0,
+          100% 100%
+        );
+    }
+
+    .windows {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      padding: 26px;
+    }
+
+    .window {
+      height: 48px;
+
+      border:
+        3px solid #c9d9e8;
+
+      background:
+        linear-gradient(
+          135deg,
+          #dff0ff,
+          #ffffff
+        );
+    }
+
+    .green-floor {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 15px;
+
+      background: var(--green);
+    }
+
+    .float-card {
+      position: absolute;
+      z-index: 5;
+
+      padding: 13px 15px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 15px;
+
+      background:
+        rgba(255, 255, 255, 0.94);
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 15px 30px rgba(20, 50, 80, 0.12);
+
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .float-card.one {
+      left: 26px;
+      top: 52px;
+    }
+
+    .float-card.two {
+      right: 25px;
+      bottom: 75px;
+    }
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      margin-bottom: 8px;
+
+      color: var(--blue);
+
+      font-size: 12px;
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin-bottom: 12px;
+
+      font-size: clamp(30px, 4vw, 45px);
+
+      line-height: 1.1;
+
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* =========================================================
+       REQUIREMENTS
+    ========================================================= */
+
+    .grid-4 {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      background:
+        rgba(255, 255, 255, 0.90);
+
+      box-shadow:
+        0 10px 30px rgba(20, 50, 80, 0.045);
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+
+      border-color:
+        rgba(11, 94, 215, 0.24);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 18px;
+
+      border-radius: 14px;
+
+      background: var(--blue-light);
+      color: var(--blue);
+
+      font-size: 21px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(11, 94, 215, 0.045),
+          rgba(11, 94, 215, 0)
+        );
+    }
+
+    .grid-3 {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
 
     .process-grid {
       display: grid;
@@ -1004,142 +672,67 @@
       gap: 18px;
     }
 
-    .process-card {
-      position: relative;
-
-      padding: 27px;
-
-      background: rgba(255,255,255,0.78);
-
-      border: 1px solid rgba(23,105,170,0.13);
-
-      border-radius: 20px;
-    }
-
-    .process-step {
-      width: 43px;
-      height: 43px;
-
-      border-radius: 50%;
+    .step-number {
+      width: 42px;
+      height: 42px;
 
       display: grid;
       place-items: center;
 
+      margin-bottom: 18px;
+
+      border-radius: 50%;
+
       background: var(--green);
+
       color: white;
 
-      font-size: 14px;
-      font-weight: 900;
-
-      margin-bottom: 22px;
-    }
-
-    .process-card h3 {
-      color: var(--blue-dark);
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-
-    .process-card p {
-      color: var(--muted);
       font-size: 13px;
-      line-height: 1.7;
+      font-weight: 900;
     }
 
-    /* =========================
+    /* =========================================================
        WHY US
-    ========================= */
+    ========================================================= */
 
-    .why-grid {
+    .why {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 60px;
+
+      grid-template-columns:
+        0.9fr 1.1fr;
+
       align-items: center;
+
+      gap: 50px;
     }
 
-    .why-visual {
-      min-height: 430px;
+    .why-box {
+      padding: 35px;
 
       border-radius: 28px;
 
       background:
         linear-gradient(
           145deg,
-          #eaf5fc,
-          #ffffff 55%,
-          #edf9f1
+          var(--blue-dark),
+          var(--blue)
         );
 
-      border: 1px solid var(--blue-line);
-
-      position: relative;
-      overflow: hidden;
-    }
-
-    .why-visual::before,
-    .why-visual::after {
-      content: "";
-
-      position: absolute;
-
-      border: 1px solid rgba(23,105,170,0.13);
-
-      transform: rotate(45deg);
-    }
-
-    .why-visual::before {
-      width: 260px;
-      height: 260px;
-
-      left: -80px;
-      top: 80px;
-    }
-
-    .why-visual::after {
-      width: 180px;
-      height: 180px;
-
-      right: -50px;
-      bottom: 35px;
-    }
-
-    .why-center {
-      position: absolute;
-
-      left: 50%;
-      top: 50%;
-
-      transform: translate(-50%, -50%);
-
-      width: 170px;
-      height: 170px;
-
-      border-radius: 50%;
-
-      background: white;
-
-      border: 1px solid var(--blue-line);
+      color: white;
 
       box-shadow: var(--shadow);
-
-      display: grid;
-      place-items: center;
-
-      color: var(--green);
     }
 
-    .why-center span {
-      position: absolute;
+    .why-box h2 {
+      margin-bottom: 15px;
 
-      bottom: 30px;
+      font-size: 38px;
 
-      color: var(--blue-dark);
+      line-height: 1.1;
+    }
 
-      font-size: 12px;
-      font-weight: 900;
-
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .why-box p {
+      color: rgba(255, 255, 255, 0.80);
     }
 
     .why-list {
@@ -1148,119 +741,96 @@
     }
 
     .why-item {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 15px;
+      display: flex;
+      gap: 13px;
 
       padding: 18px;
 
-      border-radius: 17px;
+      border:
+        1px solid var(--line);
+
+      border-radius: 15px;
 
       background: white;
-      border: 1px solid var(--border);
-
-      box-shadow: var(--shadow-soft);
     }
 
-    .why-icon {
-      width: 48px;
-      height: 48px;
+    .tick {
+      flex: 0 0 30px;
+
+      width: 30px;
+      height: 30px;
 
       display: grid;
       place-items: center;
 
-      border-radius: 14px;
+      border-radius: 50%;
 
-      color: var(--green);
-      background: var(--green-soft);
+      background: var(--green-light);
+      color: var(--green-dark);
+
+      font-weight: 900;
     }
 
-    .why-item h3 {
-      color: var(--blue-dark);
-      font-size: 16px;
-      margin-bottom: 3px;
-    }
+    /* =========================================================
+       QUOTE FORM
+    ========================================================= */
 
-    .why-item p {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.65;
-    }
-
-    /* =========================
-       QUOTE / FORM
-    ========================= */
-
-    .quote-section {
-      background:
-        linear-gradient(
-          180deg,
-          #f1f8fd,
-          #ffffff
-        );
-    }
-
-    .quote-grid {
+    .quote-wrap {
       display: grid;
-      grid-template-columns: 0.72fr 1.28fr;
-      gap: 38px;
+
+      grid-template-columns:
+        0.75fr 1.25fr;
+
       align-items: start;
+
+      gap: 30px;
     }
 
     .quote-info {
       position: sticky;
-      top: 105px;
+      top: 100px;
+
+      padding: 34px;
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--blue-dark),
+          var(--blue)
+        );
+
+      color: white;
+
+      box-shadow: var(--shadow);
     }
 
     .quote-info h2 {
-      color: var(--blue-dark);
+      margin-bottom: 15px;
 
-      font-size: clamp(32px, 4vw, 46px);
-      line-height: 1.08;
+      font-size: 35px;
 
-      letter-spacing: -1.5px;
+      line-height: 1.1;
     }
 
-    .quote-info > p {
-      margin-top: 16px;
+    .quote-info p {
+      margin-bottom: 25px;
 
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .quote-points {
-      display: grid;
-      gap: 12px;
-
-      margin-top: 28px;
-    }
-
-    .quote-point {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      color: #4e6474;
-
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .quote-point svg {
-      color: var(--green);
+      color: rgba(255, 255, 255, 0.80);
     }
 
     .form-card {
+      padding: 30px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius: 28px;
+
       background: white;
 
-      border: 1px solid var(--blue-line);
-
-      border-radius: 25px;
-
       box-shadow: var(--shadow);
-
-      padding: 30px;
     }
 
     .form-grid {
@@ -1269,93 +839,90 @@
       grid-template-columns:
         repeat(2, 1fr);
 
-      gap: 18px;
+      gap: 16px;
     }
 
     .field {
-      min-width: 0;
+      display: flex;
+      flex-direction: column;
+
+      gap: 7px;
     }
 
     .field.full {
       grid-column: 1 / -1;
     }
 
-    .field label {
-      display: block;
-
-      margin-bottom: 7px;
-
-      color: var(--blue-dark);
-
+    label {
       font-size: 13px;
       font-weight: 850;
     }
 
-    .field label em {
-      color: #d33737;
-      font-style: normal;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
 
-      border: 1px solid #d7e4eb;
+      padding: 13px 14px;
 
-      background: #fbfdff;
+      border:
+        1px solid #d4e0eb;
 
       border-radius: 12px;
 
       outline: none;
 
+      background: #fbfdff;
+
       color: var(--ink);
 
-      transition: 0.2s ease;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
-    .field input,
-    .field select {
-      height: 49px;
-      padding: 0 14px;
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--blue);
+
+      box-shadow:
+        0 0 0 4px rgba(11, 94, 215, 0.08);
     }
 
-    .field textarea {
-      min-height: 130px;
-      padding: 13px 14px;
+    textarea {
+      min-height: 135px;
+
       resize: vertical;
     }
 
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--blue);
-      box-shadow:
-        0 0 0 4px rgba(23,105,170,0.08);
-      background: white;
+    .form-submit {
+      width: 100%;
+
+      margin-top: 20px;
     }
 
-    .form-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .form-submit:disabled {
+      cursor: not-allowed;
 
-      gap: 18px;
+      transform: none;
 
-      margin-top: 22px;
-
-      padding-top: 20px;
-
-      border-top: 1px solid var(--blue-line);
+      opacity: 0.65;
     }
 
     .form-status {
-      color: var(--muted);
+      min-height: 24px;
 
-      font-size: 12px;
-      font-weight: 700;
+      margin-top: 14px;
 
-      min-height: 22px;
+      text-align: center;
+
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .form-status.sending {
+      color: var(--blue);
     }
 
     .form-status.success {
@@ -1363,22 +930,22 @@
     }
 
     .form-status.error {
-      color: #b32626;
+      color: #c62828;
     }
 
-    .submit-btn {
-      min-width: 175px;
+    .form-note {
+      margin-top: 12px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      text-align: center;
     }
 
-    .submit-btn:disabled {
-      cursor: not-allowed;
-      opacity: 0.65;
-      transform: none;
-    }
-
-    /* =========================
+    /* =========================================================
        CONTACT
-    ========================= */
+    ========================================================= */
 
     .contact-grid {
       display: grid;
@@ -1390,219 +957,141 @@
     }
 
     .contact-card {
-      padding: 22px;
+      display: block;
+
+      padding: 21px;
+
+      border:
+        1px solid var(--line);
 
       border-radius: 18px;
 
       background: white;
 
-      border: 1px solid var(--border);
-
-      box-shadow: var(--shadow-soft);
-
-      transition: 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .contact-card:hover {
-      transform: translateY(-3px);
-      border-color: #bdd9e9;
+      transform: translateY(-2px);
+
+      border-color:
+        rgba(11, 94, 215, 0.25);
     }
 
-    .contact-icon {
-      width: 45px;
-      height: 45px;
-
-      border-radius: 13px;
-
-      display: grid;
-      place-items: center;
-
-      background: var(--blue-soft);
-      color: var(--blue);
-
-      margin-bottom: 15px;
-    }
-
-    .contact-card h3 {
-      color: var(--blue-dark);
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .contact-card p {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.55;
-
-      word-break: break-word;
-    }
-
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-
-      margin-top: 10px;
-
-      color: var(--green-dark);
-
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background:
-        linear-gradient(
-          135deg,
-          #0a3456,
-          #0c4b6f
-        );
-
-      color: white;
-
-      padding: 50px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-
-      grid-template-columns: 1.3fr 0.7fr 0.7fr;
-
-      gap: 40px;
-
-      padding-bottom: 38px;
-
-      border-bottom: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .footer-brand {
-      max-width: 430px;
-    }
-
-    .footer-brand h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .footer-brand p {
-      color: rgba(255,255,255,0.70);
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .footer-column h4 {
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    .footer-column a {
+    .contact-card small {
       display: block;
 
-      color: rgba(255,255,255,0.68);
+      margin-bottom: 5px;
+
+      color: var(--muted);
 
       font-size: 12px;
-
-      margin-bottom: 9px;
     }
 
-    .footer-column a:hover {
+    .contact-card strong {
+      display: block;
+
+      font-size: 14px;
+
+      overflow-wrap: anywhere;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      margin-top: 30px;
+
+      padding: 35px 0;
+
+      background: #071c36;
+
       color: white;
     }
 
-    .footer-bottom {
+    .footer-inner {
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
-      gap: 15px;
-
-      padding-top: 22px;
-
-      color: rgba(255,255,255,0.55);
-
-      font-size: 11px;
+      gap: 20px;
     }
 
-    /* =========================
-       FLOATING WHATSAPP
-    ========================= */
+    .footer-inner p {
+      color: rgba(255, 255, 255, 0.65);
 
-    .floating-whatsapp {
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp {
       position: fixed;
 
-      right: 22px;
-      bottom: 22px;
+      right: 20px;
+      bottom: 20px;
 
-      z-index: 900;
+      z-index: 999;
 
-      width: 57px;
-      height: 57px;
-
-      border-radius: 50%;
+      width: 58px;
+      height: 58px;
 
       display: grid;
       place-items: center;
+
+      border-radius: 50%;
 
       background: #25d366;
 
       color: white;
 
       box-shadow:
-        0 13px 30px rgba(37,211,102,0.32);
-
-      transition: 0.2s ease;
+        0 15px 30px rgba(0, 0, 0, 0.20);
     }
 
-    .floating-whatsapp:hover {
-      transform: translateY(-4px) scale(1.04);
+    /* =========================================================
+       HIDDEN SUBMISSION IFRAME
+    ========================================================= */
+
+    #leadSubmitFrame {
+      display: none;
+
+      width: 0;
+      height: 0;
+
+      border: 0;
     }
 
-    /* =========================
-       ACCESSIBILITY
-    ========================= */
+    /* =========================================================
+       HONEYPOT
+    ========================================================= */
 
-    :focus-visible {
-      outline: 3px solid rgba(23,105,170,0.25);
-      outline-offset: 3px;
+    .hp-field {
+      position: absolute !important;
+
+      left: -9999px !important;
+
+      width: 1px !important;
+      height: 1px !important;
+
+      overflow: hidden !important;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
-    @media (max-width: 1050px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
+    @media (max-width: 980px) {
 
-      .hero-copy {
-        max-width: 760px;
-      }
-
-      .architectural-card {
-        max-width: 700px;
-      }
-
-      .project-grid,
-      .services-grid,
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-visual {
-        max-width: 650px;
-      }
-
-      .quote-grid {
+      .hero-grid,
+      .why,
+      .quote-wrap {
         grid-template-columns: 1fr;
       }
 
@@ -1610,111 +1099,65 @@
         position: static;
       }
 
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .grid-4,
+      .process-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
-    }
 
-    @media (max-width: 780px) {
-      .container {
-        width: min(var(--max), calc(100% - 28px));
+      .contact-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .nav-links {
         display: none;
+
+        position: absolute;
+
+        left: 16px;
+        right: 16px;
+        top: 74px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 18px;
+
+        border:
+          1px solid var(--line);
+
+        border-radius: 16px;
+
+        background: white;
+
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
       }
 
       .menu-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
       }
+    }
 
-      .nav {
-        min-height: 70px;
-      }
-
-      .brand-tagline {
-        display: none;
-      }
+    @media (max-width: 700px) {
 
       .hero {
-        padding: 65px 0 80px;
-      }
-
-      .hero h1 {
-        font-size: clamp(39px, 11vw, 55px);
-        letter-spacing: -2px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-      }
-
-      .architectural-card {
-        min-height: 430px;
-      }
-
-      .building {
-        width: 235px;
-        height: 270px;
-      }
-
-      .roof {
-        width: 270px;
-      }
-
-      .window-grid {
-        gap: 9px;
-        left: 17px;
-        right: 17px;
-      }
-
-      .window {
-        height: 43px;
-      }
-
-      .entrance {
-        width: 56px;
-        height: 80px;
-      }
-
-      .chip-1 {
-        top: 50px;
-        left: 18px;
-      }
-
-      .chip-2 {
-        top: 130px;
-        right: 18px;
-      }
-
-      .chip-3 {
-        left: 18px;
-        bottom: 50px;
-      }
-
-      .trust-card {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-item {
-        border-right: 0;
-        border-bottom: 1px solid var(--blue-line);
-      }
-
-      .trust-item:last-child {
-        border-bottom: 0;
+        padding: 55px 0 55px;
       }
 
       section {
-        padding: 78px 0;
+        padding: 60px 0;
       }
 
-      .form-card {
-        padding: 20px;
-      }
-
+      .grid-4,
+      .grid-3,
+      .process-grid,
+      .contact-grid,
       .form-grid {
         grid-template-columns: 1fr;
       }
@@ -1723,595 +1166,345 @@
         grid-column: auto;
       }
 
-      .form-bottom {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .submit-btn {
-        width: 100%;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .project-grid,
-      .services-grid,
-      .process-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-meta {
-        display: grid;
-        gap: 11px;
-      }
-
-      .architectural-card {
-        min-height: 390px;
+      .architecture {
+        min-height: 370px;
       }
 
       .building {
-        width: 205px;
-        height: 245px;
-        bottom: 43px;
+        left: 12%;
+        right: 12%;
       }
 
-      .roof {
-        width: 235px;
-        height: 47px;
-        top: -36px;
+      .hero-buttons {
+        flex-direction: column;
       }
 
-      .floating-chip {
-        transform: scale(0.88);
+      .hero-buttons .btn {
+        width: 100%;
       }
 
-      .why-visual {
-        min-height: 350px;
+      .form-card,
+      .quote-info {
+        padding: 22px;
       }
 
-      .floating-whatsapp {
-        width: 53px;
-        height: 53px;
+      .footer-inner {
+        flex-direction: column;
 
-        right: 16px;
-        bottom: 16px;
+        align-items: flex-start;
+      }
+
+      .float-card.one {
+        left: 15px;
+      }
+
+      .float-card.two {
+        right: 15px;
+      }
+    }
+
+    @media (max-width: 430px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 20px),
+            var(--max)
+          );
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .brand-text strong {
+        font-size: 13px;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .tamil-line {
+        font-size: 22px;
+      }
+
+      .architecture {
+        min-height: 330px;
+      }
+
+      .windows {
+        padding: 20px;
+
+        gap: 10px;
+      }
+
+      .window {
+        height: 40px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-  <!-- =========================
-       SVG DEFINITIONS
-  ========================= -->
-
-  <svg
-    width="0"
-    height="0"
-    style="position:absolute"
-    aria-hidden="true"
-  >
-    <defs>
-
-      <symbol id="icon-building" viewBox="0 0 24 24">
-        <path
-          d="M4 21V4l8-2v19M12 7h8v14M7 7h2M7 11h2M7 15h2M7 19h2M15 10h2M15 14h2M15 18h2"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-home" viewBox="0 0 24 24">
-        <path
-          d="M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5M9 21v-6h6v6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-blueprint" viewBox="0 0 24 24">
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="2"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-        <path
-          d="M7 17 17 7M7 7h4v4H7zM13 13h4v4h-4z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-        />
-      </symbol>
-
-      <symbol id="icon-renovation" viewBox="0 0 24 24">
-        <path
-          d="m14 6 4-3 4 4-3 4M13 7l4 4M4 20l8-8M3 21l4-1 1-4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-interior" viewBox="0 0 24 24">
-        <path
-          d="M4 20h16M6 20v-7h12v7M8 13V9h8v4M9 9V5h6v4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-tools" viewBox="0 0 24 24">
-        <path
-          d="m14 6 4-3 3 3-3 4M13 7l4 4M4 20l8-8M3 21l4-1 1-4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-check" viewBox="0 0 24 24">
-        <path
-          d="m5 12 4 4L19 6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-shield" viewBox="0 0 24 24">
-        <path
-          d="M12 3 20 6v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linejoin="round"
-        />
-        <path
-          d="m8.5 12 2.3 2.3 4.8-5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-clock" viewBox="0 0 24 24">
-        <circle
-          cx="12"
-          cy="12"
-          r="9"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-        <path
-          d="M12 7v5l3 2"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-        />
-      </symbol>
-
-      <symbol id="icon-location" viewBox="0 0 24 24">
-        <path
-          d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-        <circle
-          cx="12"
-          cy="10"
-          r="2.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-      </symbol>
-
-      <symbol id="icon-phone" viewBox="0 0 24 24">
-        <path
-          d="M6.5 3h3l1.5 5-2 1.5a15 15 0 0 0 5.5 5.5L16 13l5 1.5v3c0 1.1-.9 2-2 2C10.7 19.5 4.5 13.3 4.5 5c0-1.1.9-2 2-2Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-instagram" viewBox="0 0 24 24">
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          r="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-        <circle cx="17.3" cy="6.8" r="1" fill="currentColor"/>
-      </symbol>
-
-      <symbol id="icon-mail" viewBox="0 0 24 24">
-        <rect
-          x="3"
-          y="5"
-          width="18"
-          height="14"
-          rx="2"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        />
-        <path
-          d="m4 7 8 6 8-6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-map" viewBox="0 0 24 24">
-        <path
-          d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M9 3v15M15 6v15"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-        />
-      </symbol>
-
-      <symbol id="icon-menu" viewBox="0 0 24 24">
-        <path
-          d="M4 7h16M4 12h16M4 17h16"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-        />
-      </symbol>
-
-      <symbol id="icon-arrow" viewBox="0 0 24 24">
-        <path
-          d="M5 12h13M13 6l6 6-6 6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-
-      <symbol id="icon-send" viewBox="0 0 24 24">
-        <path
-          d="m4 4 16 8-16 8 3-8-3-8Z"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M7 12h9"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-        />
-      </symbol>
-
-    </defs>
-  </svg>
-
-  <!-- =========================
+  <!-- =======================================================
        HEADER
-  ========================= -->
+  ======================================================== -->
 
-  <header class="site-header">
-    <div class="container">
+  <header>
 
-      <nav class="nav">
+    <div class="container nav">
 
-        <a href="#home" class="brand">
+      <a href="#home" class="brand">
 
-          <span class="brand-mark">
-            <svg class="icon-lg" aria-hidden="true">
-              <use href="#icon-building"></use>
-            </svg>
+        <div class="brand-mark">
+
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 20V9L12 3L21 9V20"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"
+            />
+
+            <path
+              d="M8 20V13H16V20"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+
+        </div>
+
+
+        <div class="brand-text">
+
+          <strong>
+            Vaazhvizhi Contracters
+          </strong>
+
+          <span>
+            Building Dreams. Creating Spaces.
           </span>
 
-          <span class="brand-copy">
-            <span class="brand-name">
-              Vaazhvizhi Contracters
-            </span>
+        </div>
 
-            <span class="brand-tagline">
-              Building Dreams. Creating Spaces.
-            </span>
-          </span>
+      </a>
 
+
+      <nav
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a
+          href="#home"
+          data-i18n="navHome"
+        >
+          Home
         </a>
 
-        <div class="nav-links">
-          <a href="#services" data-i18n="navServices">Services</a>
-          <a href="#process" data-i18n="navProcess">Process</a>
-          <a href="#about" data-i18n="navWhyUs">Why Us</a>
-          <a href="#contact" data-i18n="navContact">Contact</a>
-        </div>
+        <a
+          href="#about"
+          data-i18n="navAbout"
+        >
+          About
+        </a>
 
-        <div class="nav-actions">
+        <a
+          href="#services"
+          data-i18n="navServices"
+        >
+          Services
+        </a>
 
-          <button
-            id="languageBtn"
-            class="language-btn"
-            type="button"
-            aria-label="Change language"
-          >
-            தமிழ்
-          </button>
+        <a
+          href="#process"
+          data-i18n="navProcess"
+        >
+          Process
+        </a>
 
-          <a
-            href="#quote"
-            class="btn btn-primary"
-            data-i18n="navQuote"
-          >
-            Get a Quote
-          </a>
+        <a
+          href="#quote"
+          data-i18n="navQuote"
+        >
+          Quote
+        </a>
 
-          <button
-            id="menuBtn"
-            class="menu-btn"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-          >
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-menu"></use>
-            </svg>
-          </button>
-
-        </div>
+        <a
+          href="#contact"
+          data-i18n="navContact"
+        >
+          Contact
+        </a>
 
       </nav>
 
-      <div id="mobileMenu" class="mobile-menu">
 
-        <a href="#services" data-i18n="navServices">Services</a>
-        <a href="#process" data-i18n="navProcess">Process</a>
-        <a href="#about" data-i18n="navWhyUs">Why Us</a>
-        <a href="#contact" data-i18n="navContact">Contact</a>
+      <div class="nav-actions">
 
         <button
-          id="mobileLanguageBtn"
-          class="language-btn"
           type="button"
-          style="margin-top:10px;"
+          class="lang-btn"
+          id="langBtn"
         >
           தமிழ்
+        </button>
+
+        <button
+          type="button"
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Menu"
+        >
+          ☰
         </button>
 
       </div>
 
     </div>
+
   </header>
+
 
   <main>
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================= -->
+    ====================================================== -->
 
-    <section id="home" class="hero">
+    <section
+      class="hero"
+      id="home"
+    >
 
       <div class="container hero-grid">
 
-        <div class="hero-copy">
+        <div>
 
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            <span data-i18n="heroEyebrow">
-              Construction & Contracting
-            </span>
+          <div
+            class="eyebrow"
+            data-i18n="heroEyebrow"
+          >
+            Construction • Design • Execution
           </div>
 
+
           <h1>
-            <span data-i18n="heroTamil">
-              உங்கள் கனவு கட்டுமானம்,
-            </span>
+
+            <span>Vaazhvizhi</span>
+
             <br>
-            <span>VAAZHVIZHI</span>
-            <span data-i18n="heroTamilEnd">
-              உடன்
-            </span>
+
+            Contracters
+
           </h1>
 
+
+          <div class="tamil-line">
+            உங்கள் கனவு கட்டுமானம், VAAZHVIZHI உடன்
+          </div>
+
+
           <p
-            class="hero-description"
-            data-i18n="heroDescription"
+            class="hero-copy"
+            data-i18n="heroCopy"
           >
-            From planning and civil work to finishing and interiors,
-            we bring your construction vision together with practical
-            project coordination.
+            From planning to completion, we help turn your
+            construction requirements into practical,
+            well-executed spaces.
           </p>
 
-          <div class="hero-actions">
+
+          <div class="hero-buttons">
 
             <a
               href="#quote"
               class="btn btn-primary"
-              data-i18n="heroPrimary"
+              data-i18n="heroQuote"
             >
-              Start Your Project
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-arrow"></use>
-              </svg>
+              Get a Quote
             </a>
+
 
             <a
-              href="https://wa.me/919025541161?text=Hi%20Vaazhvizhi%20Contracters%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project."
+              href="https://wa.me/919025541161"
               target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
+              rel="noopener"
+              class="btn btn-green"
+              data-i18n="heroWhatsapp"
             >
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-phone"></use>
-              </svg>
-
-              <span data-i18n="heroWhatsapp">
-                WhatsApp Us
-              </span>
+              WhatsApp Us
             </a>
-
-          </div>
-
-          <div class="hero-meta">
-
-            <div class="hero-meta-item">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-location"></use>
-              </svg>
-
-              <span data-i18n="heroLocation">
-                Ungaranahalli, Dharmapuri
-              </span>
-            </div>
-
-            <div class="hero-meta-item">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"></use>
-              </svg>
-
-              <span data-i18n="heroPlanning">
-                Construction support from plan to finish
-              </span>
-            </div>
 
           </div>
 
         </div>
 
+
         <!-- Architectural visual -->
 
-        <div class="architectural-card">
+        <div class="architecture">
 
-          <div class="blueprint-grid"></div>
+          <div class="float-card one">
 
-          <div class="floating-chip chip-1">
-            <span class="chip-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-blueprint"></use>
-              </svg>
+            🏗️
+
+            <span data-i18n="archOne">
+              Built with Purpose
             </span>
 
-            <span data-i18n="chipPlanning">
-              Planning
-            </span>
           </div>
 
-          <div class="floating-chip chip-2">
-            <span class="chip-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-tools"></use>
-              </svg>
+
+          <div class="float-card two">
+
+            ✓
+
+            <span data-i18n="archTwo">
+              Planned. Built. Delivered.
             </span>
 
-            <span data-i18n="chipCivil">
-              Civil Work
-            </span>
           </div>
 
-          <div class="floating-chip chip-3">
-            <span class="chip-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"></use>
-              </svg>
-            </span>
-
-            <span data-i18n="chipFinish">
-              Finishing
-            </span>
-          </div>
 
           <div class="building">
 
-            <div class="roof"></div>
+            <div class="building-top"></div>
 
-            <div class="window-grid">
-              <div class="window"></div>
-              <div class="window"></div>
-              <div class="window"></div>
-              <div class="window"></div>
+
+            <div class="windows">
 
               <div class="window"></div>
               <div class="window"></div>
               <div class="window"></div>
+
               <div class="window"></div>
+              <div class="window"></div>
+              <div class="window"></div>
+
+              <div class="window"></div>
+              <div class="window"></div>
+              <div class="window"></div>
+
             </div>
 
-            <div class="building-floor floor-1"></div>
-            <div class="building-floor floor-2"></div>
-            <div class="building-floor floor-3"></div>
 
-            <div class="entrance"></div>
+            <div class="green-floor"></div>
 
           </div>
 
@@ -2321,184 +1514,107 @@
 
     </section>
 
-    <!-- =========================
-         TRUST
-    ========================= -->
 
-    <div class="container trust-strip">
+    <!-- =====================================================
+         ABOUT / REQUIREMENTS
+    ====================================================== -->
 
-      <div class="trust-card">
-
-        <div class="trust-item">
-
-          <span class="trust-icon">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-building"></use>
-            </svg>
-          </span>
-
-          <span>
-            <strong data-i18n="trust1Title">
-              Construction Support
-            </strong>
-
-            <span data-i18n="trust1Text">
-              From planning to execution
-            </span>
-          </span>
-
-        </div>
-
-        <div class="trust-item">
-
-          <span class="trust-icon">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-tools"></use>
-            </svg>
-          </span>
-
-          <span>
-            <strong data-i18n="trust2Title">
-              Multiple Services
-            </strong>
-
-            <span data-i18n="trust2Text">
-              Civil, interiors & more
-            </span>
-          </span>
-
-        </div>
-
-        <div class="trust-item">
-
-          <span class="trust-icon">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-location"></use>
-            </svg>
-          </span>
-
-          <span>
-            <strong data-i18n="trust3Title">
-              Dharmapuri Based
-            </strong>
-
-            <span data-i18n="trust3Text">
-              Serving local project needs
-            </span>
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- =========================
-         PROJECT TYPES
-    ========================= -->
-
-    <section class="projects-section">
+    <section id="about">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-head">
 
-          <div class="section-kicker" data-i18n="projectKicker">
-            What We Build
+          <div
+            class="section-label"
+            data-i18n="reqLabel"
+          >
+            What we build
           </div>
 
-          <h2 data-i18n="projectTitle">
-            Construction support for different project needs.
+
+          <h2 data-i18n="reqTitle">
+            Construction solutions for different requirements.
           </h2>
 
-          <p data-i18n="projectDescription">
-            Tell us what you are planning and we can understand
-            the scope before discussing the next steps.
+
+          <p data-i18n="reqCopy">
+            Whether it is a new home, commercial space or
+            renovation, we help structure the work from
+            requirement to execution.
           </p>
 
         </div>
 
-        <div class="project-grid">
 
-          <article class="project-card">
+        <div class="grid-4">
 
-            <span class="project-number">01</span>
+          <div class="card">
 
-            <span class="project-icon">
-              <svg class="icon-xl" aria-hidden="true">
-                <use href="#icon-home"></use>
-              </svg>
-            </span>
+            <div class="icon">
+              🏠
+            </div>
 
-            <h3 data-i18n="project1Title">
-              New House
+            <h3 data-i18n="req1Title">
+              Residential
             </h3>
 
-            <p data-i18n="project1Text">
-              Construction support for new residential projects.
+            <p data-i18n="req1Text">
+              New homes and residential construction requirements.
             </p>
 
-          </article>
+          </div>
 
-          <article class="project-card">
 
-            <span class="project-number">02</span>
+          <div class="card">
 
-            <span class="project-icon">
-              <svg class="icon-xl" aria-hidden="true">
-                <use href="#icon-renovation"></use>
-              </svg>
-            </span>
+            <div class="icon">
+              🏢
+            </div>
 
-            <h3 data-i18n="project2Title">
+            <h3 data-i18n="req2Title">
+              Commercial
+            </h3>
+
+            <p data-i18n="req2Text">
+              Practical construction solutions for commercial spaces.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="icon">
+              🔧
+            </div>
+
+            <h3 data-i18n="req3Title">
               Renovation
             </h3>
 
-            <p data-i18n="project2Text">
-              Upgrade, repair and improve existing spaces.
+            <p data-i18n="req3Text">
+              Upgrades, alterations and renovation requirements.
             </p>
 
-          </article>
+          </div>
 
-          <article class="project-card">
 
-            <span class="project-number">03</span>
+          <div class="card">
 
-            <span class="project-icon">
-              <svg class="icon-xl" aria-hidden="true">
-                <use href="#icon-interior"></use>
-              </svg>
-            </span>
+            <div class="icon">
+              📐
+            </div>
 
-            <h3 data-i18n="project3Title">
-              Interior Work
+            <h3 data-i18n="req4Title">
+              Turnkey
             </h3>
 
-            <p data-i18n="project3Text">
-              Practical interior work for residential spaces.
+            <p data-i18n="req4Text">
+              Coordinated execution from planning through completion.
             </p>
 
-          </article>
-
-          <article class="project-card">
-
-            <span class="project-number">04</span>
-
-            <span class="project-icon">
-              <svg class="icon-xl" aria-hidden="true">
-                <use href="#icon-building"></use>
-              </svg>
-            </span>
-
-            <h3 data-i18n="project4Title">
-              Building Work
-            </h3>
-
-            <p data-i18n="project4Text">
-              Civil and building requirements based on project scope.
-            </p>
-
-          </article>
+          </div>
 
         </div>
 
@@ -2506,160 +1622,130 @@
 
     </section>
 
-    <!-- =========================
-         SERVICES
-    ========================= -->
 
-    <section id="services">
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section
+      class="services"
+      id="services"
+    >
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-head">
 
-          <div class="section-kicker" data-i18n="serviceKicker">
+          <div
+            class="section-label"
+            data-i18n="serviceLabel"
+          >
             Services
           </div>
+
 
           <h2 data-i18n="serviceTitle">
             One place for your construction requirements.
           </h2>
 
-          <p data-i18n="serviceDescription">
-            Choose the service you need or describe your requirement
-            in the enquiry form.
+
+          <p data-i18n="serviceCopy">
+            Choose the service that matches your project requirement.
           </p>
 
         </div>
 
-        <div class="services-grid">
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-home"></use>
-              </svg>
-            </span>
+        <div class="grid-3">
 
-            <h3 data-i18n="service1Title">
-              House Construction
+          <div class="card">
+
+            <div class="icon">🏠</div>
+
+            <h3 data-i18n="s1">
+              Residential Construction
             </h3>
 
-            <p data-i18n="service1Text">
-              Residential construction support based on your project scope.
+            <p data-i18n="s1Text">
+              Construction support for new residential projects.
             </p>
-          </article>
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-blueprint"></use>
-              </svg>
-            </span>
+          </div>
 
-            <h3 data-i18n="service2Title">
-              Planning & Design
+
+          <div class="card">
+
+            <div class="icon">🏢</div>
+
+            <h3 data-i18n="s2">
+              Commercial Construction
             </h3>
 
-            <p data-i18n="service2Text">
-              Discuss planning, drawings and practical project requirements.
+            <p data-i18n="s2Text">
+              Execution support for commercial spaces and buildings.
             </p>
-          </article>
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-renovation"></use>
-              </svg>
-            </span>
+          </div>
 
-            <h3 data-i18n="service3Title">
+
+          <div class="card">
+
+            <div class="icon">🔨</div>
+
+            <h3 data-i18n="s3">
               Renovation
             </h3>
 
-            <p data-i18n="service3Text">
-              Improvements, alterations and renovation work.
+            <p data-i18n="s3Text">
+              Renovation and alteration work based on requirements.
             </p>
-          </article>
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-interior"></use>
-              </svg>
-            </span>
+          </div>
 
-            <h3 data-i18n="service4Title">
-              Interior Work
+
+          <div class="card">
+
+            <div class="icon">📋</div>
+
+            <h3 data-i18n="s4">
+              Turnkey Construction
             </h3>
 
-            <p data-i18n="service4Text">
-              Interior execution for selected residential requirements.
+            <p data-i18n="s4Text">
+              Coordinated construction execution from start to finish.
             </p>
-          </article>
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-building"></use>
-              </svg>
-            </span>
+          </div>
 
-            <h3 data-i18n="service5Title">
-              Civil Work
+
+          <div class="card">
+
+            <div class="icon">📐</div>
+
+            <h3 data-i18n="s5">
+              Estimation & Consultation
             </h3>
 
-            <p data-i18n="service5Text">
-              Civil and structural work according to project requirements.
+            <p data-i18n="s5Text">
+              Discuss your requirement and understand the project scope.
             </p>
-          </article>
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-tools"></use>
-              </svg>
-            </span>
+          </div>
 
-            <h3 data-i18n="service6Title">
-              Electrical Work
+
+          <div class="card">
+
+            <div class="icon">🧱</div>
+
+            <h3 data-i18n="s6">
+              Finishing Works
             </h3>
 
-            <p data-i18n="service6Text">
-              Electrical requirements coordinated as part of the project.
+            <p data-i18n="s6Text">
+              Support for finishing and related construction works.
             </p>
-          </article>
 
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-tools"></use>
-              </svg>
-            </span>
-
-            <h3 data-i18n="service7Title">
-              Plumbing Work
-            </h3>
-
-            <p data-i18n="service7Text">
-              Plumbing requirements for construction and renovation work.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"></use>
-              </svg>
-            </span>
-
-            <h3 data-i18n="service8Title">
-              Turnkey Support
-            </h3>
-
-            <p data-i18n="service8Text">
-              Coordinate multiple project requirements through one enquiry.
-            </p>
-          </article>
+          </div>
 
         </div>
 
@@ -2667,206 +1753,98 @@
 
     </section>
 
-    <!-- =========================
-         PROCESS
-    ========================= -->
 
-    <section id="process" class="process-section">
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+
+    <section id="process">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-head">
 
-          <div class="section-kicker" data-i18n="processKicker">
-            How It Works
+          <div
+            class="section-label"
+            data-i18n="processLabel"
+          >
+            Process
           </div>
 
+
           <h2 data-i18n="processTitle">
-            A simple way to start your project discussion.
+            A clear path from enquiry to execution.
           </h2>
 
-          <p data-i18n="processDescription">
-            Start with your requirement. We can then discuss the
-            project details and suitable next steps.
-          </p>
-
         </div>
+
 
         <div class="process-grid">
 
-          <article class="process-card">
+          <div class="card">
 
-            <div class="process-step">01</div>
-
-            <h3 data-i18n="process1Title">
-              Share Requirement
-            </h3>
-
-            <p data-i18n="process1Text">
-              Tell us your location, project type and what you need.
-            </p>
-
-          </article>
-
-          <article class="process-card">
-
-            <div class="process-step">02</div>
-
-            <h3 data-i18n="process2Title">
-              Discuss Scope
-            </h3>
-
-            <p data-i18n="process2Text">
-              Understand the project requirement and important details.
-            </p>
-
-          </article>
-
-          <article class="process-card">
-
-            <div class="process-step">03</div>
-
-            <h3 data-i18n="process3Title">
-              Plan the Work
-            </h3>
-
-            <p data-i18n="process3Text">
-              Discuss suitable work stages, requirements and coordination.
-            </p>
-
-          </article>
-
-          <article class="process-card">
-
-            <div class="process-step">04</div>
-
-            <h3 data-i18n="process4Title">
-              Move Forward
-            </h3>
-
-            <p data-i18n="process4Text">
-              Proceed with the project after discussing the agreed scope.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- =========================
-         WHY US
-    ========================= -->
-
-    <section id="about">
-
-      <div class="container why-grid">
-
-        <div class="why-visual">
-
-          <div class="why-center">
-
-            <svg
-              width="64"
-              height="64"
-              aria-hidden="true"
-            >
-              <use href="#icon-building"></use>
-            </svg>
-
-            <span>
-              VAAZHVIZHI
-            </span>
-
-          </div>
-
-        </div>
-
-        <div>
-
-          <div class="section-header">
-
-            <div class="section-kicker" data-i18n="whyKicker">
-              Why Vaazhvizhi
+            <div class="step-number">
+              01
             </div>
 
-            <h2 data-i18n="whyTitle">
-              Built around clear project communication.
-            </h2>
+            <h3 data-i18n="p1">
+              Requirement
+            </h3>
 
-            <p data-i18n="whyDescription">
-              Construction involves many moving parts. Our approach
-              starts by understanding your requirement clearly.
+            <p data-i18n="p1Text">
+              Share your project requirement, location and basic details.
             </p>
 
           </div>
 
-          <div class="why-list">
 
-            <article class="why-item">
+          <div class="card">
 
-              <span class="why-icon">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-check"></use>
-                </svg>
-              </span>
+            <div class="step-number">
+              02
+            </div>
 
-              <div>
-                <h3 data-i18n="why1Title">
-                  Requirement First
-                </h3>
+            <h3 data-i18n="p2">
+              Discussion
+            </h3>
 
-                <p data-i18n="why1Text">
-                  We begin by understanding your project requirement
-                  before discussing the next stage.
-                </p>
-              </div>
+            <p data-i18n="p2Text">
+              Understand the project scope and construction needs.
+            </p>
 
-            </article>
+          </div>
 
-            <article class="why-item">
 
-              <span class="why-icon">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-shield"></use>
-                </svg>
-              </span>
+          <div class="card">
 
-              <div>
-                <h3 data-i18n="why2Title">
-                  Practical Coordination
-                </h3>
+            <div class="step-number">
+              03
+            </div>
 
-                <p data-i18n="why2Text">
-                  Multiple construction requirements can be discussed
-                  together through one project enquiry.
-                </p>
-              </div>
+            <h3 data-i18n="p3">
+              Planning
+            </h3>
 
-            </article>
+            <p data-i18n="p3Text">
+              Work requirements and execution approach are discussed.
+            </p>
 
-            <article class="why-item">
+          </div>
 
-              <span class="why-icon">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-location"></use>
-                </svg>
-              </span>
 
-              <div>
-                <h3 data-i18n="why3Title">
-                  Local Project Focus
-                </h3>
+          <div class="card">
 
-                <p data-i18n="why3Text">
-                  Based in Ungaranahalli, Dharmapuri, with focus on
-                  understanding local construction requirements.
-                </p>
-              </div>
+            <div class="step-number">
+              04
+            </div>
 
-            </article>
+            <h3 data-i18n="p4">
+              Execution
+            </h3>
+
+            <p data-i18n="p4Text">
+              The agreed work moves towards execution and completion.
+            </p>
 
           </div>
 
@@ -2876,182 +1854,331 @@
 
     </section>
 
-    <!-- =========================
+
+    <!-- =====================================================
+         WHY US
+    ====================================================== -->
+
+    <section>
+
+      <div class="container why">
+
+        <div class="why-box">
+
+          <h2 data-i18n="whyTitle">
+            Built around your requirement.
+          </h2>
+
+          <p data-i18n="whyCopy">
+            We focus on understanding the project before moving into execution.
+          </p>
+
+        </div>
+
+
+        <div class="why-list">
+
+          <div class="why-item">
+
+            <div class="tick">
+              ✓
+            </div>
+
+            <div>
+
+              <strong data-i18n="w1">
+                Requirement-focused approach
+              </strong>
+
+              <p data-i18n="w1Text">
+                Understand the actual project need before planning the work.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <div class="tick">
+              ✓
+            </div>
+
+            <div>
+
+              <strong data-i18n="w2">
+                Clear communication
+              </strong>
+
+              <p data-i18n="w2Text">
+                Keep project discussions simple and understandable.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <div class="tick">
+              ✓
+            </div>
+
+            <div>
+
+              <strong data-i18n="w3">
+                Practical execution
+              </strong>
+
+              <p data-i18n="w3Text">
+                Focus on workable construction requirements and execution.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <div class="tick">
+              ✓
+            </div>
+
+            <div>
+
+              <strong data-i18n="w4">
+                Local support
+              </strong>
+
+              <p data-i18n="w4Text">
+                Serving construction requirements around Dharmapuri and nearby areas.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
          QUOTE FORM
-    ========================= -->
+    ====================================================== -->
 
-    <section id="quote" class="quote-section">
+    <section id="quote">
 
-      <div class="container quote-grid">
+      <div class="container quote-wrap">
 
         <div class="quote-info">
 
-          <div class="section-kicker" data-i18n="quoteKicker">
-            Project Enquiry
-          </div>
-
           <h2 data-i18n="quoteTitle">
-            Tell us what you're planning.
+            Tell us about your project.
           </h2>
 
-          <p data-i18n="quoteDescription">
-            Share your basic project details. Your enquiry will be
-            sent to our project lead system.
+
+          <p data-i18n="quoteCopy">
+            Submit your basic requirement. Our team can contact
+            you to discuss the next steps.
           </p>
 
-          <div class="quote-points">
 
-            <div class="quote-point">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"></use>
-              </svg>
+          <strong>
+            Vaazhvizhi Contracters
+          </strong>
 
-              <span data-i18n="quotePoint1">
-                Your enquiry is recorded in our lead sheet.
-              </span>
-            </div>
+          <br>
 
-            <div class="quote-point">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"></use>
-              </svg>
+          <span>
+            Ungaranahalli, Dharmapuri
+          </span>
 
-              <span data-i18n="quotePoint2">
-                Required fields are marked clearly.
-              </span>
-            </div>
+          <br>
 
-            <div class="quote-point">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-check"></use>
-              </svg>
-
-              <span data-i18n="quotePoint3">
-                You can also contact us directly through WhatsApp.
-              </span>
-            </div>
-
-          </div>
+          <span>
+            +91 90255 41161
+          </span>
 
         </div>
 
+
         <div class="form-card">
+
+          <!--
+            ==================================================
+            IMPORTANT FORM
+            ==================================================
+
+            Exact backend field names:
+
+            name
+            phone
+            email
+            location
+            projectType
+            service
+            budget
+            requirement
+
+            DO NOT RENAME THESE.
+          -->
+
 
           <form
             id="leadForm"
-            novalidate
+            action="https://script.google.com/macros/s/AKfycbyMsEAzXdSathCJm2i44CA6lelm6KDYw9MTSRDPxiPriNXhYg2IC0AB5gIE0CYkU5hO/exec"
+            method="POST"
+            target="leadSubmitFrame"
+            accept-charset="UTF-8"
+            autocomplete="on"
           >
+
+            <!-- Unique submission ID -->
+            <input
+              type="hidden"
+              id="submissionId"
+              name="submissionId"
+            >
+
+
+            <!-- Honeypot -->
+            <div
+              class="hp-field"
+              aria-hidden="true"
+            >
+
+              <label>
+                Website
+
+                <input
+                  type="text"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                >
+
+              </label>
+
+            </div>
+
 
             <div class="form-grid">
 
-              <!-- Name -->
+
+              <!-- NAME -->
 
               <div class="field">
 
-                <label for="name">
-                  <span data-i18n="nameLabel">
-                    Name
-                  </span>
-                  <em>*</em>
+                <label
+                  for="name"
+                  data-i18n="fName"
+                >
+                  Name *
                 </label>
 
                 <input
                   id="name"
                   name="name"
                   type="text"
-                  autocomplete="name"
                   required
                   maxlength="100"
-                  data-placeholder-en="Your name"
-                  data-placeholder-ta="உங்கள் பெயர்"
+                  autocomplete="name"
                   placeholder="Your name"
+                  data-i18n-placeholder="phName"
                 >
 
               </div>
 
-              <!-- Phone -->
+
+              <!-- PHONE -->
 
               <div class="field">
 
-                <label for="phone">
-                  <span data-i18n="phoneLabel">
-                    Phone
-                  </span>
-                  <em>*</em>
+                <label
+                  for="phone"
+                  data-i18n="fPhone"
+                >
+                  Phone *
                 </label>
 
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  autocomplete="tel"
-                  inputmode="tel"
                   required
                   maxlength="20"
-                  pattern="[0-9+\-\s()]{8,20}"
-                  data-placeholder-en="Your phone number"
-                  data-placeholder-ta="உங்கள் தொலைபேசி எண்"
-                  placeholder="Your phone number"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="+91 98765 43210"
                 >
 
               </div>
 
-              <!-- Email -->
+
+              <!-- EMAIL -->
 
               <div class="field">
 
-                <label for="email">
-                  <span data-i18n="emailLabel">
-                    Email
-                  </span>
+                <label
+                  for="email"
+                  data-i18n="fEmail"
+                >
+                  Email
                 </label>
 
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  autocomplete="email"
                   maxlength="150"
-                  data-placeholder-en="Your email"
-                  data-placeholder-ta="உங்கள் மின்னஞ்சல்"
-                  placeholder="Your email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  data-i18n-placeholder="phEmail"
                 >
 
               </div>
 
-              <!-- Location -->
+
+              <!-- LOCATION -->
 
               <div class="field">
 
-                <label for="location">
-                  <span data-i18n="locationLabel">
-                    Project Location
-                  </span>
-                  <em>*</em>
+                <label
+                  for="location"
+                  data-i18n="fLocation"
+                >
+                  Project Location *
                 </label>
 
                 <input
                   id="location"
                   name="location"
                   type="text"
-                  autocomplete="address-level2"
                   required
                   maxlength="200"
-                  data-placeholder-en="Project location"
-                  data-placeholder-ta="திட்ட இடம்"
+                  autocomplete="street-address"
                   placeholder="Project location"
+                  data-i18n-placeholder="phLocation"
                 >
 
               </div>
 
-              <!-- Project Type -->
+
+              <!-- PROJECT TYPE -->
 
               <div class="field">
 
-                <label for="projectType">
-                  <span data-i18n="projectTypeLabel">
-                    Project Type
-                  </span>
+                <label
+                  for="projectType"
+                  data-i18n="fProject"
+                >
+                  Project Type
                 </label>
 
                 <select
@@ -3060,43 +2187,36 @@
                 >
 
                   <option
-                    value=""
-                    data-i18n="selectOption"
+                    value="Residential"
+                    data-i18n="optResidential"
                   >
-                    Select
+                    Residential
                   </option>
 
                   <option
-                    value="New House"
-                    data-i18n="optionNewHouse"
+                    value="Commercial"
+                    data-i18n="optCommercial"
                   >
-                    New House
+                    Commercial
                   </option>
 
                   <option
                     value="Renovation"
-                    data-i18n="optionRenovation"
+                    data-i18n="optRenovation"
                   >
                     Renovation
                   </option>
 
                   <option
-                    value="Interior"
-                    data-i18n="optionInterior"
+                    value="Turnkey"
+                    data-i18n="optTurnkey"
                   >
-                    Interior
-                  </option>
-
-                  <option
-                    value="Building Work"
-                    data-i18n="optionBuilding"
-                  >
-                    Building Work
+                    Turnkey
                   </option>
 
                   <option
                     value="Other"
-                    data-i18n="optionOther"
+                    data-i18n="optOther"
                   >
                     Other
                   </option>
@@ -3105,14 +2225,16 @@
 
               </div>
 
-              <!-- Service -->
+
+              <!-- SERVICE -->
 
               <div class="field">
 
-                <label for="service">
-                  <span data-i18n="serviceLabel">
-                    Service Required
-                  </span>
+                <label
+                  for="service"
+                  data-i18n="fService"
+                >
+                  Service Required
                 </label>
 
                 <select
@@ -3121,80 +2243,61 @@
                 >
 
                   <option
-                    value=""
-                    data-i18n="selectOption"
+                    value="Residential Construction"
+                    data-i18n="srvResidential"
                   >
-                    Select
+                    Residential Construction
                   </option>
 
                   <option
-                    value="House Construction"
-                    data-i18n="serviceOption1"
+                    value="Commercial Construction"
+                    data-i18n="srvCommercial"
                   >
-                    House Construction
-                  </option>
-
-                  <option
-                    value="Planning & Design"
-                    data-i18n="serviceOption2"
-                  >
-                    Planning & Design
+                    Commercial Construction
                   </option>
 
                   <option
                     value="Renovation"
-                    data-i18n="serviceOption3"
+                    data-i18n="srvRenovation"
                   >
                     Renovation
                   </option>
 
                   <option
-                    value="Interior Work"
-                    data-i18n="serviceOption4"
+                    value="Turnkey Construction"
+                    data-i18n="srvTurnkey"
                   >
-                    Interior Work
+                    Turnkey Construction
                   </option>
 
                   <option
-                    value="Civil Work"
-                    data-i18n="serviceOption5"
+                    value="Estimation & Consultation"
+                    data-i18n="srvEstimate"
                   >
-                    Civil Work
+                    Estimation & Consultation
                   </option>
 
                   <option
-                    value="Electrical Work"
-                    data-i18n="serviceOption6"
+                    value="Finishing Works"
+                    data-i18n="srvFinishing"
                   >
-                    Electrical Work
-                  </option>
-
-                  <option
-                    value="Plumbing Work"
-                    data-i18n="serviceOption7"
-                  >
-                    Plumbing Work
-                  </option>
-
-                  <option
-                    value="Turnkey Support"
-                    data-i18n="serviceOption8"
-                  >
-                    Turnkey Support
+                    Finishing Works
                   </option>
 
                 </select>
 
               </div>
 
-              <!-- Budget -->
+
+              <!-- BUDGET -->
 
               <div class="field">
 
-                <label for="budget">
-                  <span data-i18n="budgetLabel">
-                    Estimated Budget
-                  </span>
+                <label
+                  for="budget"
+                  data-i18n="fBudget"
+                >
+                  Estimated Budget
                 </label>
 
                 <select
@@ -3203,10 +2306,10 @@
                 >
 
                   <option
-                    value=""
-                    data-i18n="selectOption"
+                    value="Not decided"
+                    data-i18n="budgetNot"
                   >
-                    Select
+                    Not decided
                   </option>
 
                   <option
@@ -3217,100 +2320,93 @@
                   </option>
 
                   <option
-                    value="₹10 - ₹20 Lakhs"
+                    value="₹10 - ₹25 Lakhs"
                     data-i18n="budget2"
                   >
-                    ₹10 - ₹20 Lakhs
+                    ₹10 - ₹25 Lakhs
                   </option>
 
                   <option
-                    value="₹20 - ₹40 Lakhs"
+                    value="₹25 - ₹50 Lakhs"
                     data-i18n="budget3"
                   >
-                    ₹20 - ₹40 Lakhs
+                    ₹25 - ₹50 Lakhs
                   </option>
 
                   <option
-                    value="₹40 - ₹60 Lakhs"
+                    value="₹50 Lakhs+"
                     data-i18n="budget4"
                   >
-                    ₹40 - ₹60 Lakhs
-                  </option>
-
-                  <option
-                    value="Above ₹60 Lakhs"
-                    data-i18n="budget5"
-                  >
-                    Above ₹60 Lakhs
-                  </option>
-
-                  <option
-                    value="Not Decided"
-                    data-i18n="budget6"
-                  >
-                    Not Decided
+                    ₹50 Lakhs+
                   </option>
 
                 </select>
 
               </div>
 
-              <!-- Requirement -->
+
+              <!-- REQUIREMENT -->
 
               <div class="field full">
 
-                <label for="requirement">
-                  <span data-i18n="requirementLabel">
-                    Requirement / Message
-                  </span>
+                <label
+                  for="requirement"
+                  data-i18n="fRequirement"
+                >
+                  Requirement
                 </label>
 
                 <textarea
                   id="requirement"
                   name="requirement"
                   maxlength="2000"
-                  data-placeholder-en="Describe your project requirement..."
-                  data-placeholder-ta="உங்கள் திட்ட தேவையை எழுதுங்கள்..."
                   placeholder="Describe your project requirement..."
+                  data-i18n-placeholder="phRequirement"
                 ></textarea>
 
               </div>
 
             </div>
 
-            <div class="form-bottom">
 
-              <div
-                id="formStatus"
-                class="form-status"
-                aria-live="polite"
-                data-i18n="formReady"
-              >
-                Ready to send your enquiry.
-              </div>
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn btn-primary form-submit"
+              data-i18n="submit"
+            >
+              Submit Enquiry
+            </button>
 
-              <button
-                id="submitBtn"
-                type="submit"
-                class="btn btn-primary submit-btn"
-              >
 
-                <svg class="icon" aria-hidden="true">
-                  <use href="#icon-send"></use>
-                </svg>
+            <div
+              id="formStatus"
+              class="form-status"
+              aria-live="polite"
+            ></div>
 
-                <span
-                  id="submitText"
-                  data-i18n="submitButton"
-                >
-                  Send Enquiry
-                </span>
 
-              </button>
-
+            <div
+              class="form-note"
+              data-i18n="formNote"
+            >
+              Your enquiry will be sent to our lead system.
             </div>
 
           </form>
+
+
+          <!--
+            Hidden iframe.
+            Apps Script response goes here.
+            Main page does NOT navigate.
+          -->
+
+          <iframe
+            id="leadSubmitFrame"
+            name="leadSubmitFrame"
+            title="Lead submission response"
+          ></iframe>
 
         </div>
 
@@ -3318,183 +2414,121 @@
 
     </section>
 
-    <!-- Hidden iframe:
-         Browser posts form to Apps Script without making
-         the page wait for the Apps Script HTML response.
-    -->
 
-    <iframe
-      id="leadSubmitFrame"
-      name="leadSubmitFrame"
-      title="Lead submission"
-      style="
-        position:absolute;
-        width:1px;
-        height:1px;
-        border:0;
-        opacity:0;
-        pointer-events:none;
-      "
-      aria-hidden="true"
-    ></iframe>
-
-    <!-- =========================
+    <!-- =====================================================
          CONTACT
-    ========================= -->
+    ====================================================== -->
 
     <section id="contact">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-head">
 
-          <div class="section-kicker" data-i18n="contactKicker">
+          <div
+            class="section-label"
+            data-i18n="contactLabel"
+          >
             Contact
           </div>
+
 
           <h2 data-i18n="contactTitle">
             Let's discuss your construction requirement.
           </h2>
 
-          <p data-i18n="contactDescription">
-            Send an enquiry through the form or contact Vaazhvizhi
-            Contracters directly.
-          </p>
-
         </div>
+
 
         <div class="contact-grid">
 
-          <!-- WhatsApp -->
 
           <a
             class="contact-card"
             href="https://wa.me/919025541161"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
 
-            <span class="contact-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-phone"></use>
-              </svg>
-            </span>
+            <small>
+              WhatsApp
+            </small>
 
-            <h3>WhatsApp</h3>
-
-            <p>
+            <strong>
               +91 90255 41161
-            </p>
-
-            <span class="contact-link">
-              <span data-i18n="contactOpen">
-                Contact Us
-              </span>
-
-              <svg width="15" height="15" aria-hidden="true">
-                <use href="#icon-arrow"></use>
-              </svg>
-            </span>
+            </strong>
 
           </a>
 
-          <!-- Email -->
+
+          <a
+            class="contact-card"
+            href="tel:+919025541161"
+          >
+
+            <small>
+              Phone
+            </small>
+
+            <strong>
+              +91 90255 41161
+            </strong>
+
+          </a>
+
 
           <a
             class="contact-card"
             href="mailto:vaazhvizhicontractors@gmail.com"
           >
 
-            <span class="contact-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-mail"></use>
-              </svg>
-            </span>
+            <small>
+              Email
+            </small>
 
-            <h3>Email</h3>
-
-            <p>
+            <strong>
               vaazhvizhicontractors@gmail.com
-            </p>
-
-            <span class="contact-link">
-              <span data-i18n="contactEmail">
-                Send Email
-              </span>
-
-              <svg width="15" height="15" aria-hidden="true">
-                <use href="#icon-arrow"></use>
-              </svg>
-            </span>
+            </strong>
 
           </a>
 
-          <!-- Instagram -->
 
           <a
             class="contact-card"
             href="https://www.instagram.com/vaazhvizhi_contracters/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
 
-            <span class="contact-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-instagram"></use>
-              </svg>
-            </span>
+            <small>
+              Instagram
+            </small>
 
-            <h3>Instagram</h3>
-
-            <p>
+            <strong>
               @vaazhvizhi_contracters
-            </p>
-
-            <span class="contact-link">
-              <span data-i18n="contactInstagram">
-                View Instagram
-              </span>
-
-              <svg width="15" height="15" aria-hidden="true">
-                <use href="#icon-arrow"></use>
-              </svg>
-            </span>
+            </strong>
 
           </a>
 
-          <!-- Maps -->
+        </div>
+
+
+        <div style="margin-top:16px;">
 
           <a
             class="contact-card"
             href="https://maps.app.goo.gl/GWejen8cyvza9THs7?g_st=aw"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
 
-            <span class="contact-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-map"></use>
-              </svg>
-            </span>
-
-            <h3 data-i18n="contactLocationTitle">
+            <small>
               Location
-            </h3>
+            </small>
 
-            <p>
-              Ungaranahalli, Dharmapuri,
-              Tamil Nadu 636705
-            </p>
-
-            <span class="contact-link">
-              <span data-i18n="contactMap">
-                Open Maps
-              </span>
-
-              <svg width="15" height="15" aria-hidden="true">
-                <use href="#icon-arrow"></use>
-              </svg>
-            </span>
+            <strong>
+              Ungaranahalli, Dharmapuri, Tamil Nadu 636705
+            </strong>
 
           </a>
 
@@ -3506,152 +2540,96 @@
 
   </main>
 
-  <!-- =========================
+
+  <!-- =======================================================
        FOOTER
-  ========================= -->
+  ======================================================== -->
 
   <footer>
 
-    <div class="container">
+    <div class="container footer-inner">
 
-      <div class="footer-grid">
+      <div>
 
-        <div class="footer-brand">
+        <strong>
+          Vaazhvizhi Contracters
+        </strong>
 
-          <h3>
-            Vaazhvizhi Contracters
-          </h3>
-
-          <p data-i18n="footerDescription">
-            Building Dreams. Creating Spaces. Construction support
-            for residential and building requirements in Dharmapuri.
-          </p>
-
-        </div>
-
-        <div class="footer-column">
-
-          <h4 data-i18n="footerExplore">
-            Explore
-          </h4>
-
-          <a href="#home" data-i18n="navHome">
-            Home
-          </a>
-
-          <a href="#services" data-i18n="navServices">
-            Services
-          </a>
-
-          <a href="#process" data-i18n="navProcess">
-            Process
-          </a>
-
-          <a href="#quote" data-i18n="navQuote">
-            Get a Quote
-          </a>
-
-        </div>
-
-        <div class="footer-column">
-
-          <h4 data-i18n="footerContact">
-            Contact
-          </h4>
-
-          <a href="tel:+919025541161">
-            +91 90255 41161
-          </a>
-
-          <a href="mailto:vaazhvizhicontractors@gmail.com">
-            vaazhvizhicontractors@gmail.com
-          </a>
-
-          <a
-            href="https://www.instagram.com/vaazhvizhi_contracters/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @vaazhvizhi_contracters
-          </a>
-
-        </div>
+        <p>
+          Building Dreams. Creating Spaces.
+        </p>
 
       </div>
 
-      <div class="footer-bottom">
 
-        <span>
-          © <span id="currentYear"></span>
-          Vaazhvizhi Contracters.
-          <span data-i18n="footerRights">
-            All rights reserved.
-          </span>
-        </span>
-
-        <span data-i18n="footerLocation">
-          Ungaranahalli, Dharmapuri, Tamil Nadu
-        </span>
-
-      </div>
+      <p>
+        ©
+        <span id="year"></span>
+        Vaazhvizhi Contracters
+      </p>
 
     </div>
 
   </footer>
 
-  <!-- =========================
+
+  <!-- =======================================================
        FLOATING WHATSAPP
-  ========================= -->
+  ======================================================== -->
 
   <a
-    class="floating-whatsapp"
-    href="https://wa.me/919025541161?text=Hi%20Vaazhvizhi%20Contracters%2C%20I%20would%20like%20to%20discuss%20a%20project."
+    class="whatsapp"
+    href="https://wa.me/919025541161"
     target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat on WhatsApp"
+    rel="noopener"
+    aria-label="WhatsApp"
   >
 
     <svg
-      width="27"
-      height="27"
+      width="29"
+      height="29"
       viewBox="0 0 24 24"
+      fill="none"
       aria-hidden="true"
     >
+
       <path
-        d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"
-        fill="none"
+        d="M20 11.5A8.5 8.5 0 0 1 7.2 19L3 20l1.1-4A8.5 8.5 0 1 1 20 11.5Z"
         stroke="currentColor"
         stroke-width="1.8"
       />
+
       <path
-        d="M8.5 8.5c.3-.6.6-.6 1-.6h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.4-.1.6l-.6.7c.6 1.1 1.5 1.9 2.7 2.4l.6-.7c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.3.6-.2 1-.8 1.4-1.6 1.4-2 0-5.1-2.7-6.6-4.8-.7-1-.8-1.9.1-2.6Z"
+        d="M8 9.2c.2 2 2.8 4.8 4.8 5 .8.1 1.3-.3 1.7-.9l.4-.7-1.7-.8-.6.7c-.8-.2-1.9-1.1-2.4-1.8l.5-.7-.9-1.6-.7.3c-.6.3-1 .7-1.1 1.5Z"
         fill="currentColor"
       />
+
     </svg>
 
   </a>
 
-  <!-- =========================
+
+  <!-- =======================================================
        JAVASCRIPT
-  ========================= -->
+  ======================================================== -->
 
   <script>
 
     /*
-      ============================================================
-      VAAZHVIZHI LEAD FORM CONFIGURATION
-      ============================================================
-    */
+     * ========================================================
+     * CONFIG
+     * ========================================================
+     */
 
     const SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbyMsEAzXdSathCJm2i44CA6lelm6KDYw9MTSRDPxiPriNXhYg2IC0AB5gIE0CYkU5hO/exec";
 
 
     /*
-      ============================================================
-      ELEMENTS
-      ============================================================
-    */
+     * ========================================================
+     * ELEMENTS
+     * ========================================================
+     */
 
     const leadForm =
       document.getElementById("leadForm");
@@ -3659,794 +2637,725 @@
     const submitBtn =
       document.getElementById("submitBtn");
 
-    const submitText =
-      document.getElementById("submitText");
-
     const formStatus =
       document.getElementById("formStatus");
-
-    const languageBtn =
-      document.getElementById("languageBtn");
-
-    const mobileLanguageBtn =
-      document.getElementById("mobileLanguageBtn");
-
-    const menuBtn =
-      document.getElementById("menuBtn");
-
-    const mobileMenu =
-      document.getElementById("mobileMenu");
 
     const submitFrame =
       document.getElementById("leadSubmitFrame");
 
-    const currentYear =
-      document.getElementById("currentYear");
+    const submissionIdInput =
+      document.getElementById("submissionId");
+
+    const langBtn =
+      document.getElementById("langBtn");
+
+    const menuBtn =
+      document.getElementById("menuBtn");
+
+    const navLinks =
+      document.getElementById("navLinks");
 
 
     /*
-      ============================================================
-      YEAR
-      ============================================================
-    */
+     * ========================================================
+     * STATE
+     * ========================================================
+     */
 
-    currentYear.textContent =
-      new Date().getFullYear();
+    let currentLanguage =
+      localStorage.getItem(
+        "vaazhvizhi-language"
+      ) || "en";
+
+    let submissionLocked = false;
+
+    let activeSubmissionId = "";
+
+    let unlockTimer = null;
 
 
     /*
-      ============================================================
-      TRANSLATIONS
-      ============================================================
-    */
+     * ========================================================
+     * TRANSLATIONS
+     * ========================================================
+     */
 
     const translations = {
 
       en: {
 
         navHome: "Home",
+        navAbout: "About",
         navServices: "Services",
         navProcess: "Process",
-        navWhyUs: "Why Us",
+        navQuote: "Quote",
         navContact: "Contact",
-        navQuote: "Get a Quote",
 
-        heroEyebrow: "Construction & Contracting",
+        heroEyebrow:
+          "Construction • Design • Execution",
 
-        heroTamil: "உங்கள் கனவு கட்டுமானம்,",
-        heroTamilEnd: "உடன்",
+        heroCopy:
+          "From planning to completion, we help turn your construction requirements into practical, well-executed spaces.",
 
-        heroDescription:
-          "From planning and civil work to finishing and interiors, we bring your construction vision together with practical project coordination.",
+        heroQuote:
+          "Get a Quote",
 
-        heroPrimary: "Start Your Project",
-        heroWhatsapp: "WhatsApp Us",
+        heroWhatsapp:
+          "WhatsApp Us",
 
-        heroLocation:
-          "Ungaranahalli, Dharmapuri",
+        archOne:
+          "Built with Purpose",
 
-        heroPlanning:
-          "Construction support from plan to finish",
+        archTwo:
+          "Planned. Built. Delivered.",
 
-        chipPlanning: "Planning",
-        chipCivil: "Civil Work",
-        chipFinish: "Finishing",
+        reqLabel:
+          "What we build",
 
-        trust1Title: "Construction Support",
-        trust1Text: "From planning to execution",
+        reqTitle:
+          "Construction solutions for different requirements.",
 
-        trust2Title: "Multiple Services",
-        trust2Text: "Civil, interiors & more",
+        reqCopy:
+          "Whether it is a new home, commercial space or renovation, we help structure the work from requirement to execution.",
 
-        trust3Title: "Dharmapuri Based",
-        trust3Text: "Serving local project needs",
+        req1Title:
+          "Residential",
 
-        projectKicker: "What We Build",
+        req1Text:
+          "New homes and residential construction requirements.",
 
-        projectTitle:
-          "Construction support for different project needs.",
+        req2Title:
+          "Commercial",
 
-        projectDescription:
-          "Tell us what you are planning and we can understand the scope before discussing the next steps.",
+        req2Text:
+          "Practical construction solutions for commercial spaces.",
 
-        project1Title: "New House",
-        project1Text:
-          "Construction support for new residential projects.",
+        req3Title:
+          "Renovation",
 
-        project2Title: "Renovation",
-        project2Text:
-          "Upgrade, repair and improve existing spaces.",
+        req3Text:
+          "Upgrades, alterations and renovation requirements.",
 
-        project3Title: "Interior Work",
-        project3Text:
-          "Practical interior work for residential spaces.",
+        req4Title:
+          "Turnkey",
 
-        project4Title: "Building Work",
-        project4Text:
-          "Civil and building requirements based on project scope.",
+        req4Text:
+          "Coordinated execution from planning through completion.",
 
-        serviceKicker: "Services",
+        serviceLabel:
+          "Services",
 
         serviceTitle:
           "One place for your construction requirements.",
 
-        serviceDescription:
-          "Choose the service you need or describe your requirement in the enquiry form.",
+        serviceCopy:
+          "Choose the service that matches your project requirement.",
 
-        service1Title: "House Construction",
-        service1Text:
-          "Residential construction support based on your project scope.",
+        s1:
+          "Residential Construction",
 
-        service2Title: "Planning & Design",
-        service2Text:
-          "Discuss planning, drawings and practical project requirements.",
+        s1Text:
+          "Construction support for new residential projects.",
 
-        service3Title: "Renovation",
-        service3Text:
-          "Improvements, alterations and renovation work.",
+        s2:
+          "Commercial Construction",
 
-        service4Title: "Interior Work",
-        service4Text:
-          "Interior execution for selected residential requirements.",
+        s2Text:
+          "Execution support for commercial spaces and buildings.",
 
-        service5Title: "Civil Work",
-        service5Text:
-          "Civil and structural work according to project requirements.",
+        s3:
+          "Renovation",
 
-        service6Title: "Electrical Work",
-        service6Text:
-          "Electrical requirements coordinated as part of the project.",
+        s3Text:
+          "Renovation and alteration work based on requirements.",
 
-        service7Title: "Plumbing Work",
-        service7Text:
-          "Plumbing requirements for construction and renovation work.",
+        s4:
+          "Turnkey Construction",
 
-        service8Title: "Turnkey Support",
-        service8Text:
-          "Coordinate multiple project requirements through one enquiry.",
+        s4Text:
+          "Coordinated construction execution from start to finish.",
 
-        processKicker: "How It Works",
+        s5:
+          "Estimation & Consultation",
+
+        s5Text:
+          "Discuss your requirement and understand the project scope.",
+
+        s6:
+          "Finishing Works",
+
+        s6Text:
+          "Support for finishing and related construction works.",
+
+        processLabel:
+          "Process",
 
         processTitle:
-          "A simple way to start your project discussion.",
+          "A clear path from enquiry to execution.",
 
-        processDescription:
-          "Start with your requirement. We can then discuss the project details and suitable next steps.",
+        p1:
+          "Requirement",
 
-        process1Title: "Share Requirement",
-        process1Text:
-          "Tell us your location, project type and what you need.",
+        p1Text:
+          "Share your project requirement, location and basic details.",
 
-        process2Title: "Discuss Scope",
-        process2Text:
-          "Understand the project requirement and important details.",
+        p2:
+          "Discussion",
 
-        process3Title: "Plan the Work",
-        process3Text:
-          "Discuss suitable work stages, requirements and coordination.",
+        p2Text:
+          "Understand the project scope and construction needs.",
 
-        process4Title: "Move Forward",
-        process4Text:
-          "Proceed with the project after discussing the agreed scope.",
+        p3:
+          "Planning",
 
-        whyKicker: "Why Vaazhvizhi",
+        p3Text:
+          "Work requirements and execution approach are discussed.",
+
+        p4:
+          "Execution",
+
+        p4Text:
+          "The agreed work moves towards execution and completion.",
 
         whyTitle:
-          "Built around clear project communication.",
+          "Built around your requirement.",
 
-        whyDescription:
-          "Construction involves many moving parts. Our approach starts by understanding your requirement clearly.",
+        whyCopy:
+          "We focus on understanding the project before moving into execution.",
 
-        why1Title: "Requirement First",
-        why1Text:
-          "We begin by understanding your project requirement before discussing the next stage.",
+        w1:
+          "Requirement-focused approach",
 
-        why2Title: "Practical Coordination",
-        why2Text:
-          "Multiple construction requirements can be discussed together through one project enquiry.",
+        w1Text:
+          "Understand the actual project need before planning the work.",
 
-        why3Title: "Local Project Focus",
-        why3Text:
-          "Based in Ungaranahalli, Dharmapuri, with focus on understanding local construction requirements.",
+        w2:
+          "Clear communication",
 
-        quoteKicker: "Project Enquiry",
+        w2Text:
+          "Keep project discussions simple and understandable.",
+
+        w3:
+          "Practical execution",
+
+        w3Text:
+          "Focus on workable construction requirements and execution.",
+
+        w4:
+          "Local support",
+
+        w4Text:
+          "Serving construction requirements around Dharmapuri and nearby areas.",
 
         quoteTitle:
-          "Tell us what you're planning.",
+          "Tell us about your project.",
 
-        quoteDescription:
-          "Share your basic project details. Your enquiry will be sent to our project lead system.",
+        quoteCopy:
+          "Submit your basic requirement. Our team can contact you to discuss the next steps.",
 
-        quotePoint1:
-          "Your enquiry is recorded in our lead sheet.",
+        fName:
+          "Name *",
 
-        quotePoint2:
-          "Required fields are marked clearly.",
+        fPhone:
+          "Phone *",
 
-        quotePoint3:
-          "You can also contact us directly through WhatsApp.",
+        fEmail:
+          "Email",
 
-        nameLabel: "Name",
-        phoneLabel: "Phone",
-        emailLabel: "Email",
-        locationLabel: "Project Location",
-        projectTypeLabel: "Project Type",
-        serviceLabel: "Service Required",
-        budgetLabel: "Estimated Budget",
-        requirementLabel: "Requirement / Message",
+        fLocation:
+          "Project Location *",
 
-        selectOption: "Select",
+        fProject:
+          "Project Type",
 
-        optionNewHouse: "New House",
-        optionRenovation: "Renovation",
-        optionInterior: "Interior",
-        optionBuilding: "Building Work",
-        optionOther: "Other",
+        fService:
+          "Service Required",
 
-        serviceOption1: "House Construction",
-        serviceOption2: "Planning & Design",
-        serviceOption3: "Renovation",
-        serviceOption4: "Interior Work",
-        serviceOption5: "Civil Work",
-        serviceOption6: "Electrical Work",
-        serviceOption7: "Plumbing Work",
-        serviceOption8: "Turnkey Support",
+        fBudget:
+          "Estimated Budget",
 
-        budget1: "Below ₹10 Lakhs",
-        budget2: "₹10 - ₹20 Lakhs",
-        budget3: "₹20 - ₹40 Lakhs",
-        budget4: "₹40 - ₹60 Lakhs",
-        budget5: "Above ₹60 Lakhs",
-        budget6: "Not Decided",
+        fRequirement:
+          "Requirement",
 
-        formReady:
-          "Ready to send your enquiry.",
+        phName:
+          "Your name",
 
-        submitButton:
-          "Send Enquiry",
+        phEmail:
+          "you@example.com",
 
-        contactKicker:
+        phLocation:
+          "Project location",
+
+        phRequirement:
+          "Describe your project requirement...",
+
+        optResidential:
+          "Residential",
+
+        optCommercial:
+          "Commercial",
+
+        optRenovation:
+          "Renovation",
+
+        optTurnkey:
+          "Turnkey",
+
+        optOther:
+          "Other",
+
+        srvResidential:
+          "Residential Construction",
+
+        srvCommercial:
+          "Commercial Construction",
+
+        srvRenovation:
+          "Renovation",
+
+        srvTurnkey:
+          "Turnkey Construction",
+
+        srvEstimate:
+          "Estimation & Consultation",
+
+        srvFinishing:
+          "Finishing Works",
+
+        budgetNot:
+          "Not decided",
+
+        budget1:
+          "Below ₹10 Lakhs",
+
+        budget2:
+          "₹10 - ₹25 Lakhs",
+
+        budget3:
+          "₹25 - ₹50 Lakhs",
+
+        budget4:
+          "₹50 Lakhs+",
+
+        submit:
+          "Submit Enquiry",
+
+        formNote:
+          "Your enquiry will be sent to our lead system.",
+
+        contactLabel:
           "Contact",
 
         contactTitle:
-          "Let's discuss your construction requirement.",
+          "Let's discuss your construction requirement."
 
-        contactDescription:
-          "Send an enquiry through the form or contact Vaazhvizhi Contracters directly.",
-
-        contactOpen: "Contact Us",
-        contactEmail: "Send Email",
-        contactInstagram: "View Instagram",
-        contactMap: "Open Maps",
-        contactLocationTitle: "Location",
-
-        footerDescription:
-          "Building Dreams. Creating Spaces. Construction support for residential and building requirements in Dharmapuri.",
-
-        footerExplore: "Explore",
-        footerContact: "Contact",
-
-        footerRights: "All rights reserved.",
-
-        footerLocation:
-          "Ungaranahalli, Dharmapuri, Tamil Nadu"
       },
 
 
       ta: {
 
-        navHome: "முகப்பு",
-        navServices: "சேவைகள்",
-        navProcess: "செயல்முறை",
-        navWhyUs: "ஏன் நாங்கள்",
-        navContact: "தொடர்பு",
-        navQuote: "Quote பெறுங்கள்",
+        navHome:
+          "முகப்பு",
+
+        navAbout:
+          "எங்களை பற்றி",
+
+        navServices:
+          "சேவைகள்",
+
+        navProcess:
+          "செயல்முறை",
+
+        navQuote:
+          "Quote",
+
+        navContact:
+          "தொடர்பு",
 
         heroEyebrow:
-          "கட்டுமானம் & ஒப்பந்தப் பணிகள்",
+          "கட்டுமானம் • வடிவமைப்பு • செயல்படுத்தல்",
 
-        heroTamil:
-          "உங்கள் கனவு கட்டுமானம்,",
+        heroCopy:
+          "உங்கள் கட்டுமான தேவையை திட்டமிடுவதிலிருந்து செயல்படுத்துவது வரை நடைமுறைக்கு ஏற்ற முறையில் செயல்படுத்த உதவுகிறோம்.",
 
-        heroTamilEnd:
-          "உடன்",
-
-        heroDescription:
-          "திட்டமிடல், சிவில் பணிகள் முதல் finishing மற்றும் interior பணிகள் வரை, உங்கள் கட்டுமான தேவையை நடைமுறை திட்ட ஒருங்கிணைப்புடன் செயல்படுத்த உதவுகிறோம்.",
-
-        heroPrimary:
-          "உங்கள் திட்டத்தை தொடங்குங்கள்",
+        heroQuote:
+          "Quote பெறுங்கள்",
 
         heroWhatsapp:
-          "WhatsApp தொடர்பு",
+          "WhatsApp செய்யுங்கள்",
 
-        heroLocation:
-          "உங்கரனஹள்ளி, தர்மபுரி",
+        archOne:
+          "நோக்கத்துடன் கட்டமைப்பு",
 
-        heroPlanning:
-          "திட்டமிடல் முதல் முடிப்பு வரை கட்டுமான ஆதரவு",
+        archTwo:
+          "திட்டம் • கட்டுமானம் • நிறைவு",
 
-        chipPlanning:
-          "திட்டமிடல்",
+        reqLabel:
+          "நாங்கள் செய்வது",
 
-        chipCivil:
-          "சிவில் பணி",
+        reqTitle:
+          "பல்வேறு கட்டுமான தேவைகளுக்கான தீர்வுகள்.",
 
-        chipFinish:
-          "முடிப்பு பணி",
+        reqCopy:
+          "புதிய வீடு, வணிக கட்டிடம் அல்லது Renovation எதுவாக இருந்தாலும், உங்கள் தேவையைப் புரிந்து செயல்படுத்த உதவுகிறோம்.",
 
-        trust1Title:
-          "கட்டுமான ஆதரவு",
+        req1Title:
+          "வீட்டு கட்டுமானம்",
 
-        trust1Text:
-          "திட்டமிடல் முதல் செயல்படுத்தல் வரை",
+        req1Text:
+          "புதிய வீடுகள் மற்றும் குடியிருப்பு கட்டுமான தேவைகள்.",
 
-        trust2Title:
-          "பல சேவைகள்",
+        req2Title:
+          "வணிக கட்டுமானம்",
 
-        trust2Text:
-          "சிவில், இன்டீரியர் மற்றும் பல",
+        req2Text:
+          "வணிக கட்டிடங்களுக்கான நடைமுறை கட்டுமான தீர்வுகள்.",
 
-        trust3Title:
-          "தர்மபுரி அடிப்படை",
+        req3Title:
+          "Renovation",
 
-        trust3Text:
-          "உள்ளூர் திட்ட தேவைகளுக்கு சேவை",
+        req3Text:
+          "மாற்றம், மேம்பாடு மற்றும் Renovation பணிகள்.",
 
-        projectKicker:
-          "நாங்கள் செய்யும் பணிகள்",
+        req4Title:
+          "Turnkey",
 
-        projectTitle:
-          "வெவ்வேறு கட்டுமான தேவைகளுக்கான ஆதரவு.",
+        req4Text:
+          "திட்டமிடுதல் முதல் நிறைவு வரை ஒருங்கிணைந்த செயல்படுத்தல்.",
 
-        projectDescription:
-          "நீங்கள் திட்டமிடும் பணியை எங்களிடம் தெரிவியுங்கள். அடுத்த கட்டத்தைப் பற்றி பேசுவதற்கு முன் தேவையை புரிந்துகொள்ளலாம்.",
-
-        project1Title:
-          "புதிய வீடு",
-
-        project1Text:
-          "புதிய குடியிருப்பு கட்டுமான திட்டங்களுக்கு ஆதரவு.",
-
-        project2Title:
-          "புதுப்பிப்பு",
-
-        project2Text:
-          "ஏற்கனவே உள்ள இடங்களை மேம்படுத்துதல் மற்றும் பழுதுபார்த்தல்.",
-
-        project3Title:
-          "இன்டீரியர் பணி",
-
-        project3Text:
-          "குடியிருப்பு இடங்களுக்கான நடைமுறை interior பணிகள்.",
-
-        project4Title:
-          "கட்டிட பணி",
-
-        project4Text:
-          "திட்ட தேவைக்கு ஏற்ப சிவில் மற்றும் கட்டிட பணிகள்.",
-
-        serviceKicker:
+        serviceLabel:
           "சேவைகள்",
 
         serviceTitle:
-          "உங்கள் கட்டுமான தேவைகளுக்கான ஒரே இடம்.",
+          "உங்கள் கட்டுமான தேவைகளுக்கு ஒரே இடத்தில் தீர்வு.",
 
-        serviceDescription:
-          "தேவையான சேவையை தேர்வு செய்யுங்கள் அல்லது enquiry form-ல் உங்கள் தேவையை எழுதுங்கள்.",
+        serviceCopy:
+          "உங்கள் Project-க்கு பொருத்தமான சேவையைத் தேர்வு செய்யுங்கள்.",
 
-        service1Title:
-          "வீடு கட்டுமானம்",
+        s1:
+          "வீட்டு கட்டுமானம்",
 
-        service1Text:
-          "உங்கள் திட்ட தேவைக்கு ஏற்ப குடியிருப்பு கட்டுமான ஆதரவு.",
+        s1Text:
+          "புதிய குடியிருப்பு கட்டுமான திட்டங்களுக்கான சேவை.",
 
-        service2Title:
-          "திட்டமிடல் & வடிவமைப்பு",
+        s2:
+          "வணிக கட்டுமானம்",
 
-        service2Text:
-          "திட்டமிடல், வரைபடம் மற்றும் நடைமுறை தேவைகள் குறித்து ஆலோசிக்கலாம்.",
+        s2Text:
+          "வணிக கட்டிடங்கள் மற்றும் இடங்களுக்கான செயல்படுத்தல்.",
 
-        service3Title:
-          "புதுப்பிப்பு",
+        s3:
+          "Renovation",
 
-        service3Text:
-          "மாற்றம், மேம்பாடு மற்றும் renovation பணிகள்.",
+        s3Text:
+          "தேவைக்கேற்ப Renovation மற்றும் மாற்றப் பணிகள்.",
 
-        service4Title:
-          "இன்டீரியர் பணி",
+        s4:
+          "Turnkey Construction",
 
-        service4Text:
-          "தேர்ந்தெடுக்கப்பட்ட குடியிருப்பு தேவைகளுக்கான interior execution.",
+        s4Text:
+          "தொடக்கம் முதல் நிறைவு வரை ஒருங்கிணைந்த கட்டுமானம்.",
 
-        service5Title:
-          "சிவில் பணி",
+        s5:
+          "Estimation & Consultation",
 
-        service5Text:
-          "திட்ட தேவைக்கு ஏற்ப சிவில் மற்றும் structural பணிகள்.",
+        s5Text:
+          "உங்கள் தேவையைப் பற்றி விவாதித்து Project scope புரிந்துகொள்ள உதவி.",
 
-        service6Title:
-          "எலக்ட்ரிக்கல் பணி",
+        s6:
+          "Finishing Works",
 
-        service6Text:
-          "திட்டத்தின் ஒரு பகுதியாக electrical தேவைகளை ஒருங்கிணைத்தல்.",
+        s6Text:
+          "Finishing மற்றும் தொடர்புடைய கட்டுமானப் பணிகளுக்கான சேவை.",
 
-        service7Title:
-          "பிளம்பிங் பணி",
-
-        service7Text:
-          "கட்டுமானம் மற்றும் renovation பணிகளுக்கான plumbing தேவைகள்.",
-
-        service8Title:
-          "Turnkey Support",
-
-        service8Text:
-          "பல கட்டுமான தேவைகளை ஒரே enquiry மூலம் ஒருங்கிணைக்கலாம்.",
-
-        processKicker:
-          "எப்படி செயல்படுகிறது",
+        processLabel:
+          "செயல்முறை",
 
         processTitle:
-          "உங்கள் திட்டத்தை தொடங்க எளிய வழி.",
+          "Enquiry முதல் Execution வரை தெளிவான செயல்முறை.",
 
-        processDescription:
-          "முதலில் உங்கள் தேவையை தெரிவியுங்கள். பின்னர் திட்ட விவரங்கள் மற்றும் அடுத்த கட்டத்தைப் பற்றி பேசலாம்.",
+        p1:
+          "தேவை",
 
-        process1Title:
-          "தேவையை தெரிவிக்கவும்",
+        p1Text:
+          "உங்கள் Project தேவை, இடம் மற்றும் அடிப்படை விவரங்களை பகிருங்கள்.",
 
-        process1Text:
-          "இடம், திட்ட வகை மற்றும் உங்களுக்கு தேவையான பணியை தெரிவியுங்கள்.",
+        p2:
+          "விவாதம்",
 
-        process2Title:
-          "திட்ட தேவையை பேசலாம்",
+        p2Text:
+          "Project scope மற்றும் கட்டுமான தேவையைப் புரிந்துகொள்வோம்.",
 
-        process2Text:
-          "திட்டத்தின் தேவைகள் மற்றும் முக்கிய விவரங்களை புரிந்துகொள்வோம்.",
+        p3:
+          "திட்டமிடல்",
 
-        process3Title:
-          "பணியை திட்டமிடலாம்",
+        p3Text:
+          "வேலை தேவைகள் மற்றும் செயல்படுத்தும் முறையை விவாதிப்போம்.",
 
-        process3Text:
-          "பணி நிலைகள், தேவைகள் மற்றும் ஒருங்கிணைப்பு குறித்து பேசலாம்.",
+        p4:
+          "செயல்படுத்தல்",
 
-        process4Title:
-          "அடுத்த கட்டத்திற்கு செல்லலாம்",
-
-        process4Text:
-          "ஒப்புக்கொள்ளப்பட்ட திட்ட scope அடிப்படையில் அடுத்த கட்டத்திற்கு செல்லலாம்.",
-
-        whyKicker:
-          "ஏன் Vaazhvizhi",
+        p4Text:
+          "ஒப்புக்கொண்ட பணிகள் செயல்படுத்தப்பட்டு நிறைவு செய்யப்படும்.",
 
         whyTitle:
-          "தெளிவான திட்ட தொடர்பை மையமாகக் கொண்ட அணுகுமுறை.",
+          "உங்கள் தேவையை மையமாகக் கொண்ட கட்டுமானம்.",
 
-        whyDescription:
-          "கட்டுமானத்தில் பல விஷயங்கள் ஒரே நேரத்தில் நடக்கும். அதனால் முதலில் உங்கள் தேவையை தெளிவாக புரிந்துகொள்வதே எங்கள் அணுகுமுறை.",
+        whyCopy:
+          "Execution-க்கு செல்லும் முன் Project தேவையைப் புரிந்துகொள்வதில் கவனம் செலுத்துகிறோம்.",
 
-        why1Title:
-          "முதலில் உங்கள் தேவை",
+        w1:
+          "தேவையை மையமாகக் கொண்ட அணுகுமுறை",
 
-        why1Text:
-          "அடுத்த கட்டத்தைப் பற்றி பேசுவதற்கு முன் உங்கள் திட்ட தேவையை புரிந்துகொள்வோம்.",
+        w1Text:
+          "வேலையை திட்டமிடுவதற்கு முன் உண்மையான Project தேவையைப் புரிந்துகொள்வோம்.",
 
-        why2Title:
-          "நடைமுறை ஒருங்கிணைப்பு",
+        w2:
+          "தெளிவான தொடர்பு",
 
-        why2Text:
-          "பல கட்டுமான தேவைகளை ஒரே project enquiry மூலம் பேசலாம்.",
+        w2Text:
+          "Project விவாதங்களை எளிமையாகவும் தெளிவாகவும் வைத்திருக்கிறோம்.",
 
-        why3Title:
-          "உள்ளூர் திட்ட கவனம்",
+        w3:
+          "நடைமுறை செயல்படுத்தல்",
 
-        why3Text:
-          "உங்கரனஹள்ளி, தர்மபுரியை அடிப்படையாகக் கொண்டு உள்ளூர் கட்டுமான தேவைகளை புரிந்துகொள்கிறோம்.",
+        w3Text:
+          "செயல்படுத்தக்கூடிய கட்டுமான தேவைகளில் கவனம் செலுத்துகிறோம்.",
 
-        quoteKicker:
-          "திட்ட விசாரணை",
+        w4:
+          "உள்ளூர் சேவை",
+
+        w4Text:
+          "Dharmapuri மற்றும் அருகிலுள்ள பகுதிகளில் கட்டுமான தேவைகளுக்கு சேவை.",
 
         quoteTitle:
-          "நீங்கள் திட்டமிடுவதை எங்களிடம் சொல்லுங்கள்.",
+          "உங்கள் Project பற்றி சொல்லுங்கள்.",
 
-        quoteDescription:
-          "உங்கள் திட்டத்தின் அடிப்படை விவரங்களை பகிருங்கள். உங்கள் enquiry எங்கள் project lead system-க்கு அனுப்பப்படும்.",
+        quoteCopy:
+          "உங்கள் அடிப்படை தேவையை Submit செய்யுங்கள். அடுத்த கட்டத்தைப் பற்றி எங்கள் குழு தொடர்பு கொள்ளும்.",
 
-        quotePoint1:
-          "உங்கள் enquiry எங்கள் lead sheet-ல் பதிவு செய்யப்படும்.",
+        fName:
+          "பெயர் *",
 
-        quotePoint2:
-          "தேவையான fields தெளிவாக குறிக்கப்பட்டுள்ளன.",
+        fPhone:
+          "தொலைபேசி *",
 
-        quotePoint3:
-          "நேரடியாக WhatsApp மூலமும் தொடர்பு கொள்ளலாம்.",
+        fEmail:
+          "Email",
 
-        nameLabel:
-          "பெயர்",
+        fLocation:
+          "Project இடம் *",
 
-        phoneLabel:
-          "தொலைபேசி",
+        fProject:
+          "Project வகை",
 
-        emailLabel:
-          "மின்னஞ்சல்",
-
-        locationLabel:
-          "திட்ட இடம்",
-
-        projectTypeLabel:
-          "திட்ட வகை",
-
-        serviceLabel:
+        fService:
           "தேவையான சேவை",
 
-        budgetLabel:
-          "மதிப்பிடப்பட்ட பட்ஜெட்",
+        fBudget:
+          "மதிப்பிடப்பட்ட Budget",
 
-        requirementLabel:
-          "தேவை / செய்தி",
+        fRequirement:
+          "தேவை",
 
-        selectOption:
-          "தேர்வு செய்யவும்",
+        phName:
+          "உங்கள் பெயர்",
 
-        optionNewHouse:
-          "புதிய வீடு",
+        phEmail:
+          "you@example.com",
 
-        optionRenovation:
-          "புதுப்பிப்பு",
+        phLocation:
+          "Project இருக்கும் இடம்",
 
-        optionInterior:
-          "இன்டீரியர்",
+        phRequirement:
+          "உங்கள் Project தேவையை எழுதுங்கள்...",
 
-        optionBuilding:
-          "கட்டிட பணி",
+        optResidential:
+          "வீட்டு கட்டுமானம்",
 
-        optionOther:
+        optCommercial:
+          "வணிக கட்டுமானம்",
+
+        optRenovation:
+          "Renovation",
+
+        optTurnkey:
+          "Turnkey",
+
+        optOther:
           "மற்றவை",
 
-        serviceOption1:
-          "வீடு கட்டுமானம்",
+        srvResidential:
+          "வீட்டு கட்டுமானம்",
 
-        serviceOption2:
-          "திட்டமிடல் & வடிவமைப்பு",
+        srvCommercial:
+          "வணிக கட்டுமானம்",
 
-        serviceOption3:
-          "புதுப்பிப்பு",
+        srvRenovation:
+          "Renovation",
 
-        serviceOption4:
-          "இன்டீரியர் பணி",
+        srvTurnkey:
+          "Turnkey Construction",
 
-        serviceOption5:
-          "சிவில் பணி",
+        srvEstimate:
+          "Estimation & Consultation",
 
-        serviceOption6:
-          "எலக்ட்ரிக்கல் பணி",
+        srvFinishing:
+          "Finishing Works",
 
-        serviceOption7:
-          "பிளம்பிங் பணி",
-
-        serviceOption8:
-          "Turnkey Support",
+        budgetNot:
+          "இன்னும் முடிவு செய்யவில்லை",
 
         budget1:
           "₹10 லட்சத்திற்குள்",
 
         budget2:
-          "₹10 - ₹20 லட்சம்",
+          "₹10 - ₹25 லட்சம்",
 
         budget3:
-          "₹20 - ₹40 லட்சம்",
+          "₹25 - ₹50 லட்சம்",
 
         budget4:
-          "₹40 - ₹60 லட்சம்",
+          "₹50 லட்சத்திற்கு மேல்",
 
-        budget5:
-          "₹60 லட்சத்திற்கு மேல்",
-
-        budget6:
-          "இன்னும் முடிவு செய்யவில்லை",
-
-        formReady:
-          "உங்கள் enquiry-ஐ அனுப்ப தயாராக உள்ளது.",
-
-        submitButton:
+        submit:
           "Enquiry அனுப்பவும்",
 
-        contactKicker:
+        formNote:
+          "உங்கள் enquiry எங்கள் lead system-க்கு அனுப்பப்படும்.",
+
+        contactLabel:
           "தொடர்பு",
 
         contactTitle:
-          "உங்கள் கட்டுமான தேவையைப் பற்றி பேசலாம்.",
+          "உங்கள் கட்டுமான தேவையைப் பற்றி பேசலாம்."
 
-        contactDescription:
-          "Form மூலம் enquiry அனுப்பலாம் அல்லது Vaazhvizhi Contracters-ஐ நேரடியாக தொடர்பு கொள்ளலாம்.",
-
-        contactOpen:
-          "தொடர்பு கொள்ளுங்கள்",
-
-        contactEmail:
-          "மின்னஞ்சல் அனுப்பவும்",
-
-        contactInstagram:
-          "Instagram பார்க்கவும்",
-
-        contactMap:
-          "Maps திறக்கவும்",
-
-        contactLocationTitle:
-          "இடம்",
-
-        footerDescription:
-          "Building Dreams. Creating Spaces. தர்மபுரியில் குடியிருப்பு மற்றும் கட்டுமான தேவைகளுக்கான ஆதரவு.",
-
-        footerExplore:
-          "பார்க்க",
-
-        footerContact:
-          "தொடர்பு",
-
-        footerRights:
-          "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
-
-        footerLocation:
-          "உங்கரனஹள்ளி, தர்மபுரி, தமிழ்நாடு"
       }
 
     };
 
 
     /*
-      ============================================================
-      LANGUAGE
-      ============================================================
-    */
+     * ========================================================
+     * LANGUAGE
+     * ========================================================
+     */
 
-    let currentLanguage =
-      localStorage.getItem("vaazhvizhiLanguage") || "en";
+    function applyLanguage(language) {
 
+      currentLanguage = language;
 
-    function updatePlaceholders(lang) {
-
-      document
-        .querySelectorAll("[data-placeholder-en]")
-        .forEach((element) => {
-
-          const english =
-            element.getAttribute("data-placeholder-en");
-
-          const tamil =
-            element.getAttribute("data-placeholder-ta");
-
-          element.placeholder =
-            lang === "ta"
-              ? tamil
-              : english;
-        });
-
-    }
-
-
-    function setLanguage(lang) {
-
-      if (!translations[lang]) {
-        lang = "en";
-      }
-
-      currentLanguage = lang;
 
       localStorage.setItem(
-        "vaazhvizhiLanguage",
-        currentLanguage
+        "vaazhvizhi-language",
+        language
       );
 
+
       document.documentElement.lang =
-        currentLanguage === "ta"
+        language === "ta"
           ? "ta"
           : "en";
 
 
+      /*
+       * Text translation
+       */
+
       document
         .querySelectorAll("[data-i18n]")
-        .forEach((element) => {
+        .forEach(function (element) {
 
           const key =
-            element.getAttribute("data-i18n");
+            element.getAttribute(
+              "data-i18n"
+            );
 
-          if (
-            translations[currentLanguage][key] !== undefined
-          ) {
-            element.textContent =
-              translations[currentLanguage][key];
+          const value =
+            translations[language][key];
+
+          if (value) {
+            element.textContent = value;
           }
 
         });
 
 
-      updatePlaceholders(currentLanguage);
+      /*
+       * Placeholder translation
+       */
 
+      document
+        .querySelectorAll(
+          "[data-i18n-placeholder]"
+        )
+        .forEach(function (element) {
 
-      const toggleText =
-        currentLanguage === "en"
-          ? "தமிழ்"
-          : "English";
+          const key =
+            element.getAttribute(
+              "data-i18n-placeholder"
+            );
 
-      languageBtn.textContent =
-        toggleText;
+          const value =
+            translations[language][key];
 
-      mobileLanguageBtn.textContent =
-        toggleText;
+          if (value) {
+            element.placeholder = value;
+          }
+
+        });
 
 
       /*
-        Keep the form status translated
-        if it is currently in the ready state.
-      */
+       * Language button
+       */
 
-      if (
-        !submissionLocked &&
-        !formStatus.classList.contains("success") &&
-        !formStatus.classList.contains("error")
-      ) {
+      langBtn.textContent =
+        language === "en"
+          ? "தமிழ்"
+          : "English";
 
-        formStatus.textContent =
-          translations[currentLanguage].formReady;
+
+      /*
+       * Don't overwrite sending state.
+       */
+
+      if (!submissionLocked) {
+
+        submitBtn.textContent =
+          translations[language].submit;
+
       }
 
     }
 
 
-    function toggleLanguage() {
-
-      setLanguage(
-        currentLanguage === "en"
-          ? "ta"
-          : "en"
-      );
-
-    }
-
-
-    languageBtn.addEventListener(
+    langBtn.addEventListener(
       "click",
-      toggleLanguage
-    );
+      function () {
 
-
-    mobileLanguageBtn.addEventListener(
-      "click",
-      () => {
-
-        toggleLanguage();
-
-        mobileMenu.classList.remove("active");
-
-        menuBtn.setAttribute(
-          "aria-expanded",
-          "false"
+        applyLanguage(
+          currentLanguage === "en"
+            ? "ta"
+            : "en"
         );
 
       }
     );
 
 
-    setLanguage(currentLanguage);
-
-
     /*
-      ============================================================
-      MOBILE MENU
-      ============================================================
-    */
+     * ========================================================
+     * MOBILE MENU
+     * ========================================================
+     */
 
     menuBtn.addEventListener(
       "click",
-      () => {
+      function () {
 
-        const isOpen =
-          mobileMenu.classList.toggle("active");
-
-        menuBtn.setAttribute(
-          "aria-expanded",
-          String(isOpen)
+        navLinks.classList.toggle(
+          "open"
         );
 
       }
@@ -4454,20 +3363,15 @@
 
 
     document
-      .querySelectorAll("#mobileMenu a")
-      .forEach((link) => {
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
 
         link.addEventListener(
           "click",
-          () => {
+          function () {
 
-            mobileMenu.classList.remove(
-              "active"
-            );
-
-            menuBtn.setAttribute(
-              "aria-expanded",
-              "false"
+            navLinks.classList.remove(
+              "open"
             );
 
           }
@@ -4477,88 +3381,72 @@
 
 
     /*
-      ============================================================
-      FORM SUBMISSION
-      ============================================================
+     * ========================================================
+     * SUBMISSION ID
+     * ========================================================
+     */
 
-      IMPORTANT:
+    function createSubmissionId() {
 
-      We intentionally use a normal HTML POST into a hidden
-      iframe.
+      if (
+        window.crypto &&
+        typeof window.crypto.randomUUID ===
+          "function"
+      ) {
 
-      We DO NOT wait for Apps Script's response.
+        return window.crypto.randomUUID();
 
-      This avoids the old "Submitting..." hanging problem.
-
-      Sheet saving happens server-side in Code.gs.
-
-      The UI says "sent", not "saved successfully", because
-      the browser does not wait for server confirmation.
-      ============================================================
-    */
-
-    let submissionLocked = false;
+      }
 
 
-    function setSendingState() {
-
-      submitBtn.disabled = true;
-
-      submitText.textContent =
-        currentLanguage === "ta"
-          ? "அனுப்பப்படுகிறது..."
-          : "Sending...";
-
-      formStatus.className =
-        "form-status";
-
-      formStatus.textContent =
-        currentLanguage === "ta"
-          ? "உங்கள் enquiry அனுப்பப்படுகிறது..."
-          : "Sending your enquiry...";
+      return (
+        "VZ-" +
+        Date.now() +
+        "-" +
+        Math.random()
+          .toString(36)
+          .slice(2, 12)
+      );
 
     }
 
 
-    function setSentState() {
+    /*
+     * ========================================================
+     * FORM STATUS
+     * ========================================================
+     */
 
-      formStatus.className =
-        "form-status success";
+    function setStatus(
+      message,
+      type
+    ) {
 
       formStatus.textContent =
-        currentLanguage === "ta"
-          ? "✓ உங்கள் enquiry அனுப்பப்பட்டது."
-          : "✓ Your enquiry has been sent.";
+        message;
 
-      submitText.textContent =
-        currentLanguage === "ta"
-          ? "அனுப்பப்பட்டது ✓"
-          : "Request Sent ✓";
+      formStatus.className =
+        "form-status " +
+        (type || "");
 
     }
 
 
-    function resetFormState() {
-
-      leadForm.reset();
-
-      submissionLocked = false;
-
-      submitBtn.disabled = false;
-
-      submitText.textContent =
-        translations[currentLanguage].submitButton;
-
-      formStatus.className =
-        "form-status";
-
-      formStatus.textContent =
-        translations[currentLanguage].formReady;
-
-      updatePlaceholders(currentLanguage);
-
-    }
-
+    /*
+     * ========================================================
+     * FORM SUBMIT
+     *
+     * IMPORTANT:
+     *
+     * Native HTML POST.
+     * Hidden iframe.
+     *
+     * NO fetch()
+     * NO CORS dependency.
+     * NO waiting for Gmail.
+     * NO page reload.
+     * ========================================================
+     */
 
     leadForm.addEventListener(
       "submit",
@@ -4568,8 +3456,8 @@
 
 
         /*
-          Duplicate protection.
-        */
+         * Prevent duplicate clicks.
+         */
 
         if (submissionLocked) {
           return;
@@ -4577,28 +3465,64 @@
 
 
         /*
-          Browser validation.
-        */
+         * Native browser validation.
+         */
 
-        if (!leadForm.checkValidity()) {
+        if (
+          !leadForm.checkValidity()
+        ) {
 
           leadForm.reportValidity();
 
           return;
+
         }
 
+
+        /*
+         * Honeypot.
+         */
+
+        const honeypot =
+          leadForm.elements[
+            "website"
+          ];
+
+        if (
+          honeypot &&
+          honeypot.value.trim() !== ""
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+         * Lock.
+         */
 
         submissionLocked = true;
 
 
-        setSendingState();
+        submitBtn.disabled = true;
 
 
         /*
-          IMPORTANT:
+         * Generate unique Lead ID.
+         */
 
-          Always set the exact Apps Script Web App endpoint.
-        */
+        activeSubmissionId =
+          createSubmissionId();
+
+
+        submissionIdInput.value =
+          activeSubmissionId;
+
+
+        /*
+         * Exact endpoint.
+         */
 
         leadForm.action =
           SCRIPT_URL;
@@ -4611,48 +3535,64 @@
 
 
         /*
-          Native form submit.
+         * UI.
+         */
 
-          This is deliberately used instead of fetch()
-          because Apps Script cross-origin responses can
-          create unnecessary CORS/response-wait problems.
-        */
+        submitBtn.textContent =
+          currentLanguage === "ta"
+            ? "அனுப்பப்படுகிறது..."
+            : "Sending...";
 
-        try {
 
-          HTMLFormElement.prototype.submit.call(
-            leadForm
-          );
-
-        } catch (error) {
-
-          submissionLocked = false;
-
-          submitBtn.disabled = false;
-
-          formStatus.className =
-            "form-status error";
-
-          formStatus.textContent =
-            currentLanguage === "ta"
-              ? "அனுப்புவதில் சிக்கல் ஏற்பட்டது. மீண்டும் முயற்சிக்கவும்."
-              : "There was a problem sending. Please try again.";
-
-          return;
-
-        }
+        setStatus(
+          currentLanguage === "ta"
+            ? "உங்கள் enquiry அனுப்பப்படுகிறது..."
+            : "Sending your enquiry...",
+          "sending"
+        );
 
 
         /*
-          Do not wait for Apps Script.
+         * ====================================================
+         * ACTUAL SUBMISSION
+         *
+         * Important:
+         * Calling HTMLFormElement.prototype.submit()
+         * avoids triggering our submit listener again.
+         * ====================================================
+         */
 
-          The browser has successfully initiated the POST.
-        */
+        HTMLFormElement.prototype.submit.call(
+          leadForm
+        );
 
-        window.setTimeout(
-          () => {
 
-            setSentState();
+        /*
+         * We intentionally DON'T wait for
+         * Apps Script response.
+         *
+         * This prevents the old:
+         *
+         * "Submitting..."
+         *
+         * problem.
+         */
+
+        setTimeout(
+          function () {
+
+            setStatus(
+              currentLanguage === "ta"
+                ? "✓ உங்கள் enquiry அனுப்பப்பட்டது."
+                : "✓ Your enquiry has been sent.",
+              "success"
+            );
+
+
+            submitBtn.textContent =
+              currentLanguage === "ta"
+                ? "அனுப்பப்பட்டது ✓"
+                : "Request Sent ✓";
 
           },
           250
@@ -4660,60 +3600,199 @@
 
 
         /*
-          Keep the form locked long enough to prevent
-          accidental duplicate submissions.
+         * Unlock after 10 seconds.
+         *
+         * Backend should use submissionId to prevent
+         * accidental duplicate rows.
+         */
 
-          This does NOT wait for Gmail.
-          This does NOT wait for Apps Script response.
-        */
+        unlockTimer =
+          setTimeout(
+            function () {
 
-        window.setTimeout(
-          () => {
+              submissionLocked = false;
 
-            resetFormState();
+              submitBtn.disabled = false;
 
-          },
-          5000
-        );
+              submitBtn.textContent =
+                translations[
+                  currentLanguage
+                ].submit;
+
+            },
+            10000
+          );
 
       }
     );
 
 
     /*
-      ============================================================
-      OPTIONAL SERVER RESPONSE LISTENER
-      ============================================================
-
-      Code.gs sends postMessage when possible.
-
-      The UI does not depend on this message.
-      It is only an optional confirmation channel.
-      ============================================================
-    */
+     * ========================================================
+     * APPS SCRIPT RESPONSE
+     *
+     * We don't depend on this for initial UI.
+     *
+     * If backend response arrives, we can correct status.
+     * ========================================================
+     */
 
     window.addEventListener(
       "message",
       function (event) {
 
-        if (!event.data) {
-          return;
-        }
+        /*
+         * Accept messages ONLY from our iframe.
+         */
 
         if (
-          event.data.type !==
-          "VAAZHVIZHI_LEAD_RESULT"
+          !submitFrame ||
+          event.source !==
+            submitFrame.contentWindow
         ) {
+
           return;
+
         }
 
-        /*
-          Do not override the normal UX here.
 
-          Sheet saving is handled by Code.gs.
-        */
+        const data =
+          event.data;
+
+
+        if (
+          !data ||
+          data.type !==
+            "VAAZHVIZHI_LEAD_RESULT"
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+         * Ignore another submission's response.
+         */
+
+        if (
+          data.submissionId &&
+          data.submissionId !==
+            activeSubmissionId
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+         * SUCCESS
+         */
+
+        if (
+          data.success === true
+        ) {
+
+          setStatus(
+            currentLanguage === "ta"
+              ? "✓ உங்கள் enquiry பதிவு செய்யப்பட்டது."
+              : "✓ Your enquiry was received.",
+            "success"
+          );
+
+
+          /*
+           * Reset the form only after backend
+           * has confirmed the submission.
+           *
+           * This keeps the user's entered data
+           * intact while waiting.
+           */
+
+          if (
+            unlockTimer
+          ) {
+
+            clearTimeout(
+              unlockTimer
+            );
+
+          }
+
+
+          leadForm.reset();
+
+
+          submissionLocked =
+            false;
+
+
+          submitBtn.disabled =
+            false;
+
+
+          submitBtn.textContent =
+            translations[
+              currentLanguage
+            ].submit;
+
+        }
+
+
+        /*
+         * ERROR
+         */
+
+        else {
+
+          setStatus(
+            currentLanguage === "ta"
+              ? "Submission-ல் பிரச்சனை. மீண்டும் முயற்சி செய்யவும்."
+              : "There was a problem. Please try again.",
+            "error"
+          );
+
+
+          submissionLocked =
+            false;
+
+
+          submitBtn.disabled =
+            false;
+
+
+          submitBtn.textContent =
+            currentLanguage === "ta"
+              ? "மீண்டும் அனுப்பவும்"
+              : "Try Again";
+
+        }
 
       }
+    );
+
+
+    /*
+     * ========================================================
+     * CURRENT YEAR
+     * ========================================================
+     */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /*
+     * ========================================================
+     * INITIAL LANGUAGE
+     * ========================================================
+     */
+
+    applyLanguage(
+      currentLanguage
     );
 
   </script>
