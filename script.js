@@ -1,63 +1,413 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Menu Toggle
-  const menuBtn = document.querySelector('.menu-btn');
-  const navLinks = document.querySelector('.nav-links');
+/* =========================================================
+   VAazhvizhi Contracters - QUOTE SUBMISSION
+   ========================================================= */
 
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('is-open');
-      menuBtn.setAttribute('aria-expanded', String(navLinks.classList.contains('is-open')));
+
+/* =========================
+   CONFIGURATION
+   ========================= */
+
+const QUOTE_CONFIG = {
+
+    whatsappNumber: "919025541161",
+
+    googleScriptUrl:
+        "https://script.google.com/macros/s/AKfycbyMsEAzXdSathCJm2i44CA6lelm6KDYw9MTSRDPxiPriNXhYg2IC0AB5gIE0CYkU5hO/exec"
+
+};
+
+
+/* =========================
+   QUICK QUOTE
+   ========================= */
+
+document
+    .getElementById("quickQuoteForm")
+    ?.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("quickName").value.trim();
+
+        const phone =
+            document.getElementById("quickPhone").value.trim();
+
+        const requirement =
+            document.getElementById("quickRequirement").value;
+
+        const message =
+            document.getElementById("quickMessage").value.trim();
+
+
+        /* Validation */
+
+        if (!name) {
+            alert("Please enter your name.");
+            return;
+        }
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
+        }
+
+        if (!requirement) {
+            alert("Please select your requirement.");
+            return;
+        }
+
+
+        /* WhatsApp Message */
+
+        const whatsappMessage =
+`Hello Vaazhvizhi Contracters,
+
+I would like to get a Quick Quote.
+
+Name: ${name}
+Mobile: ${phone}
+Requirement: ${requirement}
+Message: ${message || "Not provided"}
+
+Please contact me regarding my requirement.`;
+
+        const whatsappUrl =
+            `https://wa.me/${QUOTE_CONFIG.whatsappNumber}?text=` +
+            encodeURIComponent(whatsappMessage);
+
+
+        /* Open WhatsApp */
+
+        window.open(whatsappUrl, "_blank");
+
+
+        /* Reset */
+
+        this.reset();
+
+        closeQuickQuote();
+
     });
 
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('is-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      });
+
+
+/* =========================
+   DETAILED QUOTE
+   ========================= */
+
+document
+    .getElementById("detailedQuoteForm")
+    ?.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+
+        /* Collect Data */
+
+        const name =
+            document.getElementById("detailedName").value.trim();
+
+        const phone =
+            document.getElementById("detailedPhone").value.trim();
+
+        const location =
+            document.getElementById("detailedLocation").value.trim();
+
+        const projectType =
+            document.getElementById("detailedProjectType").value;
+
+        const area =
+            document.getElementById("detailedArea").value.trim();
+
+        const floors =
+            document.getElementById("detailedFloors").value;
+
+        const budget =
+            document.getElementById("detailedBudget").value;
+
+        const message =
+            document.getElementById("detailedMessage").value.trim();
+
+
+        /* Validation */
+
+        if (!name) {
+            alert("Please enter your full name.");
+            return;
+        }
+
+        if (!/^[0-9]{10}$/.test(phone)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
+        }
+
+        if (!location) {
+            alert("Please enter the project location.");
+            return;
+        }
+
+        if (!projectType) {
+            alert("Please select the project type.");
+            return;
+        }
+
+
+        /* Button */
+
+        const submitButton =
+            this.querySelector(".submit-quote-btn");
+
+        const originalButtonText =
+            submitButton.textContent;
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+            "Submitting...";
+
+
+        /* Data */
+
+        const formData = {
+
+            formType: "Detailed Quote",
+
+            name: name,
+
+            phone: phone,
+
+            location: location,
+
+            projectType: projectType,
+
+            area: area,
+
+            floors: floors,
+
+            budget: budget,
+
+            message: message,
+
+            submittedAt:
+                new Date().toISOString()
+
+        };
+
+
+        try {
+
+            /* =========================
+               SEND TO GOOGLE SHEETS
+               ========================= */
+
+            await fetch(
+                QUOTE_CONFIG.googleScriptUrl,
+                {
+                    method: "POST",
+
+                    mode: "no-cors",
+
+                    headers: {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded"
+                    },
+
+                    body:
+                        new URLSearchParams(formData)
+                }
+            );
+
+
+            /* =========================
+               SUCCESS MESSAGE
+               ========================= */
+
+            alert(
+                "Thank you! Your detailed quote request has been submitted successfully."
+            );
+
+
+            /* =========================
+               WHATSAPP FOLLOW-UP
+               ========================= */
+
+            const whatsappMessage =
+`Hello Vaazhvizhi Contracters,
+
+I have submitted a Detailed Quote request.
+
+Name: ${name}
+Mobile: ${phone}
+Project Location: ${location}
+Project Type: ${projectType}
+Area: ${area || "Not provided"} sq.ft
+Floors: ${floors || "Not provided"}
+Budget: ${budget || "Not provided"}
+
+Additional Details:
+${message || "Not provided"}
+
+Please contact me regarding my project.`;
+
+            const whatsappUrl =
+                `https://wa.me/${QUOTE_CONFIG.whatsappNumber}?text=` +
+                encodeURIComponent(whatsappMessage);
+
+
+            /* Open WhatsApp */
+
+            window.open(
+                whatsappUrl,
+                "_blank"
+            );
+
+
+            /* Reset */
+
+            this.reset();
+
+            closeDetailedQuote();
+
+
+        } catch (error) {
+
+            console.error(
+                "Detailed quote submission error:",
+                error
+            );
+
+            alert(
+                "Something went wrong while submitting your request. Please try again or contact us directly on WhatsApp."
+            );
+
+        } finally {
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                originalButtonText;
+
+        }
+
     });
-  }
 
-  // Quote Form Submission (WhatsApp Integration & Validation)
-  const quoteForm = document.getElementById('quoteForm');
-  const formStatus = document.getElementById('formStatus');
 
-  if (quoteForm && formStatus) {
-    quoteForm.addEventListener('submit', (event) => {
-      event.preventDefault();
 
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const service = document.getElementById('service').value.trim();
-      const location = document.getElementById('location').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const honeypot = document.getElementById('website').value.trim();
+/* =========================
+   QUICK QUOTE MODAL
+   ========================= */
 
-      // Spam Prevention (Honeypot check)
-      if (honeypot) return;
+function openQuickQuote() {
 
-      // Validation
-      if (!name || !phone || !service) {
-        formStatus.textContent = 'Please fill in your name, phone number and service.';
-        formStatus.className = 'form-status error';
-        return;
-      }
+    const modal =
+        document.getElementById("quickQuoteModal");
 
-      formStatus.textContent = 'Preparing your enquiry...';
-      formStatus.className = 'form-status sending';
+    if (!modal) return;
 
-      // Construct WhatsApp Direct Message
-      const whatsappNumber = '919025541161';
-      const text = `Hello Vaazhvizhi Contracters,%0A%0A*New Project Enquiry*%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Service:* ${encodeURIComponent(service)}%0A- *Location:* ${encodeURIComponent(location || 'Not specified')}%0A- *Details:* ${encodeURIComponent(message || 'None')}`;
+    modal.style.display = "flex";
 
-      setTimeout(() => {
-        formStatus.textContent = 'Thank you! Redirecting to WhatsApp...';
-        formStatus.className = 'form-status success';
-        
-        // Open WhatsApp with pre-filled enquiry details
-        window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
-        
-        quoteForm.reset();
-      }, 800);
-    });
-  }
-});
+    document.body.classList.add("modal-open");
+
+}
+
+
+function closeQuickQuote() {
+
+    const modal =
+        document.getElementById("quickQuoteModal");
+
+    if (!modal) return;
+
+    modal.style.display = "none";
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+
+/* =========================
+   DETAILED QUOTE MODAL
+   ========================= */
+
+function openDetailedQuote() {
+
+    const modal =
+        document.getElementById("detailedQuoteModal");
+
+    if (!modal) return;
+
+    modal.style.display = "flex";
+
+    document.body.classList.add("modal-open");
+
+}
+
+
+function closeDetailedQuote() {
+
+    const modal =
+        document.getElementById("detailedQuoteModal");
+
+    if (!modal) return;
+
+    modal.style.display = "none";
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+
+/* =========================
+   CLOSE MODAL ON OUTSIDE CLICK
+   ========================= */
+
+window.addEventListener(
+    "click",
+    function (event) {
+
+        const quickModal =
+            document.getElementById("quickQuoteModal");
+
+        const detailedModal =
+            document.getElementById("detailedQuoteModal");
+
+
+        if (
+            quickModal &&
+            event.target === quickModal
+        ) {
+            closeQuickQuote();
+        }
+
+
+        if (
+            detailedModal &&
+            event.target === detailedModal
+        ) {
+            closeDetailedQuote();
+        }
+
+    }
+);
+
+
+
+/* =========================
+   ESC KEY CLOSE
+   ========================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key !== "Escape") return;
+
+        closeQuickQuote();
+
+        closeDetailedQuote();
+
+    }
+);
